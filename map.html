@@ -98,7 +98,7 @@ map.scrollWheelZoom.disable();
                 layer.feature.properties.Regulations_04232015_Country == "Antarctica"){
                 map.fitBounds(layer.getBounds(), {padding: [-200,-200]});
             }
-            else{ map.fitBounds(layer.getBounds(), {padding: [150,150]}); }
+            else { map.fitBounds(layer.getBounds(), {padding: [200,200]}); }
             
             $('.info').html(layer.feature.properties.popupContent);
 
@@ -218,7 +218,7 @@ map.scrollWheelZoom.disable();
                     }
                     
                     if(props.Regulations_04232015_pendingreg_explainer){
-                        popupContent += "<br /><strong>Pending Regulations: </strong>" + props.Regulations_04232015_pendingreg_explainer
+                        popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.Regulations_04232015_pendingreg_explainer
                         + "<br /><strong>Source: </strong>";
                         for(i=0; i<preg_sources.length;i++){
                             if(i != preg_sources.length-1){ popupContent += preg_sources[i] + ", ";}
@@ -236,7 +236,7 @@ map.scrollWheelZoom.disable();
                     }
 
                     if(props.Regulations_04232015_exampleflight_description){
-                        popupContent += "<br /><strong>Example Flight: </strong>" + props.Regulations_04232015_exampleflight_description
+                        popupContent += "<br /><br /><strong>Example Flight: </strong>" + props.Regulations_04232015_exampleflight_description
                         + "<br /><strong>Source: </strong>";
                         for(i=0; i<emFlight_sources.length;i++){
                                 if(i != emFlight_sources.length-1){ popupContent += emFlight_sources[i] + ", ";}
@@ -245,7 +245,7 @@ map.scrollWheelZoom.disable();
                     }
                     
                     if(props.Regulations_04232015_enforcement_action){
-                        popupContent += "<br /><strong>Enforcement Action: </strong>";
+                        popupContent += "<br /><br /><strong>Enforcement Action: </strong>";
                         for(i=0; i<enforcement_links.length;i++){
                                 if(i != enforcement_links.length-1){ popupContent += enforcement_links[i] + ", ";}
                                 else { popupContent += enforcement_links[i];}
