@@ -187,6 +187,18 @@ map.scrollWheelZoom.disable();
                     }
                 }
 
+                var enforcement_links = [];
+                if(props.Regulations_04232015_enforcement_action){
+                    var enforcement_link = props.Regulations_04232015_enforcement_action;
+                    var enforcement_link_arr = enforcement_link.split("; ");
+
+                    for(i=0;i< enforcement_link_arr.length; i++){
+                         var t = enforcement_link_arr[i].split(": ");
+                         var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                         enforcement_links.push(p);
+                    }
+                }
+
                 var popupContent = '';
                 popupContent += "<h4>" + props.Regulations_04232015_Country 
                     + "</h4><strong>Regulations: </strong>" + props.Regulations_04232015_reg_explainer
@@ -233,7 +245,11 @@ map.scrollWheelZoom.disable();
                     }
                     
                     if(props.Regulations_04232015_enforcement_action){
-                        popupContent += "<br /><strong>Enforcement Action: </strong>" + props.Regulations_04232015_enforcement_action;
+                        popupContent += "<br /><strong>Enforcement Action: </strong>";
+                        for(i=0; i<enforcement_links.length;i++){
+                                if(i != enforcement_links.length-1){ popupContent += enforcement_links[i] + ", ";}
+                                else { popupContent += enforcement_links[i];}
+                            }
                     }
 
                 feature.properties.popupContent = popupContent;
