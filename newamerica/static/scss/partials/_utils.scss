@@ -1,0 +1,116 @@
+.txtc{
+    text-align: center;
+}
+
+.txtl{
+    text-align: left;
+}
+
+.txtr{
+    text-align: right;
+}
+.fl{
+	float: left;
+}
+.fr {
+	float: right;
+}
+.cb {
+	clear: both;
+}
+
+.uc{
+    text-transform: uppercase;
+}
+
+.db{
+    display: block;
+}
+
+.dib{
+    display: inline-block;
+    a.icon{
+    	color: transparent;
+    }
+}
+
+.di{
+    display: inline;
+}
+
+.dn{
+    display: none;
+}
+
+.prel{
+	position:relative;
+}
+
+.pabs{
+	position:absolute;
+}
+
+/* Margin 0 */
+.m0 {
+	margin: 0;
+}
+
+.mauto{
+	margin: auto;
+}
+
+/* Vertical margins */
+.mv0{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* border classes */
+
+.bbdr {
+	border-bottom: 1px solid $black20;
+	padding-bottom: 3.2em;
+}
+
+.tbdr {
+	border-top: 1px solid $black20;
+	padding-top: 3.2em;
+}
+
+.cf {
+	@include clearfix;
+}
+
+.tbl {
+	display: table;
+}
+
+.sans {
+	font-family: $sansSerif;
+}
+
+.sansb {
+	font-family: $sansSerifBold;
+}
+
+.serif {
+	font-family: $serif;
+}
+
+.serifb {
+	font-family: $serifBold;
+}
+
+.df{
+	font-family: $displayFont;
+}
+
+.op0{
+	opacity: 0;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}

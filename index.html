@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@import "http://www.newamerica.org/assets/css/main.7bcb95ed.css";
+@import "http://www.newamerica.org/assets/css/wide.796fa3c5.css";
+body{
+  margin: 10px;
+}
+nav{
+  z-index:400001;
+}
+
+#intro {
+  background-size:cover;
+  border-color: #aaa;
+  padding: 10px;
+  display: inline-block;
+  width:80%;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.content-uavs #flights, #about, #regs {
+  padding: 10px 100px 10px 90px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.content-uavs #about p{
+  background-size:cover;
+  border-color: #aaa;
+  padding: 10px 100px 10px 90px;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+}
+
+.content-uavs .selectboxes #MissionFilter, #YearStartFilter, #YearEndFilter, #CostFilter, #TypeFilter {
+  display: inline-block;
+}
+
+#footer {
+  display: inline-block;
+  top: 90%;
+}
+div#page-container {
+  display: inline-block;
+  top: 25px;
+  width: 100%;
+}
+div#search-field{
+  width: 75%;
+  height: 50px;
+  display: inline-block;
+}
+form#search-form{
+  width: 100%;
+  height: 40px;
+  margin: 25px 0px 0 100px;
+  padding: 0 auto;
+  display: block;
+}
+form#search-form div.selectboxes select {
+  display: inline-block;
+}
+div#term-heading {
+  display: block;
+  margin-bottom: 20px;
+}
+div#search-result {
+  margin: 25px 100px 0 100px;
+  left: 10px;
+  width: 100%;
+  display: inline-block;
+  clear: both;
+}
+div#adv-search input[type=checkbox] {
+  margin-right: 3px;
+}
+div#adv-search label {
+  margin-right: 20px;
+}
+ul#term-tabs {
+  display: inline-block;
+  width: 35%;
+  float: left;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+ul#term-tabs li {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 2px;
+}
+ul#term-tabs li a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1em;
+}
+ul#term-tabs li.active{
+  background: #aaa;
+}
+ul#term-tabs li:hover {
+  background: #ccc;
+}
+div#term-defs {
+  display: inline-block;
+  margin-left: 10%;
+  margin-right: 20%;
+  padding: 1em;
+  border: 1px solid #aaa;
+}
+div#term-defs .citation {
+  font-size: 0.85em;
+  margin: 10px 0 0;
+  font-style: italic;
+  border-top: 1px dotted #aaa;
+  border-bottom: 1px solid #aaa;
+  padding: 0 1em 2em 0;
+}
+
+.content-uavs  div#flight-filters {
+  display: inline-flex;
+  border: 5px;
+  margin-bottom: 10px;
+}
+
+.content-uavs div#flight-filters select {
+  margin: 8px 7px 0px 7px;
+}
+
+div.showhide {
+  width: 100%;
+  clear: both;
+  float: right;
+}
+div.showhide.hiding {
+  background: #eee;
+  border-bottom: 1px solid #aaa;
+}
+div.showhide .heading {
+  float: left;
+}
+div.showhide .link {
+  float: right;
+}
+div.card {
+  clear: both;
+}
+div#deeplink {
+  width: 70%;
+  font-weight: bold;
+  margin-top: 20px
+}
+span#termname{
+  font-weight: bold;
+}
+
+#resetFilter {
+    height: 1.25em;
+    display: inline;
+    font: inherit;
+}
+
+.tabs {
+  position: relative;   
+  min-height: 55px; /* This part sucks */
+  clear: both;
+  margin: 25px 0;
+}
+.tab {
+  float: left;
+}
+.tab label { 
+  padding: 10px; 
+  border: 1px solid #fffaef;  
+  position: relative;
+  left: 1px; 
+}
+.tab [type=radio] {
+  display: none;   
+}
+.content-uavs {
+  position: absolute;
+  background: #fffaef;
+  top: 330px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid #ccc;
+}
+[type=radio]:checked ~ label {
+  background: #eee;
+  font-weight: bolder;
+  border-bottom: 2px solid;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content-uavs {
+  z-index: 1;
+}
+</style>
+
+
+<script type="text/javascript" src="newamerica/static/js/modernizr-latest.js"></script>
+
+  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="recline/vendor/slickgrid/2.0.1/slick.grid.css">
+  <link rel="stylesheet" href="recline/vendor/timeline/css/timeline.css">
+
+  <!-- Recline CSS components -->
+  <link rel="stylesheet" href="recline/css/grid.css">
+  <link rel="stylesheet" href="recline/css/slickgrid.css">
+  <link rel="stylesheet" href="recline/css/flot.css">
+  <link rel="stylesheet" href="recline/css/map.css">
+  <link rel="stylesheet" href="recline/css/multiview.css">
+  <link rel="stylesheet" href="recline/css/timeline.css">
+  <!-- /Recline CSS components -->
+
+  <!-- 3rd party JS libraries -->
+  <!--script type="text/javascript" src="recline/vendor/jquery/1.7.1/jquery.js"></script-->
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="recline/vendor/underscore/1.4.4/underscore.js"></script>
+  <script type="text/javascript" src="recline/vendor/backbone/1.0.0/backbone.js"></script>
+  <script type="text/javascript" src="recline/vendor/mustache/0.5.0-dev/mustache.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+  <!--[if lte IE 8]>
+  <script language="javascript" type="text/javascript" src="recline/vendor/flot/excanvas.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="recline/vendor/flot/jquery.flot.js"></script>
+  <script type="text/javascript" src="recline/vendor/flot/jquery.flot.time.js"></script>
+  <script type="text/javascript" src="recline/vendor/leaflet/0.7.3/leaflet.js"></script>
+  <script type="text/javascript" src="recline/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js"></script>
+  <script src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.2.js"></script>
+  <script src="recline/vendor/slickgrid/2.0.1/jquery.event.drop-2.2.js"></script>
+
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js"></script>
+  <!--script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.grid.min.js"></script-->
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.core.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.formatters.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.editors.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.grid.js"></script>
+
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/plugins/slick.rowselectionmodel.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/plugins/slick.rowmovemanager.js"></script>
+
+
+  <script type="text/javascript" src="recline/vendor/moment/2.0.0/moment.js"></script>
+  <script type="text/javascript" src="recline/vendor/timeline/js/timeline.js"></script>
+  <!--[if lte IE 7]>
+  <script language="javascript" type="text/javascript" src="recline/vendor/json/json2.js"></script>
+  <![endif]-->
+
+  <!--
+    ## Just use the all in one library version rather than individual files
+
+  <script type="text/javascript" src="recline/dist/recline.js"></script>
+
+  -->
+
+  <!-- model and backends -->
+  <script type="text/javascript" src="recline/src/ecma-fixes.js"></script>
+  <script type="text/javascript" src="recline/src/model.js"></script>
+  <script type="text/javascript" src="recline/src/backend.memory.js"></script>
+  <script type="text/javascript" src="recline/src/backend.dataproxy.js"></script>
+  <script type="text/javascript" src="http://okfnlabs.org/recline.backend.gdocs/backend.gdocs.js"></script>
+  <script type="text/javascript" src="http://okfnlabs.org/csv.js/csv.js"></script>
+
+  <!-- views -->
+  <script type="text/javascript" src="recline/src/view.grid.js"></script>
+  <script type="text/javascript" src="recline/src/view.slickgrid.js"></script>
+  <script type="text/javascript" src="recline/src/view.flot.js"></script>
+  <script type="text/javascript" src="recline/src/view.graph.js"></script>
+  <script type="text/javascript" src="recline/src/view.map.js"></script>
+  <script type="text/javascript" src="recline/src/view.timeline.js"></script>
+  <script type="text/javascript" src="recline/src/widget.pager.js"></script>
+  <script type="text/javascript" src="recline/src/widget.queryeditor.js"></script>
+  <script type="text/javascript" src="recline/src/widget.filtereditor.js"></script>
+  <script type="text/javascript" src="recline/src/widget.valuefilter.js"></script>
+  <script type="text/javascript" src="recline/src/widget.facetviewer.js"></script>
+  <script type="text/javascript" src="recline/src/widget.fields.js"></script>
+  <script type="text/javascript" src="recline/src/view.multiview.js"></script>
+
+</head>
+<body>
+
+  <nav class="na-bar " id="na-main-bar">
+    <a href="http://newamerica.org"><img src="newamerica/static/media/icons/na-menu.svg" style="width:35px; display:inline; position:absolute; top:25px; left:25px;"></a>
+    <h1 class="left-vr"><div class="page-offset"><a href="http://drones.newamerica.org/" class="org-name" id="theOrg">World of Drones</a>
+</div><div class="fr archive"><a href="http://newamerica.net/archived" target="_blank">Archived Site</a></div></h1>
+
+  </nav>
+<nav id="organization" class="org-nav">
+  <button type="button" data-related-to="orgMenu" id="ob" class="org-home light icon oti org-btn">OTI Menu</button>
+  <div class="js-menu org-links right" id="orgMenu">
+    <ul class="oti ">
+                    <li><a href="http://newamerica.org/oti/">OTI</a></li>
+                    <li><a href="http://newamerica.org/international-security">ISP</a></li>
+                    <li><a href="http://securitydata.newamerica.net">International Security Data</a></li>
+                    <li><a href="http://www.newamerica.org/our-story/">About New America</a></li>
+    </ul>
+  </div>  
+</nav>
+
+<div id="masterContent">
+<div id="intro" > 
+<p><h1>World of Drones: Flights and Regulations</h1></p>
+
+<p>After decades of use by hobbyists and militaries, unmanned aircraft are now proliferating into a wide variety of new applications. The below maps document aspects of that proliferation. The tab to the left, marked "Flights", shows a database of recent uses of drones we consider worthy of note. The tab to the right, marked "Regulations", shows extant national regulations pertaining to civil drones, which vary widely from country to country.</p>
+
+  <div id="page-container">
+    <!--CONTENT-->
+    
+    <!--TABS-->
+   <div id="tabs">
+     <div class="tab" id="flightsButton">
+          <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1">Flights</label>
+           <div class="content-uavs" id="flights" style="padding-left: 120px; padding-right: 150px; padding-top: 20px;display: block;">
+              <!--FILTERS-->
+                <div id="flight-filters"><h4>Filters:</h4> 
+                        <select id="MissionFilter" class="selectboxes">
+                          <option value="default" label="Filter by Mission Type (All)">Select Mission Type</option>
+                          <option value="Agriculture" label="Agriculture">Agriculture</option>
+                          <option value="Archaeology" label="Archaeology">Archaeology</option>
+                          <option value="Armed Conflict Monitoring" label="Armed Conflict Monitoring">Armed Conflict Monitoring</option>
+                          <option value="Cargo" label="Cargo">Cargo</option>
+                          <option value="Community Mapping" label="Community Mapping">Community Mapping</option>
+                          <option value="Current Events" label="Current Events">Current Events</option>
+                          <option value="Disaster Response" label="Disaster Response">Disaster Response</option>
+                          <option value="Environmental Surveying" label="Environmental Surveying">Environmental Surveying</option>
+                          <option value="Search and Rescue" label="Search and Rescue">Search and Rescue</option>
+                          <option value="Training" label="Training">Training</option>
+                          <option value="Other" label="Other">Other</option>
+                          <option value="Wildlife Surveying" label="Wildlife Surveying">Wildlife Surveying</option>
+                        </select> 
+                        <select id="CostFilter" class="selectboxes">
+                          <option value="default" label="Filter by Cost (All) ($USD)">Cost</option>
+                          <option value="Under" label="Below $10K">Below $10K</option>
+                          <option value="Over" label="Above $10K">Above $10K</option>
+                          </select>
+                        <select id="TypeFilter" class="selectboxes">
+                          <option value="default" label="Filter by Drone Type (All)">Type of Drone</option>
+                          <option value="Multirotor" label="Multirotor">Multirotor</option>
+                          <option value="Fixed Wing" label="Fixed Wing">Fixed Wing</option>
+                          <option value="NA" label="Multiple, Other or Unknown">Multiple, Other or Unknown</option>
+                        </select>
+                        <!-- <button id="resetFilter">Clear All Filters</button>
+                         figure out slider
+                        <select id="YearStartFilter">
+                          <option value="default" label="Start Year"></option>
+                        </select>
+                        <select id="YearEndFilter">
+                          <option value="default" label="End Year"></option>
+                          </select> -->
+                      <!--
+                      <div class="checkboxes">
+                        <label><input type="checkbox" name="P5" value="1">Under $10K</label>
+                        <label><input type="checkbox" name="UNGGE4" value="1">UNGGE4</label>
+                        <label><input type="checkbox" name="OSCE" value="1">OSCE</label>
+                        <label><input type="checkbox" name="OtherState" value="1">Other State</label>
+                        <label><input type="checkbox" name="IGO" value="1">IGO</label>
+                        <label><input type="checkbox" name="OtherSource" value="1">Other Source</label>
+                      </div>-->
+                    </div>
+                    <div id="flights-map"></div>
+              </div>
+     </div>
+
+     <div class="tab" id="regsButton">
+          <input type="radio" id="tab-2" name="tab-group-1">
+           <label for="tab-2">Regulations</label>
+           <div class="content-uavs" id="regs" style="display:none; padding-left: 120px; padding-right: 150px;">
+             <!-- REGS -->
+              <iframe src="map.html" style="width:100%; height:600px; margin: 0;"></iframe>
+           </div>
+     </div>
+     <div class="tab" id="aboutButton">
+     <!-- ABOUT -->
+        <input type="radio" id="tab-3" name="tab-group-1">
+           <label for="tab-3">About these Maps</label>
+
+        <div class="content-uavs" id="about" style="display:none; padding-left: 120px; padding-right: 150px;">
+    <p>Small airplanes without anyone inside of them have existed for many decades, since the dawn of powered flight. However, they have recently become far more capable because of the advent of cheap, reliable, and small electronics that collect and communicate data and control the aircrafts' flight. These technologies are crucially enabled by the widespread availability of the Global Positioning System, which guides aircraft in flight and situates the data they gather. </p>
+
+    <p>These aircraft, which range widely in size, cost and endurance, are known as drones, as Unmanned Aerial Vehicles (UAVs), and Remotely Piloted Aerial Vehicles (RPAVs). Sometimes "system" is substituted for vehicle, to emphasize that controllers outside the aircraft play an important role, giving the acronyms UAS and RPAS. Because none of these terms is in fact a precise description of all the aircraft under discussion, we use them interchangeably. The capacity of drones to fly without outside influence also varies widely; many are able to fly from one GPS waypoint to another, but are not able to either sense or avoid obstacles they might encounter on the way. The development of such "sense and avoid" technologies is an area of active technological and regulatory development.</p>
+
+    <p>There are now more drones than manned aircraft in the world. Most of the drones are small, cheap drones, which, properly equipped and used, nonetheless possess great power as data-collecting instruments. That data, in the form of images, maps, and other environmental data, can be used by communities to improve the quality and character of their property rights. Drone surveillance can help protect endangered wildlife and understand the changing climate; drone imagery can be used by advocates and analysts to document and deter human rights violations. UAVs can be used by first responders to search for lost people, or to evaluate the extent of damage after natural disasters  like earthquakes or hurricanes.</p>
+
+    <p>The map of UAV flights is incomplete and not, in the statistical sense, a representative sample. However, it is intended to show many of the civil activities that have been accomplished in the last several years using drones. We exclude flights that are exclusively military or commercial in nature, and only illustrate noteworthy flights that have actually been flown. Upon launch of the database, the only flights listed are those New America's researchers have been able to find. However, we invite you to nominate uses of drones you believe to be noteworthy using {THIS FORM}; New America will also continue to update its database of UAV flights.</p>
+
+    <p>The regulation of UAVs is changing quickly in some countries; many others still lack a clear regulatory regime. The map of UAV regulations is New America's effort to gather in a single map the best available information about the current state of global drone regulation. This map is not meant as legal advice; verify the accuracy and currency of any regulations we cite yourself before flying a drone. Where possible, we point to up-to-date official government citations of regulation in English. Where we could not find English-language government sources, we refer to government sources in languages other than English. Where we could not find such sources, we point to secondary accounts which appear to be credible. Purely as a heuristic, in countries where the legal regime is unclear, we include references to recent drone flights which may be indicative of current regulation. </p>
+
+    <p>This database of regulations is intended as a resource to drone operators, those seeking to hire drone operators, to regulators seeking to compare their policies with their peers, and other interested parties. It will also be updated regularly.</p>
+
+    <p>These maps are a joint effort of New America's International Security Program and Open Technology Institute. They are part of a larger project which builds on the policy and technical expertise of both programs to provide disinterested analyses of the challenges facing those who would use drones and other aerial surveillance platforms to combat poverty and insecurity. They are made possible by the generous support of the Omidyar Network and Humanity United.</p>
+    <p>Please direct any queries to {aliasADDRESSatNEWAMERICA}</p>
+    </div>
+     </div>
+  </div>
+
+
+<script id="jsbin-javascript">
+
+  $('#tabs div').click( function() {
+      if( $(this).attr('id') == 'flightsButton'){
+        $('#regs').hide();
+        $('#about').hide();
+        $('#flights').show();
+      }
+      if( $(this).attr('id') == 'regsButton'){
+        $('#flights').hide();
+        $('#about').hide();
+        $('#regs').show();
+      }
+      if( $(this).attr('id') == 'aboutButton'){
+        $('#regs').hide();
+        $('#flights').hide();
+        $('#about').show();
+      }
+  });
+
+
+
+  var data = {
+    resource_id: '26f4b855-2698-40a5-a3e5-8dbdc07fdd07', // the resource id
+    limit: 100, // get 50 results
+    q: '' // query for 'bus'
+  };
+  $.ajax({
+    url: 'https://data.opentechinstitute.org/api/3/action/datastore_search',
+    data: data,
+    dataType: 'jsonp',
+    success: function(data) {
+      //alert('Total results found: ' + data.result.total);
+     
+      var dataset = new recline.Model.Dataset({
+        records: data.result.records
+      });
+      //console.log(dataset);
+
+      //map settings
+      var $el = $('#flights-map');
+
+      var map = new recline.View.Map({
+        el: $el, 
+        model: dataset,
+        state: {
+          autoZoom: false,
+          //lonField: null,
+          //latField: null,
+          //geomField: null,
+        },
+      });
+
+      map._setupMap = function(){
+ 
+          var self = this;
+          this.map = new L.Map(this.$map.get(0));
+       
+          var mbAttr = 'Map Imagery &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          '&copy; <a href="http://mapbox.com">Mapbox</a>. Data from <a href="http://data.opentechinstitute.org/dataset/world-of-drones/resource/428e15ab-4d76-4382-9022-40ffce2dfb97">New America</a>';
+          var mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+          var layer   = L.tileLayer(mbUrl, {id: 'newamerica.l89jcfpc', maxZoom: 10, minZoom: 2, attribution: mbAttr});
+          this.map.addLayer(layer);
+       
+          var baseLayers = {
+            //layers tool
+          };
+
+          /*L.control.layers(baseLayers).addTo(this.map);*/
+          this.markers = new L.MarkerClusterGroup(this._clusterOptions);
+       
+          // rebind this (as needed in e.g. default case above)
+          this.geoJsonLayerOptions.pointToLayer =  _.bind(
+              this.geoJsonLayerOptions.pointToLayer,
+              this);
+          this.features = new L.GeoJSON(null, this.geoJsonLayerOptions);
+       
+          this.map.setView([28.6975681,-2.6414667], 2);
+          this.map.scrollWheelZoom.disable();
+       
+          this.mapReady = true;
+      }
+
+      //scrollWheelZoom: disable,
+
+      map.geoJsonLayerOptions.pointToLayer = function(feature, latlng) {
+          var marker = new L.CircleMarker(latlng, {
+            radius: 6,
+            fillColor: "#2dbbb3",
+            color: "#000",
+            weight: 0.5,
+            opacity: 0.5,
+            fillOpacity: 0.8
+          });
+        
+        marker.bindPopup(feature.properties.popupContent);
+        this.markers.addLayer(marker);
+        return marker;
+      }
+
+      //FILTERS
+      var query = new recline.Model.Query();
+      query.addFilter({type: 'term', field: ('mission_tag1'||'mission_tag2'||'mission_tag3'||'mission_tag4'||'over_under_10k'||'drone_type')});
+
+      
+      var search = {};
+
+      search["filtered"] = { "filter" :
+      { "and" :
+        [ { "term" : { "mission_tag1" : "Agriculture" } },                                                                                                                                      
+            {"term" :  { "drone_type" : "Fixed Wing" } }]
+          }
+      };                                                                                                                                                                        
+      console.log(search);                                 
+      console.log( JSON.stringify(search) ); 
+
+      var filters = document.getElementById('flight-filters').getElementsByClassName('selectboxes');
+
+      var mFilter, cFilter, tFilter;
+
+      document.getElementById("MissionFilter").onchange = function() {
+        mFilter = filters['MissionFilter'].value, 
+        cFilter = filters['CostFilter'].value,
+        tFilter = filters['TypeFilter'].value;
+
+        console.log("filters: " + mFilter + ", " + cFilter + ", " + tFilter);
+        var currFilters = [];
+      
+        if(mFilter != 'default'){ currFilters.push(mFilter);}
+        if(cFilter != 'default'){ currFilters.push(cFilter);}
+        if(tFilter != 'default'){ currFilters.push(tFilter);}
+
+        console.log(currFilters);
+
+        dataset.query({q: search, size: 1000});   
+
+        return false;
+     };
+
+      document.getElementById("CostFilter").onchange = function() {
+        mFilter = filters['MissionFilter'].value, 
+        cFilter = filters['CostFilter'].value,
+        tFilter = filters['TypeFilter'].value;
+
+        console.log("filters: " + mFilter + ", " + cFilter + ", " + tFilter);
+        var currFilters = [];
+      
+        if(mFilter != 'default'){ currFilters.push(mFilter);}
+        if(cFilter != 'default'){ currFilters.push(cFilter);}
+        if(tFilter != 'default'){ currFilters.push(tFilter);}
+
+        console.log(currFilters.toString());
+
+        dataset.query({q: currFilters.toString(), size: 1000});       
+
+        return false;
+     };
+
+      document.getElementById("TypeFilter").onchange = function() {
+        mFilter = filters['MissionFilter'].value, 
+        cFilter = filters['CostFilter'].value,
+        tFilter = filters['TypeFilter'].value;
+
+        console.log("filters: " + mFilter + ", " + cFilter + ", " + tFilter);
+        var currFilters = [];
+      
+        if(mFilter != 'default'){ currFilters.push(mFilter);}
+        if(cFilter != 'default'){ currFilters.push(cFilter);}
+        if(tFilter != 'default'){ currFilters.push(tFilter);}
+
+        console.log(currFilters.toString());
+
+        dataset.query({q: currFilters.toString(), size: 1000});        
+
+        return false;
+     };
+
+
+     //INFOBOX
+      map.infobox = function(record) {
+
+        //sources
+        var source = record.get('reference_url1');
+        var source_arr = source.split("; ");
+        var sources = [];
+
+         for(i=0;i< source_arr.length; i++){
+                 var t = source_arr[i].split(": ");
+                 var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                 sources.push(p);
+               }
+
+        //missions
+        var missionTag1 = record.get('mission_tag1');
+        var missionTag2 = record.get('mission_tag2');
+        var missionTag3 = record.get('mission_tag3');
+        var missionTag4 = record.get('mission_tag4');
+        var mission_arr = [];
+
+        if(missionTag1){
+          mission_arr.push(missionTag1);
+        }
+        if(missionTag2){
+          mission_arr.push(missionTag2);
+        }
+        if(missionTag3){
+          mission_arr.push(missionTag3);
+        }
+        if(missionTag4){
+          mission_arr.push(missionTag4);
+        }
+
+        //actual infobox text
+        var html = '<h4>' + record.get('location_descriptive') + '</h4>';
+        
+        html += '<strong>Operating Entity:</strong> ' + record.get('operating_entity') + '<br/>';
+        
+        html += '<strong>Drone Type:</strong> ';
+          if(record.get('drone_type') == 'N/A'){
+             html += 'Multiple, Other, or Unknown<br/>';
+            }
+          else {html += record.get('drone_type') + '<br/>';}
+
+        html += '<strong>Model:</strong> ';
+          if(record.get('drone_model_name') == 'N/A'){
+             html += 'Unknown or Not Applicable<br/>';
+            }
+          else {html += record.get('drone_model_name') + '<br/>';}
+        
+        html += '<strong>Manufacturer:</strong> ';
+          if(record.get('drone_manufacturer') == 'N/A'){
+             html += 'Unknown or Not Applicable<br/>';
+            }
+          else {html += record.get('drone_manufacturer') + '<br/>';}
+
+        html += '<strong>Camera:</strong> ';
+          if(record.get('camera_equipment') == 'N/A'){
+             html += 'Unknown or Not Applicable<br/>';
+            }
+          else {html += record.get('camera_equipment') + '<br/>';}
+
+        html += '<strong>Cost:</strong> ';
+          if(record.get('cost_range') == 'N/A'){
+             html += 'Unknown or Not Applicable<br/><br/>';
+            }
+          else {html += record.get('cost_range') + '<br/><br/>';}
+
+        html += '<strong>Type(s) of Mission:</strong> ';
+        for(i=0; i<mission_arr.length;i++){
+            if(i != mission_arr.length-1){ html += mission_arr[i] + ", ";}
+            else { html += mission_arr[i];}
+          }
+        html +='<br/>';
+        html += '<strong>Country:</strong> ' + record.get('country_name')+ '<br/>';
+        html += '<strong>Location Description:</strong> ' + record.get('location_descriptive')+ '<br/>';
+        html += '<strong>Description:</strong> ' + record.get('mission_description')+ '<br/>';
+        html += '<strong>Source(s):</strong> ';
+        for(i=0; i<sources.length;i++){
+            if(i != sources.length-1){ html += sources[i] + ", ";}
+            else { html += sources[i];}
+          }
+        return html;
+      }
+
+
+      map.render();
+      map.redraw();
+    }
+  });
+
+</script>
+
+
+
+
+</div>
+
+    </div>
+    <div class="scripted_styling"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>    
+    <script>window.jQuery || document.write('<script src="newamerica/static/js/libs/jquery-1.11.1.min.js"><\/script>')</script> 
+    <script src="newamerica/static/js/jquery.widowFix-1.3.2.min.js"></script> 
+
+    <script src="http://www.newamerica.org/assets/js/components/nav.js"></script> 
+    <script src="http://www.newamerica.org/assets/js/components/carosel.js"></script> 
+    <script src="http://www.newamerica.org/assets/js/core.8d266e97.js"></script> 
+
+
+</body>
+</html>

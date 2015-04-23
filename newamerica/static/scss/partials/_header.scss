@@ -1,0 +1,139 @@
+@include media($small-screen) {
+  .orgLogo {
+    display: none;    
+  }
+  
+}
+
+/*===============================
+HEADER 
+================================*/
+
+[id=masterContent] {
+
+  & > header{
+    @extend .prel;
+    color: $white;
+    padding: 7.25em 0 3em 0;
+    &.index{
+      background-color:  $highlightA;
+    }
+  
+    &.asset-building {
+      background-color:  $asset-building;
+    }
+    &.breadwinning-caregiving {
+      background-color:  $breadwinning-caregiving;
+    }
+    &.cybersecurity-initiative {
+      background-color:  $cybersecurity-initiative;
+    }
+    &.economic-growth {
+      background-color:  $economic-growth;
+    }
+    &.education-policy {
+      background-color:  $education-policy;
+    }
+    &.family-centered-social-policy {
+      background-color: $fcsp;
+    }
+    &.fellows {
+      background-color:  $fellows;
+    }
+    &.future-of-war {
+      background-color: $future-of-war;
+    }
+    &.future-tense {
+      background-color:  $future-tense;
+    }
+    &.international-security {
+      background-color:  $international-security;
+    }
+    &.live {
+      background-color:  $live;
+    }
+    &.open-markets {
+      background-color:  $meri;
+    }
+    &.new-america {
+      background-color:  $new-america-live;
+    }
+    &.nyc {
+      background-color:  $nyc;
+    } 
+    &.oti {
+      background-color:  $oti;
+    }             
+    &.political-reform {
+      background-color:  $political-reform;
+    }
+    &.profits-purpose {
+      background-color:  $profits-purpose;
+    }
+    &.postsecondary-national-policy-institute {
+      background-color:  $postsecondary-national-policy-institute;
+    }
+    &.x-lab {
+      background-color:  $xlab;
+    }
+    &.youthsave {
+      background-color: $youthsave;
+    }
+  }
+}
+.orgLogo{
+  display: none;
+  width: 60%;
+  height: auto;
+  img, svg{
+    width:100%;
+    height: auto;
+    fill: $white;
+  }
+  
+  span{
+    font-size:1px;
+    opacity: 0;
+  } 
+}
+.orgDescription{
+  font-family: $serif;
+  font-size: 1.45em;
+}
+
+[id=mast-newsletter] {
+  input, button, .button {
+    color: $white;
+    height: 42px;
+    font-size: 16px;
+    line-height: 1;
+  }
+  input {
+    @include placeholder-colors($white, transparent);
+    background: rgba($white, .20);
+    border-bottom: 0;
+    padding: 4px 20px 0;  
+  }
+  
+  button, .button {
+    color: rgba($white, .90);
+    border-color: rgba($white, .30);
+    padding: 0; 
+    &:hover, &:focus {
+      color: $white!important;
+      border-color: $white!important;
+      opacity: 1;
+    }
+  }
+  .button {
+    text-align: center;
+    padding: 8px 0!important;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  
+}
+.socmed {
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,19 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="11.9px" height="34.8px" viewBox="0 0 11.9 34.8" enable-background="new 0 0 11.9 34.8"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g class="start">
+	<g>
+		
+		<rect x="-0.9" y="5" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 14.3384 5.5765)" fill="#333232" width="13.9" height="1.5"/>
+	</g>
+	<g>
+		<polygon fill="#333232" points="7,0 11.9,0 11.9,4.8 10.5,4.8 10.5,1.4 7,1.4 		"/>
+	</g>
+	<g>
+		<polygon fill="#333232" points="11.9,11.9 0,11.9 0,0 1.4,0 1.4,10.4 11.9,10.4 "/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by georgiamoon (http://jsbin.com/woyeka/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<title>Recline Map & CKAN</title>
+<!-- bootstrap -->
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  
+
+  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="recline/vendor/slickgrid/2.0.1/slick.grid.css">
+  <link rel="stylesheet" href="recline/vendor/timeline/css/timeline.css">
+
+  <!-- Recline CSS components -->
+  <link rel="stylesheet" href="recline/css/grid.css">
+  <link rel="stylesheet" href="recline/css/slickgrid.css">
+  <link rel="stylesheet" href="recline/css/flot.css">
+  <link rel="stylesheet" href="recline/css/map.css">
+  <link rel="stylesheet" href="recline/css/multiview.css">
+  <link rel="stylesheet" href="recline/css/timeline.css">
+  <!-- /Recline CSS components -->
+
+  <!-- 3rd party JS libraries -->
+  <!--script type="text/javascript" src="recline/vendor/jquery/1.7.1/jquery.js"></script-->
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="recline/vendor/underscore/1.4.4/underscore.js"></script>
+  <script type="text/javascript" src="recline/vendor/backbone/1.0.0/backbone.js"></script>
+  <script type="text/javascript" src="recline/vendor/mustache/0.5.0-dev/mustache.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+  <!--[if lte IE 8]>
+  <script language="javascript" type="text/javascript" src="recline/vendor/flot/excanvas.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="recline/vendor/flot/jquery.flot.js"></script>
+  <script type="text/javascript" src="recline/vendor/flot/jquery.flot.time.js"></script>
+  <script type="text/javascript" src="recline/vendor/leaflet/0.7.3/leaflet.js"></script>
+  <script type="text/javascript" src="recline/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js"></script>
+  <script src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.2.js"></script>
+  <script src="recline/vendor/slickgrid/2.0.1/jquery.event.drop-2.2.js"></script>
+
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js"></script>
+  <!--script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.grid.min.js"></script-->
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.core.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.formatters.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.editors.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/slick.grid.js"></script>
+
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/plugins/slick.rowselectionmodel.js"></script>
+  <script type="text/javascript" src="recline/vendor/slickgrid/2.0.1/plugins/slick.rowmovemanager.js"></script>
+
+
+  <script type="text/javascript" src="recline/vendor/moment/2.0.0/moment.js"></script>
+  <script type="text/javascript" src="recline/vendor/timeline/js/timeline.js"></script>
+  <!--[if lte IE 7]>
+  <script language="javascript" type="text/javascript" src="recline/vendor/json/json2.js"></script>
+  <![endif]-->
+
+  <!--
+    ## Just use the all in one library version rather than individual files
+
+  <script type="text/javascript" src="recline/dist/recline.js"></script>
+
+  -->
+
+  <!-- model and backends -->
+  <script type="text/javascript" src="recline/src/ecma-fixes.js"></script>
+  <script type="text/javascript" src="recline/src/model.js"></script>
+  <script type="text/javascript" src="recline/src/backend.memory.js"></script>
+  <script type="text/javascript" src="recline/src/backend.dataproxy.js"></script>
+  <script type="text/javascript" src="http://okfnlabs.org/recline.backend.gdocs/backend.gdocs.js"></script>
+  <script type="text/javascript" src="http://okfnlabs.org/csv.js/csv.js"></script>
+
+  <!-- views -->
+  <script type="text/javascript" src="recline/src/view.grid.js"></script>
+  <script type="text/javascript" src="recline/src/view.slickgrid.js"></script>
+  <script type="text/javascript" src="recline/src/view.flot.js"></script>
+  <script type="text/javascript" src="recline/src/view.graph.js"></script>
+  <script type="text/javascript" src="recline/src/view.map.js"></script>
+  <script type="text/javascript" src="recline/src/view.timeline.js"></script>
+  <script type="text/javascript" src="recline/src/widget.pager.js"></script>
+  <script type="text/javascript" src="recline/src/widget.queryeditor.js"></script>
+  <script type="text/javascript" src="recline/src/widget.filtereditor.js"></script>
+  <script type="text/javascript" src="recline/src/widget.valuefilter.js"></script>
+  <script type="text/javascript" src="recline/src/widget.facetviewer.js"></script>
+  <script type="text/javascript" src="recline/src/widget.fields.js"></script>
+  <script type="text/javascript" src="recline/src/view.multiview.js"></script>
+
+</head>
+<body>
+<div id="mymap"></div>
+
+
+
+<script id="jsbin-javascript">
+
+  var data = {
+    resource_id: '428e15ab-4d76-4382-9022-40ffce2dfb97', // the resource id
+    limit: 100, // get 50 results
+    q: '' // query for 'bus'
+  };
+  $.ajax({
+    url: 'https://data.opentechinstitute.org/api/3/action/datastore_search',
+    data: data,
+    dataType: 'jsonp',
+    success: function(data) {
+      //alert('Total results found: ' + data.result.total);
+     
+      var dataset = new recline.Model.Dataset({
+        records: data.result.records
+      });
+
+      //console.log(dataset);
+
+      //map settings
+      var $el = $('#mymap');
+
+      var map = new recline.View.Map({
+        el: $el, 
+        model: dataset,
+        state: {
+          autoZoom: false,
+          //lonField: null,
+          //latField: null,
+          //geomField: null,
+        },
+      });
+
+      map._setupMap = function(){
+ 
+      var self = this;
+      this.map = new L.Map(this.$map.get(0));
+   
+      var mbAttr = 'Map Imagery &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+      '&copy; <a href="http://mapbox.com">Mapbox</a>. Data from <a href="http://data.opentechinstitute.org/dataset/world-of-drones/resource/428e15ab-4d76-4382-9022-40ffce2dfb97">New America</a>';
+      var mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+      var layer   = L.tileLayer(mbUrl, {id: 'newamerica.l89jcfpc', maxZoom: 10, minZoom: 1, attribution: mbAttr});
+      this.map.addLayer(layer);
+   
+      var baseLayers = {
+        //layers tool
+      };
+
+      /*L.control.layers(baseLayers).addTo(this.map);*/
+      this.markers = new L.MarkerClusterGroup(this._clusterOptions);
+   
+      // rebind this (as needed in e.g. default case above)
+      this.geoJsonLayerOptions.pointToLayer =  _.bind(
+          this.geoJsonLayerOptions.pointToLayer,
+          this);
+      this.features = new L.GeoJSON(null, this.geoJsonLayerOptions);
+   
+      this.map.setView([13.3187849,-29.110675], 2);
+   
+      this.mapReady = true;
+    },
+
+      //scrollWheelZoom: disable,
+
+      map.geoJsonLayerOptions.pointToLayer = function(feature, latlng) {
+        // Look up Record so we can use it to customize size of marker
+        // note that 'this' is specially bound for us to parent view + that feature
+        // stores record cid
+        //var record = this.model.records.getByCid(feature.properties.cid);
+        //console.log(record);
+
+        var marker = new L.CircleMarker(latlng, {
+          radius: 6,
+          fillColor: "#0000ff",
+          color: "#000",
+          weight: 0.5,
+          opacity: 0.5,
+          fillOpacity: 0.5
+        });
+        marker.bindPopup(feature.properties.popupContent);
+        // this is for cluster case
+        this.markers.addLayer(marker);
+        return marker;
+      }
+
+      map.infobox = function(record) {
+        var html = '<h4>' + record.get('LOCATION_DESCRIPTIVE') + '</h4>';
+        html += '<strong>Operating Entity:</strong> ' + record.get('OPERATING_ENTITY') + '<br/>';
+        html += '<strong>Country:</strong> ' + record.get('LOCATION_COUNTRY_NAME')+ '<br/>';
+        return html;
+      }
+
+      map.render();
+      map.redraw();
+    }
+  });
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/*==============================
+Styles for pages 
+==============================*/
+
+.page {
+	@include clearfix;
+
+	main{
+		.wrapper {
+			min-width: $minwidth;
+			max-width: $maxwidth;
+		}	
+	}
+}
+
+[id=rss] {
+	width: 60%;
+}

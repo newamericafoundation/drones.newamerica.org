@@ -1,0 +1,234 @@
+$white: #fffaef; 
+$creme: rgb(255,251,239);
+$creme60: rgba(255,251,239,.6);
+$black: rgb(51,50,50);
+$black90: rgba(51,50,50,.9);
+$black80: rgba(51,50,50,.8);
+$black70: rgba(51,50,50,.7);
+$black60: rgba(51,50,50,.6);
+$black50: rgba(51,50,50,.5);
+$black40: rgba(51,50,50,.4);
+$black30: rgba(51,50,50,.3);
+$black20: rgba(51,50,50,.2);
+$black10: rgba(51,50,50,.1);
+
+$black10opaque: #eae5db;
+
+$black05: rgba(51,50,50,.05);
+$blackA: #edebe0;
+
+$minwidth: 960px;
+$maxwidth: 1100px;
+
+/*======================
+Link variables
+=======================*/
+
+$highlightA: #2dbbb3;
+
+
+/*======================
+Program colors
+=======================*/
+
+$asset-building: #4D3969;
+$asstbldg: $asset-building;
+
+$breadwinning-caregiving: #FDBF5C;
+$bc: $breadwinning-caregiving;
+
+$cybersecurity-initiative: #37b4a5;
+$cyber: $cybersecurity-initiative;
+
+$economic-growth: #989392;
+$econ: $economic-growth;
+
+$education-policy: #5368B0;
+$edpol: $education-policy;
+
+$family-centered-social-policy: #f2d55b;
+$fcsp: $family-centered-social-policy;
+
+$fellows: #ED2926;
+$flw: $fellows;
+
+$future-of-war: #444445;
+$fow: $future-of-war;
+
+$future-tense: #1072B9;
+$ft: $future-tense;
+
+$international-security: #444445;
+$intsec: $international-security;
+
+$markets-enterprise-resiliency-initiative: #9C2524;
+$meri: $markets-enterprise-resiliency-initiative;
+$open-markets: $markets-enterprise-resiliency-initiative;
+
+$new-america-live: #2E9F99; /* Old color #2DBBB3 */
+$live: $new-america-live;
+
+$new-america-nyc: #F16123;
+$nyc: $new-america-nyc;
+
+$open-technology-institute: #5BA4DA;
+$oti: $open-technology-institute;
+
+$political-reform: #56A34A;
+$pref: $political-reform;
+
+$postsecondary-national-policy-institute: #765680;
+$psnpi: $postsecondary-national-policy-institute;
+
+$profits-purpose: #258b66;
+$prof: $profits-purpose;
+
+$weekly-wonk: #7ACBC5;
+$ww: $weekly-wonk;
+
+$xlab: #B3D234;
+$xl: $xlab;
+$x-lab: #B3D234;
+
+$youthsave: #A5C05D;
+$ys: $youthsave;
+
+/*======================
+Typography
+=======================*/
+
+$serif: 'MetaSerifWeb-Book', serif;
+$serifItalic: 'MetaSerifWeb-BookItalic', serif;
+$serifBold: 'MetaSerifWeb-Bold', serif;
+
+$sansSerif: 'SimplonNorm-Regular-WebS', arial, sans-serif;
+$sansSerifBold: 'SimplonNorm-Bold-WebS', arial, sans-serif;
+
+$displayFont: 'Platform Web','Arial Black', sans-serif;
+
+// Removes the # from hexRGB colors for use in SVG data URIs
+@function removeHash($hexColor){
+  $hexColor: $hexColor + ''; /* Convert to a string */
+  $colorNum: str-slice($hexColor,2); 
+  @return $colorNum;
+}
+
+@mixin placeholder-colors( $color, $focuscolor ) {
+  &::-webkit-input-placeholder{
+    color: $color;
+    font-family: inherit;
+  }
+  &::-moz-placeholder { 
+    color: $color;
+    font-family: inherit;  
+  }
+
+  &:-ms-input-placeholder {  
+    color: $color;
+    font-family: inherit;
+  }
+  
+  &:input-placeholder {  
+    color: $color;
+    font-family: inherit;
+  }
+  
+  &::input-placeholder {  
+    color: $color;
+    font-family: inherit;
+  }
+  
+  &:focus::-webkit-input-placeholder{
+    color: $focuscolor;
+    font-family: inherit;
+  }
+  &:focus::-moz-placeholder { 
+    color: $focuscolor;
+    font-family: inherit;  
+  }
+
+  &:focus:-ms-input-placeholder {  
+    color: $focuscolor;
+    font-family: inherit;
+  }
+  
+  &:focus:input-placeholder {  
+    color: $focuscolor;
+    font-family: inherit;
+  }
+  &:focus::input-placeholder {  
+    color: $focuscolor;
+    font-family: inherit;
+  }
+}
+
+@mixin placeholder-padding($values) {
+  &::-webkit-input-placeholder{
+    padding: $values
+  }
+  &::-moz-placeholder { 
+    padding: $values
+  }
+
+  &:-ms-input-placeholder {  
+    padding: $values
+  }
+  
+  &:input-placeholder {  
+    padding: $values
+  }
+  
+  &::input-placeholder {  
+    padding: $values
+  }
+}
+
+@mixin text-rendering($value) {
+  -webkit-text-rendering: $value;
+     -moz-text-rendering: $value;
+          text-rendering: $value;
+}
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        font-smoothing: subpixel-antialiased;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        font-smoothing: antialiased;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin checkbox($fillColor){
+  $hex: removeHash($fillColor);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-1.5%2045%20180%20180%22%20enable-background%3D%22new%20-1.5%2045%20180%20180%22%3E%3Cpath%20fill%3D%22%23#{$hex}%22%20d%3D%22M.6%20143.54l28.3-28.4%2034%2034%2085.1-85.1%2028.4%2028.4-113.4%20113.5-62.4-62.4z%22%2F%3E%3C%2Fsvg%3E"); 
+}
+
+@mixin twitter-icon($opacity, $fillColor) {
+  $hex: removeHash($fillColor);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2219.7%22%20height%3D%2216%22%3E%3Cpath%20opacity%3D%22#{$opacity}%22%20fill%3D%22%23#{$hex}%22%20d%3D%22M19.7%201.9c-.7.3-1.5.5-2.3.6.8-.5%201.5-1.3%201.8-2.2-.8.5-1.6.8-2.6%201-.8-.8-1.8-1.3-3-1.3-2.2%200-4%201.8-4%204%200%20.3%200%20.6.1.9-3.4-.1-6.3-1.7-8.3-4.2-.4.6-.6%201.3-.6%202.1%200%201.4.7%202.6%201.8%203.4-.6-.1-1.3-.3-1.8-.6%200%202%201.4%203.6%203.2%204-.3.1-.7.2-1%20.2-.3%200-.5%200-.8-.1.5%201.6%202%202.8%203.8%202.8-1.4%201.1-3.1%201.7-5%201.7-.3%200-.6%200-1-.1%201.8%201.2%203.9%201.9%206.2%201.9%207.4%200%2011.5-6.2%2011.5-11.5v-.5c.8-.6%201.5-1.3%202-2.1z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+@mixin facebook-icon($opacity, $fillColor) {
+  $hex: removeHash($fillColor);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%3E%3Cpath%20opacity%3D%22#{$opacity}%22%20fill%3D%22%23#{$hex}%22%20d%3D%22M15.1%200h-14.2c-.5%200-.9.4-.9.9v14.2c0%20.5.4.9.9.9h7.7v-6.2h-2.1v-2.4h2.1v-1.8c0-2.1%201.3-3.2%203.1-3.2.9%200%201.6.1%201.9.1v2.2h-1.3c-1%200-1.2.5-1.2%201.2v1.5h2.4l-.3%202.4h-2.2v6.2h4.1c.5%200%20.9-.4.9-.9v-14.2c0-.5-.4-.9-.9-.9z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+@mixin rss-icon($opacity, $fillColor) {
+  $hex: removeHash($fillColor);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%3E%3Cg%20opacity%3D%22#{$opacity}%22%20fill%3D%22%23#{$hex}%22%3E%3Ccircle%20cx%3D%222.1%22%20cy%3D%2213.9%22%20r%3D%222.1%22%2F%3E%3Cpath%20d%3D%22M0%205.9v2.5c4.2%200%207.5%203.4%207.6%207.6h2.5c0-5.5-4.6-10.1-10.1-10.1zM0%200v2.5c7.4%200%2013.5%206.1%2013.5%2013.5h2.5c0-8.8-7.2-16-16-16z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+@mixin ne-arrow($color) {
+  $hex: removeHash($color);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2010%2010.4%22%20enable-background%3D%22new%200%200%2010%2010.4%22%3E%3Cg%20fill%3D%22%23#{$hex}%22%3E%3Crect%20x%3D%22-1%22%20y%3D%224.2%22%20transform%3D%22matrix(.707%20-.707%20.707%20.707%20-2.217%204.941)%22%20width%3D%2211.8%22%20height%3D%222%22%2F%3E%3Cpolygon%20points%3D%2210%2C8.1%208%2C8.1%208%2C2%201.9%2C2%201.9%2C0%2010%2C0%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+@mixin left-arrow($color) {
+  $hex: removeHash($color);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2014%2011.8%22%20enable-background%3D%22new%200%200%2014%2011.8%22%3E%3Cg%20fill%3D%22%23#{$hex}%22%3E%3Crect%20x%3D%22.8%22%20y%3D%225%22%20width%3D%2211.8%22%20height%3D%222%22%2F%3E%3Cpolygon%20points%3D%228.3%2C11.7%206.9%2C10.3%2011.2%2C6%206.9%2C1.7%208.3%2C0.3%2014%2C6%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+

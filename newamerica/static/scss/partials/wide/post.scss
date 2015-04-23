@@ -1,0 +1,123 @@
+/*==============================
+Styles for pages 
+==============================*/
+
+.post {
+	.wrapper {
+		@include outer-container;
+	}
+
+	article{
+		@include span-columns(7 of 12);
+		display: block;
+		@include outer-container;
+
+		float: initial;
+		&:last-child{
+			margin-right: auto;
+		}
+		.video{
+			margin: 2em auto;
+		}
+	}
+	
+	.meta{
+		margin: 0 2em 1.5em 0;
+		width: 80%;
+	}
+
+	.podcast {
+		margin: 6.2em 0 6.2em -12%;
+	}
+}
+
+.sharing {
+	@include span-columns(2);
+	padding-left: 25px;
+	h2 {
+		padding-bottom: 10px;
+	}
+}
+
+.foreward, 
+.content p,
+.excerpt, 
+.tags-list, 
+.authorsList .author,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.participants,
+.rsvp{
+	font-size: 130%;
+}
+
+.pullquote, .image{
+	margin: 3.1em 0 3.1em -15%;
+}
+
+.pullquote{
+	@extend .txtc;
+	font-size: 1.2em
+}
+.coverimg, .post .eventMeta, .post .authors{
+	margin-left: 30px;
+	width: 80%;
+}
+
+
+// [id=tag-list]{
+// 	@include span-columns(8);
+// 	@include shift(1);
+
+// 	margin: 2em 2em 2em 0;
+// 	font-size: 130%;
+// }
+
+.authorsList {
+
+	img {
+		width:107px;
+	}
+	p {
+		margin: 0 0 .4em 140px;	
+	}
+}
+
+
+[id=related]{
+	@include span-columns(7);
+	margin-left: auto;
+	margin-right: auto;
+	float: initial;
+}
+
+[id=map] {
+	 padding: 16em 0;
+}
+
+/*===================================
+Events pages 
+====================================*/
+
+.rsvp {
+	width: 80%;
+	button, .button {
+		max-width: 200px;
+		float: left;
+	}
+}	
+
+.event {
+	.rsvp, .eventMeta, .participants{
+		@include clearfix;
+	}
+}
+
+
+[id=eventDetails] {
+	margin: 3em auto 3em 0;
+}

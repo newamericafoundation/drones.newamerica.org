@@ -1,0 +1,804 @@
+/*=======================================
+Styles for icons
+=======================================*/
+a.icon{
+  color: transparent;
+  border: 0 !important;
+}
+
+.icon{
+  position: relative;
+  background-repeat: no-repeat;
+  min-height: 1.2em;
+  min-width: 1.2em;
+  vertical-align: middle;
+
+  &.postsecondary-national-policy-institute {
+    min-width:25px;
+  }
+  &:hover b {
+    display: inline-block;
+  }
+
+  b {
+    position: absolute;
+    color: $white;
+    font: normal .875em $sansSerif;
+    left: 130%;
+    top: 0;
+    text-transform: uppercase;
+    padding: 4px 6px;
+    z-index: 2;
+    line-height: 1;
+    white-space:nowrap;
+    display: none;
+
+    &::before {
+      @include transform(rotate(-116deg));
+      content: " ";
+      display: block;
+      background-color: transparent;
+      position:absolute;
+      left:-5px;
+      top: 4px;
+      z-index: -1;
+      width: 0;
+      height: 3px;
+      border: 10px solid transparent;
+    }
+  }
+  &.asset-building, &.asstbldg{
+    b {
+      background-color: $asset-building;
+      &::before {
+        border-right-color: $asset-building;
+      }
+    }
+  }
+
+  &.breadwinning-caregiving, &.bc, &.breadwinning-and-caregiving{
+    b {
+      background-color: $bc;
+      &::before {
+        border-right-color: $bc;
+      }
+    }
+  }
+  &.cybersecurity-initiative {
+    b {
+      background-color: $cybersecurity-initiative;
+      &::before {
+        border-right-color: $cybersecurity-initiative;
+      }
+    }
+  }
+  &.economic-growth, &.econ{
+    b {
+      background-color: $economic-growth;
+      &::before {
+        border-right-color: $economic-growth;
+      }
+    }
+  }
+  &.education-policy, &.edpol{
+    b {
+      background-color: $education-policy;
+      &::before {
+        border-right-color: $education-policy;
+      }
+    }
+
+  }
+  &.family-centered-social-policy{
+    b {
+      background-color: $fcsp;
+      &::before {
+        border-right-color: $fcsp;
+      }
+    }
+  }
+  &.fellows{
+    b {
+      background-color: $fellows;
+      &::before {
+        border-right-color: $fellows;
+      }
+    }
+  }
+  &.future-of-war, &.fow{
+    b {
+      background-color: $future-of-war;
+      &::before {
+        border-right-color: $future-of-war;
+      }
+    }
+  }
+  &.future-tense, &.ft{
+    b {
+      background-color: $future-tense;
+      &::before {
+        border-right-color: $future-tense;
+      }
+    }
+  }
+  &.international-security, &.intsec{
+    b {
+      background-color: $international-security;
+      &::before {
+        border-right-color: $international-security;
+      }
+    }
+  }
+  &.open-markets {
+    b {
+      background-color: $meri;
+      &::before {
+        border-right-color: $meri;
+      }
+    }
+  }
+
+  &.live{
+    b {
+      background-color: $new-america-live;
+      &::before {
+        border-right-color: $new-america-live;
+      }
+    }
+  }
+
+  &.new-america-nyc, &.nyc{
+    b {
+      background-color: $new-america-nyc;
+      &::before {
+        border-right-color: $new-america-nyc;
+      }
+    }
+  }
+  &.open-technology-institute, &.oti{
+    b {
+      background-color: $open-technology-institute;
+      &::before {
+        border-right-color: $open-technology-institute;
+      }
+    }
+  }
+
+  &.political-reform, &.pref{
+    b {
+      background-color: $political-reform;
+      &::before {
+        border-right-color: $political-reform;
+      }
+    }
+  }
+  &.postsecondary-national-policy-institute, &.psnpi{
+    b {
+      background-color: $postsecondary-national-policy-institute;
+      &::before {
+        border-right-color: $postsecondary-national-policy-institute;
+      }
+    }
+  }
+
+  &.profits-purpose, &.prof{
+    b {
+      background-color: $profits-purpose;
+      &::before {
+        border-right-color: $profits-purpose;
+      }
+    }
+  }
+
+  &.weekly-wonk, &.ww, &.the-weekly-wonk {
+    b {
+      background-color: $weekly-wonk;
+      &::before {
+        border-right-color: $weekly-wonk;
+      }
+    }
+  }
+
+  &.x-lab{
+    b {
+      background-color: $xlab;
+      &::before {
+        border-right-color: $xlab;
+      }
+    }
+  }
+
+  &.youthsave{
+    b {
+      background-color: $youthsave;
+      &::before {
+        border-right-color: $youthsave;
+      }
+    }
+  }
+  &.cybersecurity-initiative{
+    b {
+      background-color: $cybersecurity-initiative;
+      &::before {
+        border-right-color: $cybersecurity-initiative;
+      }
+    }
+  }
+}
+
+@mixin program-icon($filename, $normal: dark, $hover: black) {
+  background-image: url(../media/icons/#{$filename}-#{$normal}.svg);
+
+  &:hover{
+    background-image: url(../media/icons/#{$filename}-#{$hover}.svg);
+  }
+}
+
+.icon {
+
+/*===================================
+Light colored icons
+*===================================*/
+
+  &.light {
+    height: 30px;
+    background-size: cover;
+    background-position: center top;
+
+    &.asset-building {
+      background-image: url(../media/icons/assetbuilding-white.svg);
+    }
+
+    &.breadwinning-caregiving, &.breadwinning-and-caregiving {
+      background-image: url(../media/icons/breadwinning-white.svg);
+    }
+
+    &.cybersecurity-initiative {
+      background-image: url(../media/icons/na-menu.svg);
+    }
+
+    &.economic-growth{
+      background-image: url(../media/icons/econ-white.svg);
+    }
+
+    &.education-policy{
+      background-image: url(../media/icons/edpolicy-white.svg);
+    }
+
+    &.family-centered-social-policy{
+      background-image: url(../media/icons/fcsp-white.svg);
+    }
+
+    &.fellows{
+      background-image: url(../media/icons/fellows-white.svg);
+    }
+
+    &.future-of-war {
+      background-image: url(../media/icons/intsec-white.svg);
+    }
+
+    &.future-tense {
+      background-image: url(../media/icons/future-white.svg);
+    }
+
+    &.international-security {
+      background-image: url(../media/icons/intsec-white.svg);
+    }
+
+    &.open-markets {
+      background-image: url(../media/icons/open-markets-white.svg);
+    }
+
+    &.live {
+      background-image: url(../media/icons/live-white.svg);
+    }
+
+    &.new-america-nyc, &.nyc {
+      background-image: url(../media/icons/nyc-white.svg);
+    }
+
+    &.oti, &.open-technology-institute {
+      background-image: url(../media/icons/oti-white.svg);
+    }
+
+    &.political-reform {
+      background-image: url(../media/icons/pref-white.svg);
+    }
+
+    &.postsecondary-national-policy-institute {
+      background-image: url(../media/icons/psnpi-white.svg);
+    }
+
+    &.profits-purpose {
+      background-image: url(../media/icons/profits-purpose-white.svg);
+    }
+
+    &.weekly-wonk, &.the-weekly-wonk {
+      background-image: url(../media/icons/wonk-white.svg);
+    }
+
+    &.x-lab {
+      background-image: url(../media/icons/xlab-white.svg);
+    }
+
+    &.youthsave {
+      background-image: url(../media/icons/youthsave-white.svg);
+    }
+
+    &.new-america {
+      background-image: url(../media/icons/na-menu.svg);
+    }
+  }
+
+  /*===================================
+  Dark colored icons
+  *===================================*/
+
+
+  &.dark {
+    &.asset-building {
+      background-size: 16px auto;
+      @include program-icon(asset-building);
+    }
+
+    &.breadwinning-caregiving, &.breadwinning-and-caregiving {
+      background-size: 16px auto;
+      @include program-icon(breadwinning-caregiving);
+    }
+
+    &.economic-growth {
+      background-size: 16px auto;
+      @include program-icon(economic-growth);
+    }
+
+    &.education-policy {
+      background-size: 16px auto;
+      @include program-icon(education-policy);
+    }
+
+    &.family-centered-social-policy{
+      @include program-icon(fcsp);
+    }
+
+    &.fellows {
+      background-size: 16px auto;
+      @include program-icon(fellows);
+    }
+
+    &.future-of-war {
+      @include program-icon(international-security);
+    }
+
+    &.future-tense {
+      background-size: 16px auto;
+      @include program-icon(future-tense);
+    }
+
+    &.international-security {
+      background-size: 16px auto;
+      @include program-icon(international-security);
+    }
+
+    &.open-markets {
+      background-size: 16px auto;
+      @include program-icon(open-markets);
+    }
+
+    &.live {
+      @include program-icon(live);
+    }
+
+    &.new-america-nyc, &.nyc {
+      background-size: 16px auto;
+      @include program-icon(new-america-nyc);
+    }
+
+    &.oti, &.open-technology-institute {
+      @include program-icon(oti);
+    }
+
+    &.political-reform {
+      background-size: 18px auto;
+      @include program-icon(political-reform);
+    }
+
+    &.postsecondary-national-policy-institute {
+      @include program-icon(psnpi);
+    }
+
+    &.profits-purpose {
+      @include program-icon(profits-purpose);
+    }
+
+
+    &.weekly-wonk, &.the-weekly-wonk {
+      background-size: 16px auto;
+      width: 16px;
+      @include program-icon(wonk);
+    }
+
+    &.x-lab{
+      @include program-icon(xlab);
+    }
+
+    &.youthsave{
+      background-size: 32px auto;
+      width: 40px;
+      margin-left: -5px;
+      @include program-icon(youthsave);
+    }
+    &.cybersecurity-initiative, &.new-america {
+      @include program-icon(new-america);
+    }
+
+  }
+
+  &.twitter {
+    padding: 0;
+    display: block;
+        font-size: 1em;
+    @include twitter-icon(0.5, $black);
+
+    &:hover {
+      @include twitter-icon(1, $black);
+    }
+  }
+
+  &.facebook {
+    display: block;
+    @include facebook-icon(0.5, $black);
+
+    &:hover {
+      @include facebook-icon(1, $black);
+    }
+
+  }
+
+  &.rss {
+    display: block;
+    @include rss-icon(0.5, $black);
+
+    &:hover {
+      @include rss-icon(1, $black);
+    }
+  }
+
+
+
+  /*===================================
+  Black-colored icons (just reverses background & hover of .dark)
+  *===================================*/
+
+
+  &.black {
+    &.asset-building {
+      background-size: 16px auto;
+      @include program-icon(asset-building, black, dark);
+    }
+
+
+    &.breadwinning-caregiving, &.breadwinning-and-caregiving {
+      @include program-icon(breadwinning-caregiving, black, dark);
+    }
+
+    &.cybersecurity-initiative {
+      @include program-icon(new-america, black, dark);
+    }
+
+    &.economic-growth {
+      @include program-icon(economic-growth, black, dark);
+    }
+
+    &.education-policy {
+      @include program-icon(education-policy, black, dark);
+    }
+
+    &.family-centered-social-policy{
+      @include program-icon(fcsp, black, dark);
+    }
+
+    &.fellows {
+      @include program-icon(fellows, black, dark);
+    }
+
+    &.future-of-war {
+      @include program-icon(international-security, black, dark);
+    }
+
+    &.future-tense {
+      @include program-icon(future-tense, black, dark);
+    }
+
+    &.international-security {
+      @include program-icon(international-security, black, dark);
+    }
+
+    &.open-markets {
+      @include program-icon(open-markets, black, dark);
+    }
+
+    &.live {
+      @include program-icon(live, black, dark);
+    }
+
+    &.new-america-nyc, &.nyc {
+      @include program-icon(new-america-nyc, black, dark);
+    }
+
+    &.oti, &.open-technology-institute {
+      @include program-icon(oti, black, dark);
+    }
+
+    &.political-reform {
+      @include program-icon(political-reform, black, dark);
+    }
+
+    &.postsecondary-national-policy-institute {
+      @include program-icon(psnpi, black, dark);
+    }
+
+    &.profits-purpose {
+      @include program-icon(profits-purpose, black, dark);
+    }
+
+    &.weekly-wonk, &.the-weekly-wonk {
+      @include program-icon(wonk, black, dark);
+    }
+
+    &.x-lab {
+      @include program-icon(xlab, black, dark);
+    }
+
+    &.youthsave {
+      @include program-icon(youthsave, black, dark);
+    }
+  }
+}
+
+.search {
+  background-image: url(../media/icons/search.svg);
+}
+
+.close {
+  background: transparent url(../media/icons/close.svg) center no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  color: transparent;
+  height: 22px;
+  width: 22px;
+}
+
+/*===============================
+Right arrow icons
+=================================*/
+
+.more {
+  background-image:  url(../media/icons/right-light.svg);
+}
+
+.external {
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 12px auto;
+  font-size: 1.1em;
+  padding-right: 1.5em;
+  border-bottom: 0 !important;
+
+  b {
+    font-weight: normal;
+    border-bottom: 2px solid $white;
+  }
+}
+
+.viewMore {
+  b, i {
+    font-weight: normal;
+    font-style: normal;
+    border-bottom: 2px solid $white;
+  }
+}
+.viewMore, .external {
+  &:hover {
+    b, i{
+      border-bottom-color: currentColor;
+    }
+  }
+}
+
+.asset-building {
+  &.viewMore {
+    @include left-arrow($asset-building);
+  }
+
+  &.external,
+  a.external{
+    @include ne-arrow($asset-building);
+  }
+}
+.breadwinning-caregiving, .breadwinning-and-caregiving {
+  &.viewMore {
+    @include left-arrow($breadwinning-caregiving);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($breadwinning-caregiving);
+  }
+}
+.economic-growth {
+  &.viewMore {
+    @include left-arrow($economic-growth);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($economic-growth);
+  }
+}
+.education-policy {
+  &.viewMore {
+    @include left-arrow($education-policy);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($education-policy);
+  }
+}
+.family-centered-social-policy {
+  &.viewMore {
+    @include left-arrow($fcsp);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($fcsp);
+  }
+}
+.fellows {
+  &.viewMore {
+    @include left-arrow($fellows);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($fellows);
+  }
+}
+.future-of-war {
+  &.viewMore {
+    @include left-arrow($international-security);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($international-security);
+  }
+}
+.future-tense {
+  &.viewMore {
+    @include left-arrow($future-tense);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($future-tense);
+  }
+}
+.international-security {
+  &.viewMore {
+    @include left-arrow($international-security);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($international-security);
+  }
+}
+.markets-enterprise-resiliency-initiative {
+  &.viewMore {
+    @include left-arrow($markets-enterprise-resiliency-initiative);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($markets-enterprise-resiliency-initiative);
+  }
+}
+.live {
+  &.viewMore {
+    @include left-arrow($live);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($live);
+  }
+}
+.nyc {
+  &.viewMore {
+    @include left-arrow($nyc);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($nyc);
+  }
+}
+.oti, .open-technology-institute {
+  &.viewMore {
+    @include left-arrow($oti);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($oti);
+  }
+}
+.political-reform {
+  &.viewMore {
+    @include left-arrow($political-reform);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($political-reform);
+  }
+}
+.postsecondary-national-policy-institute {
+  &.viewMore {
+    @include left-arrow($postsecondary-national-policy-institute);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($postsecondary-national-policy-institute);
+  }
+}
+.profits-purpose {
+  &.viewMore {
+    @include left-arrow($profits-purpose);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($profits-purpose);
+  }
+}
+.weekly-wonk, .the-weekly-wonk {
+  &.viewMore {
+    @include left-arrow($weekly-wonk);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($weekly-wonk);
+  }
+}
+.x-lab {
+  &.viewMore {
+    @include left-arrow($xlab);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($xlab);
+  }
+}
+.youthsave {
+  &.viewMore {
+    @include left-arrow($youthsave);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($youthsave);
+  }
+}
+.cybersecurity-initiative {
+  &.viewMore {
+    @include left-arrow($cybersecurity-initiative);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($cybersecurity-initiative);
+  }
+}
+
+.homepage {
+  &.viewMore {
+    @include left-arrow($highlightA);
+  }
+  &.external,
+  a.external{
+    @include ne-arrow($highlightA);
+  }
+}
+
+.socmed .icon{
+  width: 19px;
+  height: 16px;
+  margin: 0 2em 0 0;
+}

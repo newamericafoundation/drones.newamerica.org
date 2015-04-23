@@ -1,0 +1,28 @@
+nav#master {
+    height: 80px;
+}
+
+f[id=mast-newsletter] button , f[id=mast-newsletter] .button{
+    color: #fffaef;
+}
+[id=mast-newsletter] button:hover , f[id=mast-newsletter] .button:hover{
+    color: rgba(255, 250, 239, 0.8);
+}
+[id=mast-newsletter] button:hover , f[id=mast-newsletter] .button:hover{
+    border-color: rgba(255, 250, 239, 0.8);
+}
+
+.js-menu-trigger {
+    width: 80px;
+}
+
+[data-related-to=mainMenu] {
+    background-size: 32px auto;
+}
+@include media($down-small-medium-screen){
+    .orgLogo {
+        margin-top: 35px !important;
+        position: relative;
+        padding-top: 48px !important;
+    }
+}

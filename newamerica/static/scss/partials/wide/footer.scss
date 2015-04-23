@@ -1,0 +1,31 @@
+/*===================================
+FOOTER: Wide screens > 1023px
+====================================*/
+
+[id=masterContent] > footer{
+
+	& > div {
+		@include clearfix;
+		text-align: center;
+		background: $black10;
+		color: $black50;		
+		margin: 80px 0 0 0;
+		padding: 2.8125em 0;
+	}
+	
+	li{
+		margin-right: 1.5em;
+		width: auto;
+	}
+	
+	.fl {
+		float: left;
+	}
+	.fr {
+		float:right;
+	}
+	form h4:first-of-type {
+		left: 25px;
+    top: -10px;
+	}
+}

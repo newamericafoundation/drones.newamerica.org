@@ -1,0 +1,145 @@
+[id=books] {
+	margin-top: 2em;
+	
+	.flexslider a {
+		@extend .blklnk;
+	}
+	
+	& > .wrapper {
+		border-top: 1px solid $black20;
+		border-bottom: 1px solid $black20;
+		padding-bottom: 3em;
+	}
+	.booklink {
+	 	display: block;
+	 	background: #cf0;
+	}	
+	h2 {	
+		padding: 80px 0 0; 
+		margin-bottom: 2.6em;
+	}
+
+	h4, .subtitle, .authors {
+		width: 60%;
+		position: relative;
+		left: 114px;
+		clear: both;
+	}
+	
+	h4 {
+		@extend .uc;
+		font-size: 1.3125em;
+		top: 9px;
+		@include media($up-small-screen) {
+			top: -.2em;
+		}
+		span{
+			border-bottom: 5px solid rgba(51, 50, 50, 0.2);
+			line-height: 1.6em;
+		}
+	}
+	a .subtitle{
+		font-weight: bold;
+		line-height: 1.2;
+		margin-top: 1.5em;
+		min-height: 1em;
+	}
+	.subtitle:empty {
+		display: none;
+	}
+	.authors {
+		color: $black70;
+		line-height: 1.2;
+		
+		b{
+			font-weight: normal;
+			
+			&:after:not(:last-child){
+				content: ', ';
+			}
+		}
+	}
+	a:hover{
+		h4{
+			span{
+				border-bottom: 5px solid;
+			}
+		}
+	}
+	/* Also see flexslider.scss */
+		
+	.flexslider {		
+		.flex-control-nav {
+			display: none;
+		}
+	}
+	
+	.flexslider {
+		margin: auto;
+		@include media($up-small-screen) {
+			margin-left: -10px;
+			width: calc(100% + 75px);
+			}
+		.slides {
+			li {
+				padding: 10px 0px 10px 0;
+				margin-right: 30px;
+				position: relative;
+				min-height: 250px;
+				
+				@include media($up-small-screen) {
+				}
+				&:first-child {
+					margin-left: 0;
+				}
+				> a {
+					display: block;
+					cursor: pointer;
+				}	
+			}
+			
+			img {
+				position: absolute;
+				top: 1em;
+				border: 1px solid $black10;
+				box-shadow: 0 5px 10px $black10;
+				margin: 0 15pc 0 0;
+				max-width: 100px;
+				width: auto;
+				max-height: 145px;
+		
+				@include media($up-small-screen) {
+					margin: 0 0 0 10px;
+					max-height: 133px;
+					width: auto;
+				}
+			}
+			
+		}
+	}
+	
+	.programs {
+		top: 160px;
+		height: 30px;
+		position: absolute;
+
+		@include media($up-small-screen) {
+
+		}
+		@include media($up-small-screen) {
+			margin-left: 10px;
+		}
+	}
+	
+	.icon{
+		height: 18px;
+		width: 16px;
+		margin-right: 5px;
+	}
+	b.progname {
+		top: -4px;
+	}
+	.viewMore {
+		margin-top: 2em;
+	}
+}

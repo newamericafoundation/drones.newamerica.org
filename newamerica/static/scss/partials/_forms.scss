@@ -1,0 +1,595 @@
+/*=======================================
+Styles for NewAmerica-specific forms.
+=======================================*/
+
+.required {
+  &:after {
+    content: '\00A0*';      
+  }
+}
+
+/* For checkbox and radio button labels */
+.cb, .rb {
+  @include clearfix; 
+  min-height: 2em;
+  position: relative;
+  
+  input[type=checkbox], input[type=radio], label {
+    position: absolute;
+  }
+  label {
+    padding-left: 3em;
+    z-index: 2;
+    cursor: pointer;
+    top: 0;
+  }
+  input[type=checkbox], input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+      appearance: none;
+    width: 2em;
+    height: 2em;
+    border: 0;
+    display: none;
+    opacity: 1; 
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: $black20;
+    vertical-align: bottom;
+  }
+  
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($highlightA);
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+    background-size: 18px auto;
+  }
+}
+
+
+textarea, 
+#{$all-text-inputs}{ 
+  @include placeholder-colors($black, transparent); 
+  background: $black10;
+  border: 0; 
+  border-bottom: 5px solid $black20;
+  font: 1em / 1 $sansSerif;
+  height: 60px;
+  width: 100%;
+
+  &:focus{
+    outline: none;
+  } 
+}
+
+input[type=email], input[type=text]{
+  padding: 10px 23px 0;
+}
+
+button[type=submit], 
+input[type=button],
+button.default, .button {
+  border: 5px solid $black;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  font-family: $sansSerif;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  // padding: 21px 22px;
+  width: 100%;
+  height: 60px;
+  line-height: 2.75;
+  @include transition(all 0.1s ease);
+}
+
+button[type=submit], .button, 
+input[type=button]{
+  margin: auto;
+}
+
+form {
+  :focus{
+    border-color: $new-america-live;
+    outline: none;
+  }
+}
+
+button[type=submit], .button,
+input[type=button],
+button.default {
+   &:focus, &:hover {
+    border-color: $new-america-live;
+    color: $new-america-live;
+   }
+}
+
+
+.asset-building {
+  main a:hover {
+    color: $asset-building;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $asset-building;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $asset-building;
+      color: $asset-building;
+     }
+  }
+  
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($asset-building);
+  }
+}
+
+.breadwinning-caregiving {
+  main a:hover {
+    color: $breadwinning-caregiving;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $breadwinning-caregiving;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $breadwinning-caregiving;
+      color: $breadwinning-caregiving;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($breadwinning-caregiving);
+  }
+}
+
+.cybersecurity-initiative {
+  main a:hover {
+    color: $cybersecurity-initiative;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $cybersecurity-initiative;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $cybersecurity-initiative;
+      color: $cybersecurity-initiative;
+     }
+  }
+  
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($cybersecurity-initiative);
+  }
+}
+
+.economic-growth {
+  main a:hover {
+    color: $economic-growth;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $economic-growth;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $economic-growth;
+      color: $economic-growth;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($economic-growth);
+  }
+}
+
+.education-policy {
+  main a:hover {
+    color: $education-policy;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $education-policy;
+      outline: none;
+    }
+  }
+  
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $education-policy;
+      color: $education-policy;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($education-policy);
+  } 
+}
+
+.family-centered-social-policy {
+  main a:hover {
+    color: $fcsp;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $fcsp;
+      outline: none;
+    }
+  }
+  
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $fcsp;
+      color: $fcsp;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($fcsp);
+  } 
+}
+
+.fellows {
+  main a:hover {
+    color: $fellows;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $fellows;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $fellows;
+      color: $fellows;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($fellows);
+  } 
+}
+
+.future-tense {
+  main a:hover {
+    color: $future-tense;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $future-tense;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      opacity: 1;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($future-tense);
+  }
+}
+
+.international-security {
+  main a:hover {
+    color: $international-security;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $international-security;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $international-security;
+      color: $international-security;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($international-security);
+  }
+}
+
+.open-markets {
+  main a:hover {
+    color: $meri;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $meri;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $meri;
+      color: $meri;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($meri);
+  }
+}
+
+.live, .pressroom {
+  main a:hover {
+    color: $new-america-live;
+    border-bottom-color: currentColor;
+  }
+}
+
+.nyc {
+  main a:hover {
+    color: $new-america-nyc;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $new-america-nyc;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $new-america-nyc;
+      color: $new-america-nyc;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($new-america-nyc);
+  }
+}
+
+.oti {
+  main a:hover {
+    color: $open-technology-institute;
+    border-bottom-color: currentColor;
+  }
+  form {
+    :focus{
+      border-color: $open-technology-institute;
+      outline: none;
+    }
+  }
+  
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      color: $open-technology-institute;
+      border-color: $open-technology-institute;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($oti);
+  }
+}
+
+.political-reform {
+  main a:hover {
+    color: $political-reform;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $political-reform;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      color: $political-reform;
+      border-color: $political-reform;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($political-reform);
+  }
+}
+
+.postsecondary-national-policy-institute {
+  main a:hover {
+    color: $postsecondary-national-policy-institute;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $postsecondary-national-policy-institute;
+      outline: none;
+    }
+  }
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      color: $postsecondary-national-policy-institute;
+      border-color: $postsecondary-national-policy-institute;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($postsecondary-national-policy-institute);
+  }
+}
+
+.profits-purpose {
+  main a:hover {
+    color: $profits-purpose;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $profits-purpose;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      color: $profits-purpose;
+      border-color: $profits-purpose;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($profits-purpose);
+  }
+}
+
+.weekly-wonk {
+  main a:hover {
+    color: $weekly-wonk;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $weekly-wonk;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      color: $weekly-wonk;
+      border-color: $weekly-wonk;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($weekly-wonk);
+  }
+}
+
+.x-lab {
+  main a:hover {
+    color: $xlab;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $xlab;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $xlab;
+      color: $xlab;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($xlab);
+  }
+}
+
+.youthsave {
+  main a:hover {
+    color: $youthsave;
+    border-bottom-color: currentColor;
+  }
+
+  form {
+    :focus{
+      border-color: $youthsave;
+      outline: none;
+    }
+  }
+
+  button[type=submit], .button,
+  input[type=button],
+  button.default {
+     &:focus, &:hover {
+      border-color: $youthsave;
+      color: $youthsave;
+     }
+  }
+  input[type=checkbox]:checked + label,
+  input[type=radio]:checked + label{
+    @include checkbox($youthsave);
+  }
+}
+
+form.newsletter button[type=submit] {
+  font-family: $sansSerifBold;
+}

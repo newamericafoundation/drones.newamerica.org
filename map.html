@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>WoD</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+<script src='drones_world_borders-regulations.geojson'></script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+<style>
+  html, body { margin:0; padding:0; height: 100%; }
+  #map { width:100%; height: 100%; }
+  .info {
+        padding: 6px 8px;
+        font: 12px/14px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255,255,255,1);
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        border-radius: 5px;
+        width: 300px;
+    }
+    .info h4 {
+        margin: 0 0 5px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
+var map = L.mapbox.map('map', 'newamerica.l89jcfpc');
+map.scrollWheelZoom.disable();
+
+        function style(feature) {
+            return {
+                color: '#2dbbb3',
+                weight: 1.5,
+                fillOpacity: 0.05,
+                fillColor: "#fff"
+            };
+        }
+
+        // control that shows state info on hover
+        var info = L.control();
+
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+
+        info.update = function (props) {
+            this._div.innerHTML = '<h4>Click on a country to learn about their drone regulations.</h4>';
+        };
+
+        info.addTo(map);
+
+        var myLayer;
+
+        function highlightFeature(e) {
+            var layer = e.target;
+            $('.info').html(layer.feature.properties.popupContent);
+            layer.setStyle({
+                weight: 5,
+                color: '#2dbbb3',
+                fillOpacity: 0.5,
+                fillColor: "#2dbbb3"
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera) {
+                layer.bringToFront();
+            }
+        }
+
+
+        function resetHighlight(e) {
+            myLayer.resetStyle(e.target);
+            $('.info').html('<h4>Click on a country.</h4>');
+        }
+
+        var lastClickedLayer;
+
+        function zoomToFeature(e) {
+            if(lastClickedLayer){
+                myLayer.resetStyle(lastClickedLayer);
+            }
+            var layer = e.target;
+
+
+            if(layer.feature.properties.Regulations_04212015_Country == "United States of America" ||
+                layer.feature.properties.Regulations_04212015_Country == "Russia" ||
+                layer.feature.properties.Regulations_04212015_Country == "Canada" ||
+                layer.feature.properties.Regulations_04212015_Country == "Greenland" ||
+                layer.feature.properties.Regulations_04212015_Country == "Antarctica"){
+                map.fitBounds(layer.getBounds(), {padding: [-200,-200]});
+            }
+            else{ map.fitBounds(layer.getBounds(), {padding: [150,150]}); }
+            
+            $('.info').html(layer.feature.properties.popupContent);
+
+            layer.setStyle({
+                weight: 5,
+                color: '#2dbbb3',
+                fillOpacity: 0.5,
+                fillColor: "#2dbbb3"
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera) {
+                layer.bringToFront();
+            }
+        
+            //$('.info').panel('open');
+            lastClickedLayer = layer;
+        }
+        
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                    //mouseover: highlightFeature,
+                    //mouseout: resetHighlight,
+                    click: zoomToFeature
+                });
+
+            var props = feature.properties;
+            if(props){
+                var reg_sources = [];
+                if(props.Regulations_04212015_reg_official_source){
+                    var reg_source = props.Regulations_04212015_reg_official_source;
+                    var reg_source_arr = reg_source.split("; ");
+
+                    for(i=0;i< reg_source_arr.length; i++){
+                         var t = reg_source_arr[i].split(": ");
+                         var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                         reg_sources.push(p);
+                    }
+                }
+
+                var reg_sec_sources = [];
+                if(props.Regulations_04212015_reg_secondary_source){
+                    var reg_sec_source = props.Regulations_04212015_reg_secondary_source;
+                    var reg_sec_source_arr = reg_sec_source.split("; ");
+
+                    for(i=0;i< reg_sec_source_arr.length; i++){
+                         var t = reg_sec_source_arr[i].split(": ");
+                         var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                         reg_sec_sources.push(p);
+                    }
+                }
+
+                var preg_sources = [];
+                if(props.Regulations_04212015_pendingreg_official_source){
+                    var preg_source = props.Regulations_04212015_pendingreg_official_source;
+                    var preg_source_arr = preg_source.split("; ");
+
+                    for(i=0;i< preg_source_arr.length; i++){
+                         var t = preg_source_arr[i].split(": ");
+                         var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                         preg_sources.push(p);
+                    }
+                }
+
+                var preg_sec_sources = [];
+                if(props.Regulations_04212015_pendingreg_secondary_source){
+                    var preg_sec_source = props.Regulations_04212015_pendingreg_secondary_source;
+                    var preg_sec_source_arr = preg_sec_source.split("; ");
+
+                    for(i=0;i< preg_sec_source_arr.length; i++){
+                         var t = preg_sec_source_arr[i].split(": ");
+                         var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                         preg_sec_sources.push(p);
+                    }
+                }
+
+                var emFlight_sources = [];
+                if(props.Regulations_04212015_exampleflight_refURL){
+                    var emFlight_source = props.Regulations_04212015_exampleflight_refURL;
+                    var emFlight_source_arr = emFlight_source.split("; ");
+
+                    for(i=0;i< emFlight_source_arr.length; i++){
+                         var t = emFlight_source_arr[i].split(": ");
+                         var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
+                         emFlight_sources.push(p);
+                    }
+                }
+
+                var popupContent = '';
+                popupContent += "<h4>" + props.Regulations_04212015_Country 
+                    + "</h4><strong>Regulations: </strong>" + props.Regulations_04212015_reg_explainer
+                    + "<br/><strong>Regulations Status: </strong>" + props.Regulations_04212015_reg_status_flag
+                    + "<br/><strong>Regulations Source:</strong> ";
+                    for(i=0; i<reg_sources.length;i++){
+                        if(i != reg_sources.length-1){ popupContent += reg_sources[i] + ", ";}
+                        else { popupContent += reg_sources[i];}
+                     }
+
+                    if(props.Regulations_04212015_reg_secondary_source){
+                        popupContent += "<br /><strong>Regulations Secondary Source: </strong>";
+                        for(i=0; i<reg_sec_sources.length;i++){
+                            if(i != reg_sec_sources.length-1){ popupContent += reg_sec_sources[i] + ", ";}
+                            else { popupContent += reg_sec_sources[i];}
+                         }
+                    }
+                    
+                    if(props.Regulations_04212015_pendingreg_explainer){
+                        popupContent += "<br /><strong>Pending Regulations: </strong>" + props.Regulations_04212015_pendingreg_explainer
+                        + "<br /><strong>Pending Regulations Source: </strong>";
+                        for(i=0; i<preg_sources.length;i++){
+                            if(i != preg_sources.length-1){ popupContent += preg_sources[i] + ", ";}
+                            else { popupContent += preg_sources[i];}
+                        }
+                        
+                        if(props.Regulations_04212015_pendingreg_secondary_source){
+                            popupContent += "<br /><strong>Pending Regulations Secondary Source: </strong>";
+                            for(i=0; i<preg_sec_sources.length;i++){
+                                if(i != preg_sec_sources.length-1){ popupContent += preg_sec_sources[i] + ", ";}
+                                else { popupContent += preg_sec_sources[i];}
+                            }
+                        }
+                    //+ "<br /><strong>Pending Regulations Status: </strong>" + props.Regulations_04212015_pendingreg_status_flag;
+                    }
+
+                    if(props.Regulations_04212015_exampleflight_description){
+                        popupContent += "<br /><strong>Example Flight: </strong>" + props.Regulations_04212015_exampleflight_description
+                        + "<br /><strong>Example Flight Source: </strong>";
+                        for(i=0; i<emFlight_sources.length;i++){
+                                if(i != emFlight_sources.length-1){ popupContent += emFlight_sources[i] + ", ";}
+                                else { popupContent += emFlight_sources[i];}
+                            }
+                    }
+                    
+                    if(props.Regulations_04212015_enforcement_action){
+                        popupContent += "<br /><strong>Enforcement Action: </strong>" + props.Regulations_04212015_enforcement_action;
+                    }
+
+                feature.properties.popupContent = popupContent;
+            }
+
+        } 
+
+
+        myLayer = L.geoJson(data, {
+            style: style,
+            onEachFeature: onEachFeature
+                /*filter:function (feature, layer) {
+                    if(feature.properties.woddata219_tier_ii_plus){
+                        return feature.properties.woddata219_used_armed_drones_in_combat == 1;
+                    }
+                    return false;
+                },*/
+
+        }).addTo(map);
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="14.5px" height="35.9px" viewBox="0 0 14.5 35.9" enable-background="new 0 0 14.5 35.9"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g class="start">
+	<g>
+		<polygon fill="#fffaef" points="6.5,9.3 3.1,5.9 4.2,4.7 6.5,7 13.3,0.2 14.5,1.4 		"/>
+	</g>
+	<g>
+		<path fill="#fffaef" d="M11.4,5.9c0.1,0.2,0.1,0.4,0.1,0.6c0,2.7-2.2,4.9-4.9,4.9S1.7,9.2,1.7,6.5s2.2-4.9,4.9-4.9
+			c1.1,0,2.1,0.4,2.9,1l1.1-1.1C9.5,0.6,8,0,6.5,0C2.9,0,0,2.9,0,6.5S2.9,13,6.5,13S13,10.1,13,6.5c0-0.7-0.1-1.4-0.3-2L11.4,5.9z"
+			/>
+	</g>
+</g>
+</svg>
