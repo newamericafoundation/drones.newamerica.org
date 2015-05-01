@@ -203,14 +203,14 @@ map.scrollWheelZoom.disable();
                 popupContent += "<h4>" + props.Regulations_04232015_Country 
                     + "</h4><strong>Regulations: </strong>" + props.Regulations_04232015_reg_explainer
                     + "<br/><strong>Status: </strong>" + props.Regulations_04232015_reg_status_flag
-                    + "<br/><strong>Source:</strong> ";
+                    + "<br/><strong>Source(s):</strong> ";
                     for(i=0; i<reg_sources.length;i++){
                         if(i != reg_sources.length-1){ popupContent += reg_sources[i] + ", ";}
                         else { popupContent += reg_sources[i];}
                      }
 
                     if(props.Regulations_04232015_reg_secondary_source){
-                        popupContent += "<br /><strong>Secondary Source: </strong>";
+                        popupContent += "<br /><strong>Secondary Source(s): </strong>";
                         for(i=0; i<reg_sec_sources.length;i++){
                             if(i != reg_sec_sources.length-1){ popupContent += reg_sec_sources[i] + ", ";}
                             else { popupContent += reg_sec_sources[i];}
@@ -219,14 +219,14 @@ map.scrollWheelZoom.disable();
                     
                     if(props.Regulations_04232015_pendingreg_explainer){
                         popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.Regulations_04232015_pendingreg_explainer
-                        + "<br /><strong>Source: </strong>";
+                        + "<br /><strong>Source(s): </strong>";
                         for(i=0; i<preg_sources.length;i++){
                             if(i != preg_sources.length-1){ popupContent += preg_sources[i] + ", ";}
                             else { popupContent += preg_sources[i];}
                         }
                         
                         if(props.Regulations_04232015_pendingreg_secondary_source){
-                            popupContent += "<br /><strong>Secondary Source: </strong>";
+                            popupContent += "<br /><strong>Secondary Source(s): </strong>";
                             for(i=0; i<preg_sec_sources.length;i++){
                                 if(i != preg_sec_sources.length-1){ popupContent += preg_sec_sources[i] + ", ";}
                                 else { popupContent += preg_sec_sources[i];}
@@ -236,8 +236,8 @@ map.scrollWheelZoom.disable();
                     }
 
                     if(props.Regulations_04232015_exampleflight_description){
-                        popupContent += "<br /><br /><strong>Example Flight: </strong>" + props.Regulations_04232015_exampleflight_description
-                        + "<br /><strong>Source: </strong>";
+                        popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + props.Regulations_04232015_exampleflight_description
+                        + "<br /><strong>Source(s): </strong>";
                         for(i=0; i<emFlight_sources.length;i++){
                                 if(i != emFlight_sources.length-1){ popupContent += emFlight_sources[i] + ", ";}
                                 else { popupContent += emFlight_sources[i];}

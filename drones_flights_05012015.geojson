@@ -1,0 +1,3012 @@
+var data = {
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    36.932873,
+                    0.046228
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Both standard and thermal imaging ",
+                "cost_range": "$25K-$50K",
+                "country_name": "Kenya",
+                "date_begun": "201312",
+                "date_ended": "201312",
+                "drone_manufacturer": "Airware",
+                "drone_model_name": "Aerial Ranger",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Ol Pejeta Conservancy",
+                "mission_description": "San Francisco drone startup Airware partnered with the Ol Pejeta Conservancy in Kenya to conduct testing of the usage of drones for anti-poaching and wildlife monitoring efforts. Due to Kenya's recent crackdown on drones, the future of the program is in doubt.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Airware; Ol Pejeta Conservancy",
+                "over_under_10k": "Over",
+                "reference_url1": "BBC: http://www.bbc.com/news/business-28132521; Ol Pejeta Conservancy:http://www.olpejetaconservancy.org/about/news/defining-future-drones-conservation;",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    124.99609,
+                    11.248807
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Canon cameras optimized for usage with the senseFly eBee",
+                "cost_range": "$15K-$50K",
+                "country_name": " Phillipines ",
+                "date_begun": "201403",
+                "date_ended": "201403",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "Ebee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Tacloban; Dulag; Leyte",
+                "mission_description": "Drone Adventures, a non-profit backed by manufacturer senseFly, worked with Swiss organization MedAir to create detailed 2D and 3D maps of areas of Tacloban affected by Typhoon Yolanda, enabling a more targeted aid response.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Drone Adventures; MedAir",
+                "over_under_10k": "Over",
+                "reference_url1": "Irevolution: http://irevolution.net/2014/03/26/humanitarians-using-uavs-for-post-disaster-recovery/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -80.325431,
+                    26.516836
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Canon Elura 2 video camera; Panasonic\nHDC-SD9 high-definition video camera; Canon Powershot 650 compact\ncamera; Olympus E-420 camera",
+                "cost_range": "N/A",
+                "country_name": "United States",
+                "date_begun": "200205",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "MLB Company; Navmar",
+                "drone_model_name": "FoldBat; Mako",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Arthur R. Marshall Loxahatchee National Wildlife Refuge, Florida; Lake Okeechobee, Florida; L-6 Levee, Southern Florida; Picayune Strand, Florida ",
+                "mission_description": "University of Florida researchers used the early FoldBat UAV and later the Mako UAV in an ongoing program to conduct surveys of wildlife in the Arthur R. Marshall Loxahatchee National Wildlife Refuge, map herbicide treatments at Lake Okeechobee, and monitor infrastructure degradation at L-6 Levee and Picayune Strand in Florida.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "University of Florida",
+                "over_under_10k": "N/A",
+                "reference_url1": "University of Florida: http://uav.ifas.ufl.edu/projects.shtml; Surveying and Land Information Science: http://s3.amazonaws.com/file-storage.INDIVIDUAL-ACTIVITIES-CooperativeResearchUnits.digitalmeasures.usgs.edu/percivaf/intellcont/Copy%20of%20Smith%20et%20al%202010-2.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    140.71222,
+                    -34.042036
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Canon Powershot SX230",
+                "cost_range": "$1K-$5K",
+                "country_name": "Australia",
+                "date_begun": "201406",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "3D Robotics",
+                "drone_model_name": "Y6",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Riverland Biosphere Reserve, South Australia",
+                "mission_description": "In an ongoing program at the Environment Institute at the University of Adelaide, researchers created a high-resolution orthomosaic of mallee (woodland and shrubland) bushland at the Riverland Biosphere Reserve in Southern Australia. ",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "University of Adelaide",
+                "over_under_10k": "Under",
+                "reference_url1": "DIY Drones:http://diydrones.com/profiles/blogs/super-high-resolution-mapping-of-mallee-bushland-with-a-3dr-y6; University of Adelaide: http://www.adelaide.edu.au/environment/cst/research/drones/",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.067562,
+                    38.159628
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Canon SX 260 HS",
+                "cost_range": "$1K-$5K",
+                "country_name": "Turkey",
+                "date_begun": "201406",
+                "date_ended": "201406",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2",
+                "drone_type": "Multirotor",
+                "location_descriptive": "G\u0178ney",
+                "mission_description": "Drone journalist Ben Kreimer used a Phantom 2 UAV equipped with a point and shoot camera to produce a 3D model of the Antiochia ad Cragum research project in Turkey. ",
+                "mission_tag1": "Archaeology",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Ben Kreimer",
+                "over_under_10k": "Under",
+                "reference_url1": "Ben Kreimer: http://benkreimer.com/aerial-video-photography/antiochia-ad-cragum-aerial-survey/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    116.482036,
+                    3.439989
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Canon SX 260 HS",
+                "cost_range": "N/A",
+                "country_name": "Indonesia",
+                "date_begun": "201405",
+                "date_ended": "201409",
+                "drone_manufacturer": "Custom",
+                "drone_model_name": "Custom-made tricopter; custom-made flying wing models",
+                "drone_type": "N/A",
+                "location_descriptive": "Setulang, Malinau, East Kalimantan, Borneo",
+                "mission_description": "Indigenous rights organization \"If Not Us Then Who\" helped the Dayak people of East Kalimantan in Indonesia to create their own public maps, in an effort to help them protect their forest rights against the interests of the central Indonesian government.\u00ca",
+                "mission_tag1": "Community Mapping",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "If Not Us Then Who",
+                "over_under_10k": "N/A",
+                "reference_url1": "If Not Us Then Who: http://ifnotusthenwho.me/story/malinau/; DIY Drones: http://diydrones.com/profiles/blogs/dayaks-and-drones-the-movie?xg_source=activity",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -3.484629,
+                    54.976187
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Canon SX260",
+                "cost_range": "$1K-$5K",
+                "country_name": "United Kingdom",
+                "date_begun": "201305",
+                "date_ended": "201305",
+                "drone_manufacturer": "Bormatec",
+                "drone_model_name": "MAJA",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "WWT Caerlaverock Wildlife Centre ",
+                "mission_description": "The Wildfowl and Wetlands Trust (WWT) working at the WWT Caerlaverock Centre wetlands in Scotland used a Maja fixed-wing UAV to create aerial maps of the region, allowing researchers to identify the accretion of new saltmarsh in the reserved area. The imagery also allowed them to identify small ephemeral pools, home to rare species.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "Wildlife Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Wildfowl and Wetlands Trust; Conservation Drones; Liverpool John Moores University; ResearchDrones; Swiss Federal Institute of Technology",
+                "over_under_10k": "Under",
+                "reference_url1": "Pix4D: http://pix4d.com/monitoring-saltmarsh-vegetation-in-scotland/",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -72.312409,
+                    18.572203
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Customized 16MP RGB compact digital camera",
+                "cost_range": "$15K-$20K",
+                "country_name": "Haiti",
+                "date_begun": "201201",
+                "date_ended": "201202",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "swinglet CAM",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Port-au-Prince",
+                "mission_description": "UNOSAT mapped a refugee camp in Port Au Prince, one of the first deployments of UAVs for mapping purposes by the United Nations. The goal was to survey rebuilding efforts since the deadly 2010 earthquake, and to assess the area for its suitability for further reconstruction efforts.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "Community Mapping",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "United Nations Institute for Training and Research Operational Satellite Applications Programme (UNOSAT)",
+                "over_under_10k": "Over",
+                "reference_url1": "UNITAR: http://www.unitar.org/unosat-carries-out-first-uav-mission-iom-haiti",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -121.516379,
+                    38.164361
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "DJI camera; infrared camera",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "201402",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "X8 Phantom Vision",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Staten Island, San Joaquin River Delta, Northern California",
+                "mission_description": "The Nature Conservancy uses photographs and video gathered using a DJI Phantom Vision+ quadcopter and a 3D Robotics X8 quadcopter to monitor populations of rare sandhill cranes in the wetlands of the Sacramento River Delta. They also are using a fixed-wing UAV with an infrared camera for night-time monitoring of the birds.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "The Nature Conservancy",
+                "over_under_10k": "Under",
+                "reference_url1": "San Jose Mercury News: http://www.mercurynews.com/business/ci_27045788/drone-helps-conservation-group-threatened-sandhill-crane",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -106.099312,
+                    52.158679
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "FLIR heat-sensing camera",
+                "cost_range": "$5K-$10K",
+                "country_name": "Canada",
+                "date_begun": "201305",
+                "date_ended": "201305",
+                "drone_manufacturer": "Draganflyer",
+                "drone_model_name": "Draganflyer X4-ES",
+                "drone_type": "Multirotor",
+                "location_descriptive": "St. Denis, Saskatchewan",
+                "mission_description": "Canadian police used the Canadian-made Draganflyer quadcopter to locate a man who had wandered away from a car crash in cold weather, using data from a heat-sensing camera to trace him. The UAV was able to find the man after a search party and a helicopter failed to locate him. ",
+                "mission_tag1": "Search and Rescue",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Royal Canadian Mounted Police",
+                "over_under_10k": "Under",
+                "reference_url1": "CBC Canada: http://www.cbc.ca/news/canada/saskatchewan/aerial-drone-locates-sask-man-injured-in-rollover-crash-1.1398942",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -59.78814,
+                    3.125783
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro",
+                "cost_range": "N/A",
+                "country_name": "Guyana",
+                "date_begun": "201410",
+                "date_ended": "201410",
+                "drone_manufacturer": "Custom",
+                "drone_model_name": "Flying wing equipped with Pixhawk flight controller.",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Shulinab",
+                "mission_description": "Digital Democracy trained local people from the Shulinab village in Guyana to build and deploy their own fixed-wing mapping drone, using a GoPro camera. The goal of the project is to help villagers preserve their land rights and document deforestation and other uses of their land. The project was implemented by Gregor MacLennan. ",
+                "mission_tag1": "Community Mapping",
+                "mission_tag2": "Training",
+                "mission_tag3": "Environmental Surveying",
+                "mission_tag4": "",
+                "operating_entity": "Digital Democracy",
+                "over_under_10k": "N/A",
+                "reference_url1": "Digital Democracy: http://www.digital-democracy.org/blog/we-built-a-drone/;",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -73.927109,
+                    18.093552
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro",
+                "cost_range": "$1K-$5K",
+                "country_name": "Haiti",
+                "date_begun": "201405",
+                "date_ended": "201405",
+                "drone_manufacturer": "Custom",
+                "drone_model_name": "Henri (Hydex waterproof frame)",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Natural Protected Area of Managed Resources of Port-Salut/Aquin",
+                "mission_description": "Student Jordan Mitchell, working with the Nature Conservancy's Caribbean Program, built a waterproof drone and used it to map and take photographs of reefs and coastal areas in a newly-protected region of northern Haiti.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "The Nature Conservancy's Caribbean Program",
+                "over_under_10k": "Under",
+                "reference_url1": "Nature: http://blog.nature.org/science/2014/08/11/innovation-drone-mapping-of-coral-reefs-and-the-coastal-zone/; Nature: http://blog.nature.org/conservancy/2013/08/29/haiti-declares-its-first-marine-protected-area/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -16.833449,
+                    64.856624
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro",
+                "cost_range": "UNDER $1K",
+                "country_name": "Iceland",
+                "date_begun": "201409",
+                "date_ended": "201409",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2 ",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Holuhraun Lava Field, Icelandic Highlands",
+                "mission_description": "DJI Aerial Imaging specialist Eric Cheng flew a DJI Phantom 2 over an active fissure at the Holuhraun lava field in Iceland, collecting footage of an active volcano erupting for ABC News program Good Morning America.",
+                "mission_tag1": "Other",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Eric Cheng, DJI; ABC News",
+                "over_under_10k": "Under",
+                "reference_url1": "Wired: http://www.wired.com/2014/10/drone-video-iceland-eruption-bardarbunga-volcano/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -77.936119,
+                    34.953278
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro 3",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "201304",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "MikroKopter",
+                "drone_model_name": "HexaKopter XL",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Duplin County, North Carolina",
+                "mission_description": "North Carolina filmmaker and anti-factory farming activist Mark Devries filmed footage of farms supplying hogs for meat packer Smithfield Farms, collecting images of large-scale waste pools.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Other",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Mark Devries ",
+                "over_under_10k": "Under",
+                "reference_url1": "Hampton Roads: http://hamptonroads.com/2014/12/filmmaker-flies-drones-document-nc-hog-supplier; Industry Tap: http://www.industrytap.com/spy-drone-exposes-pig-factory-sustainable/25853",
+                "regulatory_compliance": "IN CLEAR VIOLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -89.428152,
+                    43.002549
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero 3",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "201407",
+                "date_ended": "201407",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Flamewheel F550",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Fitchburg, Wisconsin",
+                "mission_description": "In a widely-publicized case, hobby drone pilot David Lesh used a DJI Flamewheel F550 equipped with a GoPro and a FPV system to locate a missing elderly man in a soybean field, after search teams, dogs, and a helicopter failed to find him in a three-day effort.",
+                "mission_tag1": "Search and Rescue",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "David Lesh",
+                "over_under_10k": "Under",
+                "reference_url1": "The Examiner: http://www.examiner.com/article/amateur-drone-pilot-finds-man-missing-for-three-days",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    84.668069,
+                    27.499018
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero 3 Black",
+                "cost_range": "$1K-$5K",
+                "country_name": "Nepal",
+                "date_begun": "201206",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Team Black Sheep; Conservation Drones",
+                "drone_model_name": "Caipirinha; Vanguard",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Chitwan National Park",
+                "mission_description": "Conservation Drones is working with Chitwan National Park in Nepal to use flying-wing UAVs to monitor large, difficult-to-navigate areas for intrusion by poachers, who target endangered species such as rhinos and tigers.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Conservation Drones; World Wildlife Fund",
+                "over_under_10k": "Under",
+                "reference_url1": "Conservation Drones: http://conservationdrones.org/2013/10/27/new-anti-poaching-video-surveillance-drones-for-nepal/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -107.957684,
+                    44.017169
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero 3 Black",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "201403",
+                "date_ended": "201403",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Worland, Wyoming",
+                "mission_description": "Volunteer firefighter Brandon Yule used his personal DJI Phantom to survey the scene of a Wyoming flood. The resulting data was used by the Army Corps of Engineers and state authorities to strategize a response to the flooding.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Brandon Yule",
+                "over_under_10k": "Under",
+                "reference_url1": "High Country News: http://www.hcn.org/blogs/goat/drone-improves-emergency-response-in-wyoming-floods",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -113.049572,
+                    33.022861
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero 3, Phantom Vision+ Camera",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "201305",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom Vision+",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Sears Point, Arizona",
+                "mission_description": "Evelyn Billo and Robert Mark, owners of Rupestrian Cyberservices, have used the Phantom Vision+ quadcopter to shoot photographs and create maps of historical rock art sites in the American Southwest.",
+                "mission_tag1": "Archaeology",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Robert Mark and Evelyn Billo, Rupestrian CyberServices",
+                "over_under_10k": "Under",
+                "reference_url1": "Rupestrian Cyberservices: http://www.rupestrian.com/quadcopter.html",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.783324,
+                    16.800119
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero3+",
+                "cost_range": "UNDER $1K",
+                "country_name": "Belize",
+                "date_begun": "201407",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "HobbyUAV",
+                "drone_model_name": "Techpod",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Glover Reef Marine Reserve",
+                "mission_description": "The government of Belize has deployed drones to enforce fishing regulations in protected marine areas, with assistance from the Wildlife Conservation Society and Conservation Drones. The UAVs are also used for wildlife surveys and photography.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "Wildlife Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Belize Fisheries Department; Wildlife Conservation Society; Conservation Drones",
+                "over_under_10k": "Under",
+                "reference_url1": "Wildlife Conservation Society: http://www.wcs.org/press/press-releases/conservation-drones-in-belize.aspx",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    30.116741,
+                    51.381174
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero3+",
+                "cost_range": "$1K-$5K",
+                "country_name": "Ukraine",
+                "date_begun": "201406",
+                "date_ended": "201406",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Chernobyl Nuclear Power Plant",
+                "mission_description": "British filmmaker Danny Cooke used a drone to capture footage of the area surrounding the Chernobyl nuclear power plant, focusing on the abandoned city of Pripyat, in a news segment for 60 Minutes. ",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Danny Cooke, 60 Minutes",
+                "over_under_10k": "Under",
+                "reference_url1": "Smithsonian Magazine: http://www.smithsonianmag.com/travel/haunting-drone-footage-chernobyl-180953495/?no-ist",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    34.470549,
+                    31.501632
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero3+",
+                "cost_range": "$1K-$5K",
+                "country_name": "Palestine",
+                "date_begun": "201408",
+                "date_ended": "201408",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Al-Shejaiya, Gaza Strip",
+                "mission_description": "Palestine-based production company Media Town documented the scale of destruction in the Gaza Strip town of Al-Shejaiya in August 2014, following that summer's fighting with Israel. The producers hoped to raise awareness of the extent of the destruction of the city with the aerial footage.",
+                "mission_tag1": "Armed Conflict Monitoring",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Media Town",
+                "over_under_10k": "Under",
+                "reference_url1": "Irevolution: http://irevolution.net/2014/09/01/uav-aerial-video-of-gaza-damage/",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    115.628875,
+                    4.018461
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Malaysia",
+                "date_begun": "201309",
+                "date_ended": "201309",
+                "drone_manufacturer": "N/A ",
+                "drone_model_name": "Unclear. Used both balloon and fixed-wing.",
+                "drone_type": "N/A",
+                "location_descriptive": "Ba Kelalan, Sarawak, Borneo",
+                "mission_description": "Team from eBario and the Universiti Malaysia Sarawak (Unimas) worked to produce high-quality UAV and balloon maps of the Bario Highlands area, working with community representative to address their needs.",
+                "mission_tag1": "Community Mapping",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "eBario Innovation Village Project; Universiti Malaysia Saraw; International Fund for Agricultural Development",
+                "over_under_10k": "N/A",
+                "reference_url1": "The Borneo Post: http://www.theborneopost.com/2013/09/25/don-rural-folk-want-map-to-determine-land-ownership/#ixzz2qyuro5eN%20",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.343601,
+                    -1.187852
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "OVER $50K",
+                "country_name": "Democratic Republic of Congo",
+                "date_begun": "201312",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Selex ES",
+                "drone_model_name": "Selex ES Falco",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Borders Rwanda and Uganda",
+                "mission_description": "The United Nations has deployed drones to conduct surveillance of armed groups operating near the DRC border with Rwanda and Uganda, the first such deployment of UAVs for peacekeeping by the international body.",
+                "mission_tag1": "Armed Conflict",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "United Nations ",
+                "over_under_10k": "Over",
+                "reference_url1": "BBC: http://www.bbc.com/news/world-africa-25197754",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -79.43793,
+                    -7.181583
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Peru ",
+                "date_begun": "201108",
+                "date_ended": "201408",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "Various including Phantom 1",
+                "drone_type": "Multirotor",
+                "location_descriptive": "San Jose de Moro Site; Cerro Chepen; Cerro El Tigre",
+                "mission_description": "Peruvian archaeologist Luis Jaime Castillo, in an ongoing project with eight drones including a DJI Phantom 1, used drones to create aerial maps of sites like Moche San Jose de Moro, a cemetery and ceremonial site, Cerro Chepen, and Cerro El Tigre, a cliff-side tomb that is nearly impossible to reach. The maps are used in part to help protect these sites from being built over by developers.",
+                "mission_tag1": "Archaeology",
+                "mission_tag2": "Community Mapping",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Luis Jaime Castillo, Pontifical Catholic University of Peru",
+                "over_under_10k": "N/A",
+                "reference_url1": "Reuters: http://www.dispatch.com/content/stories/science/2013/09/15/1-drones-help-map-perus-ancient-sites.html; New York Times: http://www.nytimes.com/2014/08/14/arts/design/drones-are-used-to-patrol-endangered-archaeological-sites.html?_r=0; Acercando Naciones: http://www.acercandonaciones.com/en/cultura/con-drones-estudian-sarcofagos-de-la-cultura-chachapoyas.html",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -72.268556,
+                    19.086996
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Haiti; Dominican Republic",
+                "date_begun": "201208",
+                "date_ended": "201209",
+                "drone_manufacturer": "Matternet",
+                "drone_model_name": "Matternet Prototypes",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Rural regions",
+                "mission_description": "Matternet, a startup, conducted trials of using drones to deliver medicines and other supplies in Haiti and the Dominican Republic. It is continuing trials in other countries with poor infrastructure, including Papua New Guinea and in Bhutan.",
+                "mission_tag1": "Cargo",
+                "mission_tag2": "Disaster Response",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Matternet",
+                "over_under_10k": "N/A",
+                "reference_url1": "Guardian: http://www.theguardian.com/global-development/2013/jan/09/flying-aid-drones-haiti-dominican-republic",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -118.076763,
+                    34.610449
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "OVER $50K",
+                "country_name": "United States",
+                "date_begun": "200710",
+                "date_ended": "200910",
+                "drone_manufacturer": "NASA",
+                "drone_model_name": "Ikhana",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Fire-afflicted areas in Southern California",
+                "mission_description": "NASA's Ikhana drone, based at the Armstrong Flight Research Center at Edwards Air Force Base, was used to monitor dangerous wildfires in Southern California from 2007 to 2008, after the drone was modified from its original design as a platform for advanced sensor research. The drone was also used to conduct post-fire surveying in 2009.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": " NASA; U.S. Forest Service, Remote Sensing Applications Center",
+                "over_under_10k": "Over",
+                "reference_url1": "NASA: http://www.nasa.gov/offices/ipp/centers/dfrc/news_events/SS-Ikhana.html#.VLgn4mTF-A8; U.S. Forest Service: http://www.fs.fed.us/science-technology/fire/unmanned-aircraft-systems/faqs",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -178.059182,
+                    56.896332
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "OVER $50K",
+                "country_name": "United States",
+                "date_begun": "200905",
+                "date_ended": "200906",
+                "drone_manufacturer": "Boeing InSitu",
+                "drone_model_name": "Scan Eagle",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Bering Sea",
+                "mission_description": "The University of Colorado, partnered with the National Oceanic and Atmospheric Administration, used a ScanEagle UAV to survey the movement of seals, who haul out on the ice of the Bering Sea and are difficult to spot with conventional methods. The Boeing-made UAV captured 27,000 images and assisted researchers in spotting the animals.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "University of Colorado; National Oceanic and Atmospheric Administration",
+                "over_under_10k": "Over",
+                "reference_url1": "University of Colorado: http://www.colorado.edu/news/releases/2010/12/14/high-tech-software-and-unmanned-planes-allow-scientists-keep-tabs-arctic; Audubon: http://www.audubon.org/magazine/july-august-2014/drones-take-wildlife-conservation-tool",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -106.098433,
+                    37.487836
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "201103",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "AeroVironment ",
+                "drone_model_name": "AeroVironment Raven RQ-11A",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Monte Vista National Wildlife Refuge, Colorado",
+                "mission_description": "The USGS National UAS Project Office used the AeroVironment Raven fixed wing UAV to conduct surveys of sandhill cranes at the Monte Vista National Wildlife Refuge in Colorado, beginning in 2011. The project received a COA from the FAA, and flew missions using both conventional cameras and infrared sensors. ",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "U.S. Geological Survey (USGS) National UAS Project Office",
+                "over_under_10k": "Under",
+                "reference_url1": "US Geological Service: http://uas.usgs.gov/CO_SandhillCranesMonteVistaNWR.shtml; Audubon: http://www.audubon.org/magazine/july-august-2014/drones-take-wildlife-conservation-tool",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -116.640798,
+                    45.371433
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Photo 3S",
+                "cost_range": "N/A",
+                "country_name": "United States",
+                "date_begun": "201102",
+                "date_ended": "201311",
+                "drone_manufacturer": "Aeryon, MikroKopter",
+                "drone_model_name": "Scout; HexaKopter",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Hells Canyon, Idaho",
+                "mission_description": "In 2011, scientist Phil Groves used an off-the-shelf multirotor UAV to search for salmon nests in the Snake River where biologists recently lost their lives in a manned helicopter crash. The FAA did not grant Groves permits the following year so Groves partnered with the University of Alaska Fairbanks and has been mapping salmon using the University's Aeryon Scout UAV. ",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Idaho Power; University of Alaska Fairbanks",
+                "over_under_10k": "N/A",
+                "reference_url1": "Aeryon: http://www.aeryon.com/applications/case-studies/588-monitoring-sensitive-salmon-populations-on-snake-river-is-safer-with-aeryon-scout.html; Idaho Statesman: http://magicvalley.com/news/state-and-regional/idaho-biologists-look-to-drones-to-monitor-wildlife/article_2eb1ba70-5eef-11e1-b029-001871e3ce6c.html",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    97.86804,
+                    3.786144
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro HD Hero2, Canon IXUS 220HS, Canon Powershot SX230",
+                "cost_range": "$1K-$5K",
+                "country_name": "Indonesia",
+                "date_begun": "201207",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Bormatec",
+                "drone_model_name": "FPV Raptor with APM; MAJA",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Sumatra",
+                "mission_description": "Since 2012, Conservation Drones has been working with the Sumatran Orangutan Conservation Programme to use fixed-wing camera drones to monitor areas in which the endangered primates reside. The drones have been used for applications such as habitat monitoring, tracking illegal logging, and identifying the nests of individual animals. ",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Sumatran Orangutan Conservation Programme; Conservation Drones",
+                "over_under_10k": "Under",
+                "reference_url1": "Sumatran Orangutan: http://www.sumatranorangutan.org/drone-technology; Conservation Drone: http://conservationdrones.org/2013/06/26/drone-flight-over-orangutan-re-introduction-site-in-jantho-aceh/",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    14.839969,
+                    1.317883
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "Congo",
+                "date_begun": "201212",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Bormatec",
+                "drone_model_name": "MAJA",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Odzala-Kokoua National Park",
+                "mission_description": "Conservation Drones is working with the WWF at Odzala National Park in the Congo, evaluating the usage of inexpensive fixed-wing drones for monitoring poachers.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Conservation Drones; World Wildlife Fund",
+                "over_under_10k": "Under",
+                "reference_url1": "Conservation Drones: http://conservationdrones.org/2012/12/15/launch-of-new-researchdronesconservationdrones-in-odzala-national-park-congo/; Conservation Drones: http://conservationdrones.org/2012/09/13/conservation-drones-maja-edition/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    50.100915,
+                    -15.637519
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Madagascar",
+                "date_begun": "201301",
+                "date_ended": "201301",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Kianjavato; Masoala National Park; Tampolo; Ambohitralalana",
+                "mission_description": "Zuzana Burivalova, at the Applied Ecology & Conservation Lab, ETH Zurich, worked with Conservation Drones to shoot footage of deforested areas in Madagascar, tracing the impact of illegal logging on the local environment.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Zuzana Burivalova, Applied Ecology & Conservation Lab, ETH Zurich; Conservation Drones",
+                "over_under_10k": "N/A",
+                "reference_url1": "Vice Motherboard: http://motherboard.vice.com/read/drones-are-sniffing-out-illegal-logging-in-madagascar",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    123.041577,
+                    -12.239975
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "Australia ",
+                "date_begun": "201405",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "3D Robotics",
+                "drone_model_name": "X8",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Island of West Australia coast",
+                "mission_description": "Researchers Jarrod Hodgson and Rohan Clarke from Monash University in Australia used a 3D Robotics X8 quadcopter to shoot footage of seabirds from the air at a remote northwestern Australian island, finding that the drone did not disturb the birds below. ",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Monash University; Conservation Drones",
+                "over_under_10k": "Under",
+                "reference_url1": "Conservation Drones: http://conservationdrones.org/2014/05/05/conservation-drones-for-seabird-monitoring/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    100.510423,
+                    13.763907
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Thailand",
+                "date_begun": "201312",
+                "date_ended": "201312",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Bangkok",
+                "mission_description": "Thai drone pilot @cyberjom shot footage of the 2013 protests in Thailand, capturing aerial video of the clash between protesters and authorities. The video attracted much international attention and opened a debate about the uses of small drones for monitoring political activity.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "@cyberjom",
+                "over_under_10k": "N/A",
+                "reference_url1": "New York Times: http://thelede.blogs.nytimes.com/2013/12/02/in-thailand-a-drones-eye-view-of-protests/; YouTube:https://www.youtube.com/watch?v=c_63LqLIyds",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    37.74198,
+                    48.068781
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Ukraine",
+                "date_begun": "201501",
+                "date_ended": "201501",
+                "drone_manufacturer": "N/A ",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Donestk International Airport",
+                "mission_description": "A volunteer group that supports the Ukrainian army, Army SOS, uploaded drone footage purporting to show the bombed-out Donestk airport, which has been the scene of battles between government forces and pro-Russian rebels. ",
+                "mission_tag1": "Armed Conflict Monitoring",
+                "mission_tag2": "Current Events",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Army SOS",
+                "over_under_10k": "N/A",
+                "reference_url1": "The Guardian: http://www.theguardian.com/world/video/2015/jan/17/drone-destruction-donetsk-ukraine-airport-video",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    13.951145,
+                    -21.763291
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Namibia ",
+                "date_begun": "201206",
+                "date_ended": "201209",
+                "drone_manufacturer": "Shadowview",
+                "drone_model_name": "N/A",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Cape Cross",
+                "mission_description": "In \"Operation Desert Seal,\" ShadowView co-founder Laurens de Groot, working with Sea Shepherd, used three fixed-wing UAVs to videotape the slaughter of Cape Fur seals on a beach in Namibia, in what the organization claims is one of the first instances of a drone being used for conservation purposes.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Wildlife Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "ShadowView; Sea Shepherd Conservation Society",
+                "over_under_10k": "N/A",
+                "reference_url1": "Shadowview: http://www.shadowview.org/projects/operation-desert-seal/; SeaShepherd: http://www.seashepherd.org/desert-seal/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    124.973602,
+                    11.246787
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "OVER $50K",
+                "country_name": "Philippines",
+                "date_begun": "201311",
+                "date_ended": "201312",
+                "drone_manufacturer": "Huginn",
+                "drone_model_name": "X1",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Tacloban",
+                "mission_description": "Direct Relief conducted surveys of post-disaster areas in the Philippines with drones, using the data to deliver aid and to help guide reconstruction and relief efforts.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Direct Relief",
+                "over_under_10k": "Over",
+                "reference_url1": "Devex: https://www.devex.com/news/in-the-philippines-drones-provide-humanitarian-relief-82512",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    18.6968,
+                    44.724308
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$15K-$50K",
+                "country_name": "Bosnia and Herzegovina",
+                "date_begun": "201405",
+                "date_ended": "201506",
+                "drone_manufacturer": "MicroDrones",
+                "drone_model_name": "MD4-1000 Quadcopter",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Kopanice region; Zavidovici- Dolac region",
+                "mission_description": "Haris Balta worked with ICARUS to use a quadcopter to survey a flooded region in Bosnia, searching for landmines that had been displaced by the deluge. 3D maps and geostatistical modeling were used in the landmine search.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "Armed Conflict Monitoring",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Haris Balta; ICARUS Unmanned Search and Rescue Project (EU)",
+                "over_under_10k": "Over",
+                "reference_url1": "Irevolution: http://irevolution.net/2014/07/07/humanitarian-uav-missions-during-balkan-floods; MicroDrones: http://www.microdrones.com/uploads/tx_news/SSRR2014_proj_XXX_01.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    141.032798,
+                    37.421071
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Japan",
+                "date_begun": "201401",
+                "date_ended": "201401",
+                "drone_manufacturer": "Japanese Atomic Energy Agency; Japanese Space Exploration Agency",
+                "drone_model_name": "N/A",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Fukushima Daiichi Nuclear Power Station",
+                "mission_description": "Japanese authorities have deployed a small internally-developed fixed-wing drone to monitor radiation levels at the site of the Fukushima nuclear disaster. Testing was completed in January 2014. This is just one of several efforts which use drones to map the aftermath of the nuclear reactor meltdown; others include the Tokyo Electric Power Co. and University of Bristol.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Japanese Atomic Energy Agency; Japanese AeroSpace Exploration Agency",
+                "over_under_10k": "N/A",
+                "reference_url1": "Latin Post: http://www.latinpost.com/articles/6442/20140127/fukushima-radiation-disaster-news-japan-uses-drone-check-rad-levels.htm; Atlantic: http://www.theatlantic.com/technology/archive/2011/04/inside-the-drone-missions-to-fukushima/237981/; BBC: http://www.bbc.com/news/uk-28239851",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -24.340433,
+                    14.948885
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Cape Verde",
+                "date_begun": "201411",
+                "date_ended": "201411",
+                "drone_manufacturer": "Tekever",
+                "drone_model_name": "AR4 Light Ray",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Pico do Fogo volcano, Fogo Island",
+                "mission_description": "Tekever used its fixed-wing drone to shoot images of the lava flow from the eruption of Pico do Fogo volcano in the Cape Verde Islands. The imagery helped officials determine if the lava flow had hardened, as well as to survey the extent of the damage.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "TEKEVER; Cape Verdean authorities",
+                "over_under_10k": "N/A",
+                "reference_url1": "Tekever: http://tekevernews.blogspot.com/2015/01/tekever-drone-tracks-lava-flow-at-pico.html",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -96.796228,
+                    32.776222
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "United States",
+                "date_begun": "200704",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "RP Flight Systems Inc.",
+                "drone_model_name": "Spectra",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Texas",
+                "mission_description": "Texas-based search and rescue volunteer group, Texas EquuSearch, has been involved in a long court battle with the FAA over its usage of drones to search for missing persons across Texas. The FAA issued an emergency COA in September 2014, allowing the group to use a drone to search for a missing woman near Dallas, Texas. The group has been using drones in its SAR work since 2007.",
+                "mission_tag1": "Search and Rescue",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Texas EquuSearch",
+                "over_under_10k": "Under",
+                "reference_url1": "Texas Equusearch: http://texasequusearch.org/about/how-when-and-why-we-search/; Texas EquuSearch: http://texasequusearch.org/2011/06/video-cnns-mike-brooks-interview-of-gene-robinson-of-rp-flight-systems-drone-demonstration/",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -107.961915,
+                    39.240857
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "United States",
+                "date_begun": "201405",
+                "date_ended": "201405",
+                "drone_manufacturer": "Draganfly; Falcon UAV",
+                "drone_model_name": "Draganfly X6; Falcon UAV",
+                "drone_type": "N/A",
+                "location_descriptive": "Collbran, Mesa County, Colorado",
+                "mission_description": "The Mesa County Sheriff's Office deployed drones to search for survivors of a massive mudslide in western Colorado. Although no bodies were found, officials deemed the drones a useful tool for inspecting dangerous areas for survivors. The Sheriff's Office has used Draganflyer X6 multi-rotor and fixed-wing Falcon UAV for over 55 operations.",
+                "mission_tag1": "Search and Rescue",
+                "mission_tag2": "Disaster Response",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Mesa County Sheriff's Office",
+                "over_under_10k": "N/A",
+                "reference_url1": "Colorado Public Radio: http://www.cpr.org/news/story/how-mesa-county-used-drones-search-and-rescue-efforts-after-landslide; Mesa County Sheriff's Office: http://sheriff.mesacounty.us/uav/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    114.049322,
+                    -25.891341
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Nikon D90 12 megapixel digital SLR camera, fixed video camera",
+                "cost_range": "OVER $50K",
+                "country_name": "Australia",
+                "date_begun": "201009",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Boeing Insitu",
+                "drone_model_name": "ScanEagle",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Shark Bay, Western Australia",
+                "mission_description": "Murdoch University Cetecean researcher Dr. Amanda Hodgson ran trials with Insitu, a drone manufacturer, to investigate the feasibility of using UAVs to conduct research on the movements of marine mammals. The UAV is able to take over from manned aircraft in a number of instances, allowing researchers to conduct surveys of dugongs and whales along areas of the coast that were not feasible for manned flight.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Murdoch University; Australian Marine Mammal Centre; Insitu Pacific",
+                "over_under_10k": "Over",
+                "reference_url1": "Murdoch University: http://mucru.org/unmanned-drones-to-watch-over-australias-marine-mammals/; Plos One: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0079556",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -55.368347,
+                    4.421378
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "NIR or optical camera",
+                "cost_range": "$25K-$50K",
+                "country_name": "Suriname",
+                "date_begun": "201201",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Trimble",
+                "drone_model_name": "Gatewing X100",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Gunsi",
+                "mission_description": "Suriname-based GISSat used the Gatewing X100 to create community maps of villages, in an effort to provide an inexpensive and easily updateable \"baseline\" of development for usage by NGOs and governmental agencies. The drone-created map allowed assessment of local logging activities, as well as an inventory of homes, giving locals evidence to support themselves in boundary conflicts.",
+                "mission_tag1": "Community Mapping",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "GISsat",
+                "over_under_10k": "Over",
+                "reference_url1": "ESRI: http://proceedings.esri.com/library/userconf/proc13/papers/840_92.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    159.944794,
+                    -9.430701
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Panasonic Lumix G3",
+                "cost_range": "$10K-$15K",
+                "country_name": "Solomon Islands",
+                "date_begun": "201404",
+                "date_ended": "201404",
+                "drone_manufacturer": "MikroKopter",
+                "drone_model_name": "Oktokopter 2-26",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Honiara; Mataniko River Valley",
+                "mission_description": "Disaster responders from the Secretariat of the Pacific Community and the South Pacific Applied Geoscience Commission deployed to the flooded area near the Solomon Islands capital city of Honiara. The team used the multirotor to capture detailed images of the flooded area along the Mataniko River and to determine if the April Ridge area was suitable for resettlement. It also captured imagery of a gold mining camp that had been abandoned due to the flooding, conducting a survey of the mining equipment and vehicles there. The team reported that the multirotor was very useful for the project, and allowed them to capture higher-quality image data than might be provided by a fixed-wing UAV.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "Community Mapping",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Secretariat of the Pacific Community; South Pacific Applied Geoscience Commission",
+                "over_under_10k": "Over",
+                "reference_url1": "Irevolution: http://irevolution.net/2014/09/25/humanitarian-uavs-in-the-solomon-islands/; Secretariat of the Pacific Community: http://www.pacificdisaster.net/pdnadmin/data/original/SLB_FL_SPC_SOPAC_20140430_GIS_RS_Assistance.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    103.395065,
+                    27.212591
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Phantom 2 Camera, Canon DSLR (exact model unknown)",
+                "cost_range": "$1K-$5K",
+                "country_name": "China",
+                "date_begun": "201408",
+                "date_ended": "201408",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "S900; Phantom 2 Vision+",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Ludian County, Yunnan Province",
+                "mission_description": "The China Association for Disaster & Emergency Rescue Medicine partnered with Chinese drone-maker DJI to search for survivors, look for paths through the rubble, and gain a spatial sense of the destruction caused by the August 2014 earthquake in Yunnan Province. ",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "China Association for Disaster & Emergency Rescue Medicine; DJI",
+                "over_under_10k": "Under",
+                "reference_url1": "DJI: https://www.dji.com/info/news/dji-technology-used-to-aid-yunnan-earthquake-relief-efforts ",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    168.157876,
+                    -16.238897
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Phantom 2 Vision+ camera",
+                "cost_range": "$1K-$5K",
+                "country_name": "Vanuatu",
+                "date_begun": "201501",
+                "date_ended": "201502",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2 Vision+",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Ambrym Volcano, Marum",
+                "mission_description": "Explorer Sam Cossman used multiple Phantom 2 Vision+ drones to shoot imagery of a volcano in Vanautu, working with Pix4D software to create a model of the volcanoes interior.",
+                "mission_tag1": "Other",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Sam Cossman; Pix4D; DJI; Kenu.com",
+                "over_under_10k": "Under",
+                "reference_url1": "National Geographic: http://adventureblog.nationalgeographic.com/2015/02/20/video-adventurer-and-drones-go-into-the-volcano-for-science/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -126.068292,
+                    50.456093
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Olympus E-PL2",
+                "cost_range": "N/A",
+                "country_name": "Canada",
+                "date_begun": "201408",
+                "date_ended": "201409",
+                "drone_manufacturer": "Aerial Imaging Solutions ",
+                "drone_model_name": "Custom built APH-22 marine hexacopter (Mobly)",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Johnstone Strait, British Columbia",
+                "mission_description": "The Vancouver Aquarium and America's Natinoal Oceanic and Atmospheric Administration (NOAA) are using a hexacopter to monitor populations of orcas (killer whales) in British Columbia's Johnstone Strait, the first time a UAV has been deployed for this purpose. ",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Vancouver Aquarium; National Oceanic and Atmospheric Administration (NOAA)",
+                "over_under_10k": "N/A",
+                "reference_url1": "CNET: http://www.cnet.com/news/drones-capture-first-stunning-footage-of-killer-whales/; The Marine Detective: http://themarinedetective.com/tag/hexacopter/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    18.38852,
+                    -23.202825
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "RGB, NIR, RE, multi-spectral",
+                "cost_range": "$15K-$20K",
+                "country_name": "Namibia",
+                "date_begun": "201405",
+                "date_ended": "201405",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Kuzikus Wildlife Reserve",
+                "mission_description": "Drone Adventures worked with the Kuzikus Wildlife Reserve and the Polytechnic of Namibia in partnership with the Swiss Federal Polytechnic in Lausanne to carry out mapping surveys for nature conservation using five kinds of sensors, and also hosted a workshop on drone mapping and photogrammetry for local students.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "Wildlife Surveying",
+                "mission_tag3": "Training",
+                "mission_tag4": "",
+                "operating_entity": "Drone Adventures; Kuzikus Wildlife Reserve; the Polytechnic of Namibia; Swiss Federal Polytechnic in Lausanne",
+                "over_under_10k": "Over",
+                "reference_url1": "Drone Adventures: http://blog.droneadventures.org/post/94741443510/nature-conservation-mapping-in-namibia",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -1.461431,
+                    11.090619
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Ricoh GR III still camera",
+                "cost_range": "N/A",
+                "country_name": "Burkina Faso",
+                "date_begun": "201201",
+                "date_ended": "201301",
+                "drone_manufacturer": "Trimble",
+                "drone_model_name": "Gatewing _100 UAS",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Nazinga Game Ranch ",
+                "mission_description": "Researchers used a UAV to survey the reaction of large mammals in the Nazinga Game Ranch in Burkina Faso to UAVs. The experiment found that elephants were most readily visible from the 100 meter operation height, and that the animals did not appear to react to the UAV when flown at this altitude. Researchers also used the data for the annual wildlife foot count of the elephants. ",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "Other",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Forest Resource Management Unit; Natural Environment at the University of Liege Gembloux Agro-Bio Tech",
+                "over_under_10k": "N/A",
+                "reference_url1": "PLOS ONE: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0054700",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -52.130084,
+                    70.676234
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Sony Alpha NEX-5K",
+                "cost_range": "$10K-$15K",
+                "country_name": "Greenland",
+                "date_begun": "201406",
+                "date_ended": "201406",
+                "drone_manufacturer": "Skywalker Technology",
+                "drone_model_name": "Skywalker X8",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Uummannaq Glacier; Store Glacier; Lille Glacier",
+                "mission_description": "Researchers from Aberystwyth University used a fleet of six UAVs to gather images of the Store and Lille glacier off the coast of Greenland, which they then converted into 3D models. The imagery will allow researchers to create elevation maps and to track the movement and calving of the glacier on a regular basis, among other applications.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Aberystwyth University",
+                "over_under_10k": "Over",
+                "reference_url1": "sUAS News: http://www.suasnews.com/2014/08/30581/uav-technology-aids-in-collecting-invaluable-data/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -105.349818,
+                    40.047374
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Sony NEX7 24.1 MP DSLR",
+                "cost_range": "$10K-$15K",
+                "country_name": "United States",
+                "date_begun": "201309",
+                "date_ended": "201309",
+                "drone_manufacturer": "Falcon",
+                "drone_model_name": "Falcon UAV",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Boulder County, Colorado",
+                "mission_description": "CLMax Engineer and DroneMappers worked with the Boulder County Emergency Operations Center to map the area affected by heavy flooding, producing the maps quickly and inexpensively. The operation was grounded by FEMA, who said that the UAV owned by CLMax Engineer might potentially collide with helicopters being used to evacuate people trapped by the flooding. ",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "CLMax Engineering; DroneMapper; Boulder County Emergency Operations Center",
+                "over_under_10k": "Over",
+                "reference_url1": "Popular Science: http://www.popsci.com/technology/article/2013-09/drone-company-helps-colorado-emergency-until-fema-says-no",
+                "regulatory_compliance": "IN CLEAR VIOLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    14.241986,
+                    50.874579
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Czech Republic",
+                "date_begun": "201306",
+                "date_ended": "201307",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "Unknown octocopter model",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Hrensko; Prague; Kamenice",
+                "mission_description": "Geodis worked to survey severe flooding in the Czech Republic, producing real-time footage of affected areas, and collecting footage of remote areas cut off to land transportation. The UAVs were used in conjunction with manned aircraft and with a mobile mapping system to collect data.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Geodis",
+                "over_under_10k": "N/A",
+                "reference_url1": "GIM International: http://www.gim-international.com/news/mapping/uas/id7439-monitoring_czech_floods_with_a_uav.html; Wall Street Journal: http://blogs.wsj.com/emergingeurope/2013/06/12/drones-play-peacetime-role-with-flood-coverage/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    123.769758,
+                    10.341334
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Sony 24 MP APS-C",
+                "cost_range": "$5K-$10K",
+                "country_name": "Philippines",
+                "date_begun": "201312",
+                "date_ended": "201312",
+                "drone_manufacturer": "Swift Radioplanes",
+                "drone_model_name": "Lynx UAS",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Cebu",
+                "mission_description": "Swift Radioplanes used their Lynx UAS mapping systems to create detailed maps of the destruction in Cebu over the course of seven days. Over 20 square kilometers of imagery were shot. The imagery was then given to Philippines authorities and to universities, and also made available as an open-source online resource.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Swift Radioplanes",
+                "over_under_10k": "Under",
+                "reference_url1": "Swift Radioplanes: http://swiftradioplanes.com/swift-rp-in-the-philippines/; Swift Radioplanes: http://swiftradioplanes.com/lynx-uas/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    2.277046,
+                    9.660344
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "10 MP digital camera",
+                "cost_range": "N/A",
+                "country_name": "Benin",
+                "date_begun": "200401",
+                "date_ended": "200601",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Kpawa; Quake",
+                "mission_description": "German researchers in conjunction with GTZ (German Development Service) used a fixed-wing UAV to assess land conservation and vegetation dynamics, examine the development of settlements and road patterns, and to photograph archaeological sites in Benin.",
+                "mission_tag1": "Community Mapping",
+                "mission_tag2": "Archaeology",
+                "mission_tag3": "Environmental Surveying",
+                "mission_tag4": "",
+                "operating_entity": "Free University of Berlin; GTZ",
+                "over_under_10k": "N/A",
+                "reference_url1": "Geonetwork Impetus: http://geonetwork.impetus.uni-koeln.de/srv/en/resources.get?id=596&fname=41_IMPETUS_AtlasBenin.pdf&access=private",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    90.32753,
+                    22.364336
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Bangladesh",
+                "date_begun": "201411",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Patuakhali district; Barisal district",
+                "mission_description": "The International Maize and Wheat Improvement Centre implemented a 20-month-long research project in November of 2014, which will use drones to evaluate the condition of maize, wheat, and mung bean crops in Southern Bangladesh. The drone data is intended to help farmers better evaluate the needs of their crops.",
+                "mission_tag1": "Agriculture",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "International Maize and Wheat Improvement Centre; Bangladesh Agricultural Research Institute; Bangladesh Agricultural Research Council ",
+                "over_under_10k": "N/A",
+                "reference_url1": "The Daily Star: http://www.thedailystar.net/drones-used-for-first-time-in-bangladesh-67653",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    35.475299,
+                    31.016109
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Jordan",
+                "date_begun": "201301",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Other",
+                "location_descriptive": "Fifa archaeological site ",
+                "mission_description": "Archaeologists from the interdisciplinary \"Follow the Pots\" project intend to use drone imagery shot annually from 2013 to 2018 to document looting, in an effort to better understand the behavior of looters and the pattern of damage. 3D imagery using drone-shot footage permits clearer analysis of the effect the looters actions have on the historical site. The project uses both fixed wing and multirotor drones, including a Skywalker 1680.",
+                "mission_tag1": "Archaeology",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Landscapes of the Dead Research Project, Follow The Pots",
+                "over_under_10k": "N/A",
+                "reference_url1": "National Geographic: http://news.nationalgeographic.com/news/2014/04/140411-drones-jordan-dead-sea-looting-archaeology; Academia: http://www.academia.edu/10144287/Aerial_Innovations_Using_drones_to_document_looting",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    44.200745,
+                    40.508897
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "Armenia",
+                "date_begun": "201406",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Tsaghkahovit Plain; Mt. Aragats region",
+                "mission_description": "Archaeologists from Purdue University and Cornell used a DJI Phantom 2 to survey Bronze Age sites within the Tsaghkahovit Plain and Mt. Aragats region in southern Armenia. The drone gave researchers an inexpensive aerial perspective of the region, allowing them to identify potential sites of interest at a low cost.",
+                "mission_tag1": "Archaeology",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Project ArAGATS, Cornell University; Purdue University",
+                "over_under_10k": "Under",
+                "reference_url1": "Purdue University: http://www.purdue.edu/newsroom/releases/2014/Q3/archaeologist-digs-using-drone-for-fieldwork-in-armenia.html; Cornell University: http://aragats.arts.cornell.edu/?p=715",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -72.302796,
+                    18.572528
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$15K-$20K",
+                "country_name": "Haiti",
+                "date_begun": "201304",
+                "date_ended": "201304",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Port-au-Prince",
+                "mission_description": "Drone Adventures, a non-profit backed by manufacturer senseFly, mapped 45 square kilometers of territory in Port-au-Prince. They mapped informal settlements to assist aid organizations with population counts, created 3D terrain models of potentially dangerous riverbeds.",
+                "mission_tag1": "Community Mapping",
+                "mission_tag2": "Disaster Response",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Drone Adventures",
+                "over_under_10k": "Over",
+                "reference_url1": "Drone Adventures: http://blog.droneadventures.org/post/85864746895/drone-adventure-in-haiti",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    145.771236,
+                    -7.963685
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Papua New Guinea",
+                "date_begun": "201411",
+                "date_ended": "201411",
+                "drone_manufacturer": "Matternet",
+                "drone_model_name": "N/A",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Kerema, Gulf Province",
+                "mission_description": "Doctors Without Borders and Matternet, a startup, ran trials using quadcopters to ferry samples of sputum from patients potentially infected with tuberculosis from remote areas to the hospital in the regional capital of Kerema.",
+                "mission_tag1": "Cargo",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Matternet; Doctors Without Borders",
+                "over_under_10k": "N/A",
+                "reference_url1": "Doctors Without Borders: http://www.msf.org/article/papua-new-guinea-innovating-reach-remote-tb-patients-and-improve-access-treatment",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -60.206769,
+                    -62.631156
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$25K-$50K",
+                "country_name": "Antarctica ",
+                "date_begun": "201110",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "NOAA; Aerial Imaging Solutions",
+                "drone_model_name": "NOAA design",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Livingston Island",
+                "mission_description": "America's National Oceanic and Atmospheric Administration (NOAA) first began using drones for wildlife research in 2011, deploying them to count penguins and leopard seals in Antarctica, and to gauge the effect that krill fishing has on predator populations. NOAA biologist Wayne Perryman and Dan Leroi from Aerial Imaging Solutions developed a hexacopter for use.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "National Oceanic and Atmospheric Administration",
+                "over_under_10k": "Over",
+                "reference_url1": "NOAA Fisheries: http://www.nmfs.noaa.gov/stories/2012/10/10_03_12wayne_perryman.html; NOAA Fisheries: https://swfsc.noaa.gov/textblock.aspx?Division=PRD&ParentMenuId=211&id=18412; NOAA Fisheries: https://swfsc.noaa.gov/index.aspx?id=18533&Division=PRD&ParentMenuId=147",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -147.853512,
+                    64.877919
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "OVER $50K",
+                "country_name": "United States",
+                "date_begun": "201405",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Aeryon",
+                "drone_model_name": "Scout",
+                "drone_type": "Multirotor",
+                "location_descriptive": "University of Alaska Fairbanks Large Animal Research Station, Fairbanks, Alaska",
+                "mission_description": "The FAA issued the University of Alaska Fairbanks a two-year COA to conduct research into using a drone to monitor and to count large animals in wilderness areas. Ongoing flights are taking place at the University of Alaska Fairbanks Large Animal Research Station.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "University of Alaska Fairbanks",
+                "over_under_10k": "Over",
+                "reference_url1": "FAA: http://www.faa.gov/news/press_releases/news_story.cfm?newsId=16194&omniRss=press_releasesAoc&cid=102_P_R",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    90.756745,
+                    27.713953
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$25K-$50K",
+                "country_name": "Bhutan",
+                "date_begun": "201406",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Bumthang ",
+                "mission_description": "Bhutan's Ugyen Wangchuck Institute for Conservation and Environment began using a senseFly eBee for monitoring wildlife, mapping snow cover, land cover dynamics, forest fires, and tree line range shift in June 2014.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "Disaster Response",
+                "mission_tag4": "",
+                "operating_entity": "Ugyen Wangchuck Institute for Conservation and Environment",
+                "over_under_10k": "Over",
+                "reference_url1": "Royal Government of Bhutan: http://www.moaf.gov.bt/bhutans-first-ever-drone-successfully-flies-over-chamkhar-town/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    9.592351,
+                    -2.153834
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "Gabon ",
+                "date_begun": "201212",
+                "date_ended": "201212",
+                "drone_manufacturer": "Bormatec",
+                "drone_model_name": "MAJA",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Loango National Park",
+                "mission_description": "Conservation Drones flew its Maja airframe in Loango National Park, capturing images of sea turtle nesting areas, chimpanzee nests, and forest buffalo.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Conservation Drones; Max Planck Institute for Evolutionary Anthropology",
+                "over_under_10k": "Under",
+                "reference_url1": "Conservation Drones: http://conservationdrones.org/2012/12/13/conservation-drone-in-loango-gabon/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    110.550802,
+                    -2.02717
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Indonesia",
+                "date_begun": "201403",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "ShadowView",
+                "drone_model_name": "N/A",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Ketapang, West Kalimantan, Borneo",
+                "mission_description": "ShadowView is partnering with International Animal Rescue to test using drone technology for various conservation projects surrounding Borneo's orangutan population, including collecting data on remote habitat and tracking animals implanted with tracing devices.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "ShadowView; International Animal Rescue",
+                "over_under_10k": "N/A",
+                "reference_url1": "ShadowView: http://www.shadowview.org/projects/saving-orangutans-borneo/; ShadowView: http://www.shadowview.org/news/saving-orangutans-borneo-2/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    40.5282,
+                    -2.527151
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Kenya",
+                "date_begun": "201411",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Tana Delta",
+                "mission_description": "The Sentinel Project is testing using drones as part of its efforts to prevent political violence caused by rumors and misinformation in Kenya's Tana Delta.",
+                "mission_tag1": "Armed Conflict Monitoring",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "The Sentinel Project",
+                "over_under_10k": "N/A",
+                "reference_url1": "The Sentinel Project: https://thesentinelproject.org/2014/11/18/humanitarian-drones-perceptions-vs-reality-in-kenyas-tana-delta/",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    124.999352,
+                    11.251333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Philippines",
+                "date_begun": "201311",
+                "date_ended": "201405",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Tacloban, Central Philippines",
+                "mission_description": "British photographer Lewis Whyld used a drone to capture footage of Tacloban days after Typhoon Haiyan hit the region in November 2013. In May 2014, Whyld returned to Tacloban and captured new footage of the region by manually flying the drone over the same flight path used to capture the images in November. A side-by-side comparison of the footage captured by the drone in November 2013 to the footage captured by the drone in May 2014 has allowed Whyld to precisely document the rebuilding process. ",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Disaster Response",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Lewis Whyld, The Telegraph",
+                "over_under_10k": "N/A",
+                "reference_url1": "The Telegraph: http://www.telegraph.co.uk/news/worldnews/asia/philippines/10804117/Typhoon-Haiyan-aerial-footage-shows-how-Tacloban-has-recovered-six-months-on-from-the-natural-disaster.html",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    30.527267,
+                    50.451889
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Ukraine",
+                "date_begun": "201402",
+                "date_ended": "201402",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Kiev",
+                "mission_description": "A drone was used to capture footage of anti-government protests in Kiev, Ukraine in February 2014, over former President Yanukovich's decision to reject a trade and investment deal with the European Union.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Armed Conflict Monitoring",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Unknown",
+                "over_under_10k": "N/A",
+                "reference_url1": "IB Times: http://www.ibtimes.co.uk/incredible-drone-footage-ukraine-carnage-video-1437134",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    19.201992,
+                    50.027425
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Poland",
+                "date_begun": "201501",
+                "date_ended": "201501",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Auschwitz-Birkenau Concentration Camp, O_wi_cim",
+                "mission_description": "The BBC flew a drone over the Auschwitz-Birkenau concentration camp in Poland, shooting aerial footage of the site 70 years after it was liberated by Soviet troops.",
+                "mission_tag1": "Other",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "BBC",
+                "over_under_10k": "N/A",
+                "reference_url1": "YouTube: https://www.youtube.com/watch?v=449ZOWbUkf0",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    99.913057,
+                    38.967484
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "China",
+                "date_begun": "201408",
+                "date_ended": "201408",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Source of the Yellow River, Qinghai",
+                "mission_description": "Greenpeace UK used a drone to capture footage of illegal coal mining at the source of China's Yellow River, an area that is protected by environmental regulations. Greenpeace claims coal mining in this locale may trigger an environmental crisis.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Greenpeace",
+                "over_under_10k": "N/A",
+                "reference_url1": "YouTube: https://www.youtube.com/watch?v=_4l3vVXQtus",
+                "regulatory_compliance": "IN CLEAR VIOLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    105.574894,
+                    -10.47015
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Australia",
+                "date_begun": "201105",
+                "date_ended": "201105",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Christmas Island",
+                "mission_description": "Australia's Nine Network's 60 Minutes TV program tried to fly a drone over a immigration detention center on Christmas Island. The hexacopter successfully captured images of the camp, triggering an investigation by Australian authorities. The drone later crashed as the TV crew attempted to film footage of a cliff area where 50 asylum-seekers died on December 15, 2011 in a boat accident.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Other",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Nine Network",
+                "over_under_10k": "N/A",
+                "reference_url1": "The West Australian: https://au.news.yahoo.com/thewest/a/9382555/spy-in-sky-over-island-camp/; The Australian: http://www.theaustralian.com.au/business/media/sixty-minutes-drone-crashes-off-death-cliff/story-e6frg996-1226055615740",
+                "regulatory_compliance": "IN CLEAR VIOLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    38.397631,
+                    48.33362
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Ukraine",
+                "date_begun": "201502",
+                "date_ended": "201502",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Debaltseve",
+                "mission_description": "Drone footage depicts the destroyed state of the Ukrainian town of Debaltseve, which came under attack in February from Russian-backed rebel forces.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Armed Conflict Monitoring",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Yury Kasyanov",
+                "over_under_10k": "N/A",
+                "reference_url1": "ABC News: http://abcnews.go.com/International/ukraine-village-pummeled-drone-photos-evidence/story?id=29050476; YouTube: https://www.youtube.com/watch?v=wBCq8Qok6sA",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -169.61944,
+                    -14.171402
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "American Samoa ",
+                "date_begun": "2013",
+                "date_ended": "2013",
+                "drone_manufacturer": "Custom built by Trent Lukazyk",
+                "drone_model_name": "Custom built quadcopter",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Ofu Island",
+                "mission_description": "Stanford Woods Institute Senior Fellow Stephen Palumbi partnered with Stanford graduate student Ved Chirayath to use a quadcopter drone to map, measure, and study shallow water reefs off the coast of Ofu Island in American Samoa.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Stanford University",
+                "over_under_10k": "Under",
+                "reference_url1": "Stanford University: http://news.stanford.edu/news/2013/october/coral-reefs-drones-101613.html; Samoa News: http://www.samoanews.com/?q=node%2F77489; VedPhoto: http://www.vedphoto.com/blog/2014/4/new-samoa-coral-mapping-results",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    37.482569,
+                    47.595131
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Standard model of the CAMCOPTER\u00a8 S-100 ships with Electro-Optical / Infra-Red (EO/IR) sensors",
+                "cost_range": "OVER $50K",
+                "country_name": "Ukraine",
+                "date_begun": "201410",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "Schiebel ",
+                "drone_model_name": "CAMCOPTER S-100",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Volnovakha; Mariupol",
+                "mission_description": "In October 2014, the OSCE conducted maiden flights of its Schiebel CAMCOPTER S-100 UAVs. The intended use of the CAMCOPTER is to augment on-the-ground monitoring of the security situation in the region, specifically around the Ukrainian-Russian border. The OSCE has since used drones to monitor conflict between pro-Russian separatists and the Ukraine, as well as to monitor the 18.7 mile buffer zone along the Russia-Ukraine border. Additionally, OSCE has used drones to investigate the January 13, 2015 shelling of a passenger bus in government-controlled Volnovakha. It is unclear whether or not the CAMCOPTER S-100 UAV was used in this investigation.  ",
+                "mission_tag1": "Armed Conflict Monitoring",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": " Organization for Security and Cooperation in Europe (OSCE), Special Monitoring Mission to Ukraine (SMM)",
+                "over_under_10k": "Over",
+                "reference_url1": "OSCE: http://www.osce.org/ukraine-smm/134916; OSCE: http://www.osce.org/ukraine-smm/125813 ",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    21.055813,
+                    55.399343
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "RGB camera, near infra-red camera",
+                "cost_range": "$15K-$20K",
+                "country_name": "Lithuania",
+                "date_begun": "201404",
+                "date_ended": "201404",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Curonian Spit, Neringa Municipality",
+                "mission_description": "The Hnit-Baltic GIS company was commissioned by the Neringa National Park Directorate to to create a detailed orthomosaic map of a 219 acre area damaged by a wildfire.  The Hnit-Baltic GIS company used a Sensefly ebee to create the map. The map was used to calculate the area of forest damaged, as well as the total vegetation loss. Postflight Terra 3D software was used for image processing. ",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "Disaster Response",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Hnit-Baltic",
+                "over_under_10k": "Over",
+                "reference_url1": "Sensefly: https://www.sensefly.com/fileadmin/user-cases/2014/senseFly-Case-Study-Hnit-Baltic-Lithuania.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -80.0365,
+                    19.69135
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Standard model of the eBee includes a WX (18.2 MP) camera.",
+                "cost_range": "$15K-$20K",
+                "country_name": "Cayman Islands",
+                "date_begun": "201406",
+                "date_ended": "201406",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Little Cayman",
+                "mission_description": "Royal Botanic Gardens Kew partnered with the Cayman Islands Department of Environment to attempt to locate a very rare species of mistletoe, indigious to Little Cayman island. The project also allowed researchers to test a new method of monitoring booby populations on the island.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "Wildlife Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Cayman Islands Department of Environment; Royal Botanic Gardens Kew",
+                "over_under_10k": "Over",
+                "reference_url1": "UAS Vision: http://www.uasvision.com/2014/08/11/uas-searches-for-rare-mistletoe-in-cayman-islands/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    20.294366,
+                    44.436445
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Standard model of the eBee includes a WX (18.2 MP) camera.",
+                "cost_range": "$15K-$20K",
+                "country_name": "Serbia",
+                "date_begun": "201405",
+                "date_ended": "201405",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Kolubara Mine Basin",
+                "mission_description": "The Serbian government commissioned GeoGIS Consultants to create 2D orthomosaic images and digital terrain models of the Kolubara Mine Basin, which was partially flooded in May 2014. The images and models were then used to assist the mining company in determining how best to drain the water. The images were also used to aid engineers in determining the best location for a new river, in an effort to prevent a repeat of the incident.",
+                "mission_tag1": "Disaster Response",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "GeoGIS Consultants",
+                "over_under_10k": "Over",
+                "reference_url1": "Sensefly: https://www.sensefly.com/fileadmin/user-cases/2015/senseFly-Case-Study-Mine-Flood-Mapping-Serbia.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -20.999743,
+                    74.499902
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "WX (18.2 MP) camera",
+                "cost_range": "$15K-$20K",
+                "country_name": "Greenland",
+                "date_begun": "201408",
+                "date_ended": "201408",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": " Zackenberg Research Station",
+                "mission_description": "Danish consulting group COWI planned to use a senseFly eBee and a large-area fixed wing UAV to map an area of northeast Greenland, in an effort to determine if drones could be used to replace satellites and airplanes in glacier mapping. The large-area fixed wing UAV ultimately was not used due to technical issues. The eBee was used to generate a digital terrain model, a near infrared orthophoto, and a color orthophoto of the area surrounding the Zackenberg Research Center. ",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "COWI",
+                "over_under_10k": "Over",
+                "reference_url1": "senseFly: https://www.sensefly.com/fileadmin/user-cases/2015/senseFly-Case-Study-Greenland-COWI.pdf; COWI: http://www.cowi.com/menu/project/GeographicalInformationandIT/Mappinganddatacapture/uav-mapping/Pages/Mapping-of-Greenlandic-glacier.aspx",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    102.834147,
+                    47.551139
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "LEICA M8 range finder camera and a 21 mm VOIGTL\u20acNDER lens",
+                "cost_range": "N/A",
+                "country_name": "Mongolia",
+                "date_begun": "200807",
+                "date_ended": "200810",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "Falcon 12",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Orkhon Valley",
+                "mission_description": "A study was launched in July 2008 to analyze settlement patterns, examine the human impact on the environment, and determine the relation between towns and their hinterland in the Orkhon valley. An octocopter drone was used to complete this study. The drone was deployed in the Orkhon Valley of Mongolia to confirm the location of potential archaeological sites captured in a 1970s Russian aerial survey. The 10 megapixel camera used for the project captured high-resolution data for photogrammetric stereoscopic processing.",
+                "mission_tag1": "Archaeology",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Department of Pre- and Protohistoric Archaeology of Bonn University; German Federal Ministry of Education and Research",
+                "over_under_10k": "N/A",
+                "reference_url1": "Academia.edu: http://www.academia.edu/3617146/Small_drones_for_geo-archaeology_in_the_steppe_locating_and_documenting_the_archaeological_heritage_of_the_Orkhon_Valley_in_Mongolia; Bonn University: http://www.vfgarch.uni-bonn.de/pdf/small_drones",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -8.876105,
+                    30.47943
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Panasonic Lumix GF1",
+                "cost_range": "OVER $50K",
+                "country_name": "Morocco",
+                "date_begun": "2011",
+                "date_ended": "2011",
+                "drone_manufacturer": "MAVinci",
+                "drone_model_name": "Sirius I",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Taroudant; Souss-Massa-Dr\u2030a",
+                "mission_description": "German researchers used the MaVinci Sirius 1 to gather information on soil erosion in Morocco. The fixed-wing UAV was used to reduce the gap between data collected from a satellite and data collected in  the field. ",
+                "mission_tag1": "Agriculture",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Goethe University; University of Trier",
+                "over_under_10k": "Over",
+                "reference_url1": "Remote Sensing: http://www.mdpi.com/2072-4292/4/11/3390/htm",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    85.516699,
+                    28.256672
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$10K-$15K",
+                "country_name": "Nepal",
+                "date_begun": "201305",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "Swinglet ",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Lirung Glacier, Langtang Region",
+                "mission_description": "Researchers used drones to collect information on the melt patterns of the Lirung glacier in Nepal's Langtang region. The collected data was higher in resolution than that which could be collected from satellite imagery. The imagery also greatly decreased the standard amount of time needed to document glacial melt. ",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Utrecht University; International Centre for Integrated Mountain Development",
+                "over_under_10k": "Over",
+                "reference_url1": "Sci Dev.Net: http://www.scidev.net/south-asia/environment/news/drones-zero-in-on-himalayan-glaciers.html; Down To Earth: http://www.downtoearth.org.in/content/glacier-through-drones-eye; ScienceDirect (paper): http://www.sciencedirect.com/science/article/pii/S003442571400176X",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    11.874913,
+                    78.92777
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "OVER $50K",
+                "country_name": "N/A",
+                "date_begun": "200907",
+                "date_ended": "200908",
+                "drone_manufacturer": "NASA",
+                "drone_model_name": "SIERRA (Systems Integration Evaluation Remote Research Aircraft)",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Arctic Ocean; Fram Strait; North Atlantic Ocean",
+                "mission_description": "Scientists from the University of Colorado, Boulder worked with NASA to document changes in sea ice coverage in Fram Strait, between Greenland and Svalbard. To complete this research, scientists used NASA's Science Instrumentation Evaluation Remote Research Aircraft (\"SIERRA\"). The SIERRA has a range of 500 miles and can fly as low as 300 feet.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "University of Colorado at Boulder; NASA",
+                "over_under_10k": "Over",
+                "reference_url1": "ISPRS: http://www.isprs.org/proceedings/2011/ISRSE-34/211104015Final00062.pdf; Colorado Space Coalition: http://www.spacecolorado.org/nasa--cu-boulder-expedition-chases-arctic-sea-ice-questions.html; SIERRA UAV: http://www.fuentek.com/downloads/AR-0022%20SIERRA-TOP.pdf",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    35.235257,
+                    -13.317275
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$10K-$15K",
+                "country_name": "Mozambique",
+                "date_begun": "201306",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "Swinglet CAM",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Chikweti Forests",
+                "mission_description": "As of 2013, Chikweti Forests in Mozambique, was using a senseFly Swinglet CAM for forestry planning. The UAV is used to take aerial photos to update maps, to measure roads and fire brakes, to plan contour ripping, to monitor field operations and to determine compartment stocking.",
+                "mission_tag1": "Agriculture",
+                "mission_tag2": "Environmental Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Chikweti Forests; Global Solidarity Forests Fund",
+                "over_under_10k": "Over",
+                "reference_url1": "SA Forestry Magazine: http://www.saforestrymag.co.za/articles/detail/the_drone_is_flying_at_chikweti_forests_mozambique",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.987196,
+                    41.038594
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "Turkey",
+                "date_begun": "201306",
+                "date_ended": "201306",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Takzim Gezi Park, Istanbul",
+                "mission_description": "Jenk K used a DJI Phantom to shoot footage of political protests in Istanbul, during the Summer of 2013. He reported that police shot down his drone during a protest. He claimed to have captured night-time video depicting a protester shot on the ground.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Jenk K",
+                "over_under_10k": "Under",
+                "reference_url1": "Mashable: http://mashable.com/2013/06/19/drone-journalism-turkey/; Mental Munition: http://www.mentalmunition.com/2013/06/civilian-whose-drone-was-shot-down-over.html; Vimeo: https://vimeo.com/68156381",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    37.61774,
+                    55.745829
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Russia",
+                "date_begun": "201112",
+                "date_ended": "201112",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Bolotnaya Square, Moscow",
+                "mission_description": "The Ridus News Agency used a drone to shoot footage of anti-Putin protests in December 2011 in Moscow's Bolotnaya square. This story highlights an early example of drone journalism.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Ridus News Agency",
+                "over_under_10k": "N/A",
+                "reference_url1": "Ridus News: http://www.ridus.ru/news/14365/; ABC News: http://abcnews.go.com/blogs/technology/2011/12/a-ufo-hovers-over-russians-protesting-vladimir-putin/",
+                "regulatory_compliance": "UNKNOWN"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -46.652291,
+                    -23.552811
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "$1K-$5K",
+                "country_name": "Brazil",
+                "date_begun": "201306",
+                "date_ended": "201306",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom",
+                "drone_type": "Multirotor",
+                "location_descriptive": "S\u2039o Paulo",
+                "mission_description": "Brazilian news group Folha de S\u2039o Paulo used a Phantom multirotor to capture footage of protests against the rise in public transport fares in S\u2039o Paulo. This marked one of the first times that a drone has been used for journalism in Brazil.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": " Folha de S\u2039o Paulo",
+                "over_under_10k": "Under",
+                "reference_url1": "Wall Street Journal: http://www.wsj.com/articles/SB10001424127887324577904578559901159199168; Tecnoblog: https://tecnoblog.net/133227/protesto-sao-paulo-drone-video/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -79.846356,
+                    9.153526
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "UNDER $1K",
+                "country_name": "Panama",
+                "date_begun": "201309",
+                "date_ended": "201309",
+                "drone_manufacturer": "3D Robotics",
+                "drone_model_name": "Finwing Penguin",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Barro Colorado Island",
+                "mission_description": "Two specialists from Conservation Drones brought two 3D Robotics drones to Barro Colorado Island in Panama, where they trained ecologists from the Smithsonian Tropical Research Institute to use the UAVs for research purposes.",
+                "mission_tag1": "Training",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Conservation Drones; Smithsonian Tropical Research Institute",
+                "over_under_10k": "Under",
+                "reference_url1": "Conservation Drones: http://conservationdrones.org/2013/09/29/conservation-drones-over-barro-colorado-island-panama/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    23.681873,
+                    46.777867
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Romania",
+                "date_begun": "201402",
+                "date_ended": "201402",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Cluj; Pata Rat Dump",
+                "mission_description": "The Telegraph used a drone to document the story of 76 families from Romania's second-largest city of Cluj, who were evicted from their homes and forced to resettle on the Parta Rat dump, a chemical waste deposit.  ",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "The Telegraph ",
+                "over_under_10k": "N/A",
+                "reference_url1": "The Telegraph: http://www.telegraph.co.uk/news/worldnews/europe/romania/10636448/Roma-on-the-rubbish-dump-British-religious-leaders-call-on-Romanian-mayor-to-reverse-forced-evictions.html; Professional Society of Drone Journalists: http://www.dronejournalism.org/news/2014/2/what-the-telegraphs-drone-journalism-of-a-community-living-on-a-chemical-dump-means-for-environmental-reporting ",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    116.965057,
+                    5.970362
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "16 megapixel camera",
+                "cost_range": "$20K-$25K",
+                "country_name": "Malaysia; Philippines ",
+                "date_begun": "201410",
+                "date_ended": "201410",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": "eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Sabah; Palawan",
+                "mission_description": "A group of researchers used a senseFly eBee to conduct 158 test flights in Sabah, Malaysia, and in Palawan, Philippines to determine the human risk factors for infection posed by a malaria-causing parasite. The researchers concluded that UAVs fill a particular niche within their arena of research, but are not a replacement for existing remote-sensing techniques. Further, the researchers concluded that UAVs are particularly useful in situations where data is needed in real time, or in small areas that do not have existing satellite information. ",
+                "mission_tag1": "Other",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "London School of Hygiene and Tropical Medicine; Menzies School of Health Research in Malaysia; Queen Elizabeth Hospital in Malaysia; Malaysia's Department of Health in Sabah; Department of Health in Muntinlupa City, Philippines ",
+                "over_under_10k": "Over",
+                "reference_url1": "Science Direct: http://www.sciencedirect.com/science/article/pii/S1471492214001469; Conservation Magazine: http://conservationmagazine.org/2014/10/drones-record-how-the-environment-shapes-disease-risk/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    106.293556,
+                    17.44855
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero 4 Black, Canon 6D DSLR",
+                "cost_range": "$1K-$5K",
+                "country_name": "Vietnam",
+                "date_begun": "201503",
+                "date_ended": "201503",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom 2",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Hang Son Doong Cave",
+                "mission_description": "U.S. photographer Ryan Deboodt used a quadcopter mounted with a GoPro and Canon 6D to shoot footage of the Son Doong Cave in Vietnam.",
+                "mission_tag1": "Other",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": " Ryan Deboodt",
+                "over_under_10k": "Under",
+                "reference_url1": "NPR: http://www.npr.org/blogs/thetwo-way/2015/03/18/393817006/video-break-soaring-through-an-immense-vietnamese-cave; National Geographic: http://news.nationalgeographic.com/2015/03/150318-cave-vietnam-viral-video-photographer-ryan-deboodt/; CNET:http://www.cnet.com/news/take-an-incredible-drone-flight-through-the-worlds-biggest-cave/",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    168.32809,
+                    -17.733837
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Vanuatu",
+                "date_begun": "201503",
+                "date_ended": "201503",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Port Vila",
+                "mission_description": "NBC News shot footage of destruction from Cyclone Pam on the Pacific island of Vanuatu on March 13, 2015. ",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "Disaster Response",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "NBC News",
+                "over_under_10k": "N/A",
+                "reference_url1": "NBC News: http://www.nbcnews.com/watch/nbc-news/drone-flies-over-cyclone-pam-damage-in-vanuatu-413990979840; MSNBC.com: http://www.msnbc.com/msnbc/watch/nbc-news-drone-captures-devastation-in-vanuatu-414032451897; Drone Journalism Lab: http://www.dronejournalismlab.org/post/114140178067/could-nbc-news-shoot-the-same-video-from-vanuatu",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -25.426374,
+                    37.780039
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Standard model of the eBee includes a WX (18.2 MP) camera.",
+                "cost_range": "$10K-$15K",
+                "country_name": "Portugal",
+                "date_begun": "201503",
+                "date_ended": "201503",
+                "drone_manufacturer": "senseFly",
+                "drone_model_name": " eBee",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "The Azores",
+                "mission_description": "Members of the \u00d2Race for Water Odyssey\u00d3 scientific sailing exploration team are taking a senseFly eBee with them on their world journey, where they intend to test the technology as a portable scientific tool, as well as use aerial data to gather information on the macro-trash present on many beaches. Researchers from Duke University and Oregon State University will analyze the aerial trash data collected by the drone from five beaches in the Azores.",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Race for Water Odyssey",
+                "over_under_10k": "Over",
+                "reference_url1": "National Geographic: http://voices.nationalgeographic.com/2015/03/25/the-azores-first-witness-island-of-the-r4wo/; Race for Water: http://www.raceforwater.com/race_for_water_odyssey/expedition ",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -156.77,
+                    20.936
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Radar, infrared, and video cameras ",
+                "cost_range": "OVER $50K",
+                "country_name": "United States",
+                "date_begun": "201407",
+                "date_ended": "201502",
+                "drone_manufacturer": "AeroVironment",
+                "drone_model_name": "Puma",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Hawaiian Islands Humpback Whale National Marine Sanctuary, Hawaii",
+                "mission_description": "The National Oceanic and Atmospheric Administration (NOAA) tested a Puma UAS and two aquatic drones in February 2015 off the Kohala Coast in Hawaii. The devices will hopefully be used to locate distressed vessels and marine life, conduct wildlife surveys, monitor remote areas of the sea, identify garbage and debris for removal, and access hard-to-reach areas. The Puma UAS worked in tandem with two Wave Glider aquatic \u00d2drones,\u00d3 which identified the location of a target vessel and relayed the location to the UAS. The UAS then flew to the target and photographed it. ",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "Wildlife Surveying",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "National Oceanic and Atmospheric Administration",
+                "over_under_10k": "Over",
+                "reference_url1": "Hawaii Tribune: http://hawaiitribune-herald.com/news/local-news/noaa-tests-research-drones-big-isle; Live Science: http://www.livescience.com/46808-drones-monitor-hawaii-wildlife.html",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    4.015513,
+                    43.580038
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "GoPro Hero 3",
+                "cost_range": "$1K-$5K",
+                "country_name": "France",
+                "date_begun": "201502",
+                "date_ended": "201504",
+                "drone_manufacturer": "DJI",
+                "drone_model_name": "Phantom",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Camargue",
+                "mission_description": "Scientists from France\u00d5s National Center for Scientific Research in Montpellier tested semi-captive and wild birds' reaction to drone flight. This study was conducted to determine if small UAVs will be useful for conducting research on wild bird populations. The researchers found the drone could get to within 4 meters of the birds without disturbing them 80 percent of the time. The birds were most distressed when the drone approached from above.",
+                "mission_tag1": "Other",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "National Center for Scientific Research",
+                "over_under_10k": "Under",
+                "reference_url1": "LiveScience: http://www.livescience.com/49702-bird-watching-drones-impact-study.html; Scientific American: http://www.scientificamerican.com/podcast/episode/drones-spy-on-birds-in-flight/; The Atlantic: http://www.theatlantic.com/technology/archive/2015/02/drones-might-not-disrupt-birds-after-all/385338/; Biology Letters: http://ca.audubon.org/sites/default/files/documents/vas.approaching_birds_with_drones.biologyletters.20140754.pdf",
+                "regulatory_compliance": "EXISTS UAV LEGISLATION"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    21.431835,
+                    41.996179
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "N/A",
+                "cost_range": "N/A",
+                "country_name": "Macedonia",
+                "date_begun": "201412",
+                "date_ended": "201412",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "N/A",
+                "drone_type": "N/A",
+                "location_descriptive": "Skopje",
+                "mission_description": "Citizen journalists used drones to film large-scale student protests in Skopje against planned state-supervised tests for graduates. A drone operator was said to have been arrested. As a result, the Macedonian government banned the usage of drones near large gatherings of people and government buildings, among other locations.",
+                "mission_tag1": "Current Events",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "Grouse Production",
+                "over_under_10k": "N/A",
+                "reference_url1": "Global Voices: https://advocacy.globalvoicesonline.org/2015/02/04/the-macedonian-government-clamps-down-on-filming-protests-with-drones/; YouTube: https://www.youtube.com/watch?v=rIxQybI47XQ",
+                "regulatory_compliance": "AD HOC"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    31.557387,
+                    -23.956387
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "",
+                "cost_range": "N/A",
+                "country_name": "South Africa",
+                "date_begun": "201409",
+                "date_ended": "ONGOING",
+                "drone_manufacturer": "N/A",
+                "drone_model_name": "Air Shepherd custom design",
+                "drone_type": "Fixed Wing",
+                "location_descriptive": "Kruger National Park",
+                "mission_description": "Starting in the Fall of 2014, a team from the University of Maryland has been working with park rangers and environmental groups to fly drones, equipped with infrared cameras, to act as night-time poaching patrols. The group claims to have reduced rhino deaths from poaching from 19 per month to 0 per month over a 6-month time period.",
+                "mission_tag1": "Wildlife Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "South African National Parks; South African Department of Environmental Affairs; Ezemvelo KZN Wildlife; Peace Parks Foundation; University of Maryland, Institute for Advanced Computer Studies",
+                "over_under_10k": "Over",
+                "reference_url1": "Air Shepherd: https: //www.indiegogo.com/projects/air-shepherd-drones-stop-elephant-rhino-poaching; NBC News: http://www.nbcnews.com/news/world/air-shepherd-uses-drones-stop-elephant-rhino-poachers-africa-n335801; PeaceParks Press Release: http://www.peaceparks.org/news.php?pid=1481&mid=1506&o=0&q=uav",
+                "regulatory_compliance": ""
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -12.918771,
+                    9.552671
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "": "",
+                "camera_equipment": "Two 74g lightweight still cameras",
+                "cost_range": "N/A",
+                "country_name": "Guinea",
+                "date_begun": "201406",
+                "date_ended": "201406",
+                "drone_manufacturer": "Unknown",
+                "drone_model_name": "Unknown",
+                "drone_type": "Multirotor",
+                "location_descriptive": "Forecariah Prefecture",
+                "mission_description": "A joint USGS/USAID team flew a small quadcopter with two cameras to create high-resolution maps of small-scale artisanal diamond mines. They claim to be the first to have used a UAV to map artisanal mines. Researchers say that the high-resolution images allow them to \"clearly distinguish active pits from inactive pits, locate and measure piles of extracted gravel and sedimentary layers, and detect changes in watercolor and sediment properties.\"",
+                "mission_tag1": "Environmental Surveying",
+                "mission_tag2": "",
+                "mission_tag3": "",
+                "mission_tag4": "",
+                "operating_entity": "U.S. Geological Survey, U.S. Agency for International Development",
+                "over_under_10k": "N/A",
+                "reference_url1": "Photogrammetric Engineering and Reomte Sensing: http://api.ning.com/files/uCeLa4uwiH9X1gryyurwlURRkypeF5AOLqf27rTTIDBM6MmsGGQEaJPFfzP9LXLpjSHjaNWCPCTgL5-ThTS9JNscOzFJ4pkr/MalpeliChirico_UAV_2015.pdf",
+                "regulatory_compliance": ""
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+};
