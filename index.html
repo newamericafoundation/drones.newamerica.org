@@ -170,6 +170,7 @@ ul#tabs {
   min-height: 55px; /* This part sucks */
   clear: both;
   margin: 0 0 0 125px;
+  z-index: 1;
 }
 li.tab {
   display: inline-block;
@@ -190,11 +191,10 @@ ul#tabs li.active {
   background: #eee;
   font-weight: bolder;
   border-bottom: 2px solid;
-  z-index: 2;
 }
-[type=radio]:checked ~ label ~ .content-uavs {
-  z-index: 1;
-}
+<!-- [type=radio]:checked ~ label ~ .content-uavs { -->
+<!--   z-index: 1; -->
+<!-- } -->
 </style>
 
 
