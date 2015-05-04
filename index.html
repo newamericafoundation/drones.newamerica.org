@@ -176,7 +176,8 @@ li.tab {
   display: inline-block;
   list-style: none;
   padding: 10px; 
-  border: 1px solid #fffaef;  
+  border: 1px solid #fffaef;
+  cursor: pointer; 
 }
 .content-uavs {
   position: absolute;
@@ -190,6 +191,9 @@ li.tab {
 ul#tabs li.active {
   background: #eee;
   font-weight: bolder;
+  border-bottom: 2px solid;
+}
+ul#tabs li.tab:hover {
   border-bottom: 2px solid;
 }
 <!-- [type=radio]:checked ~ label ~ .content-uavs { -->
@@ -389,8 +393,8 @@ ul#tabs li.active {
 
 <script id="jsbin-javascript">
 
-  $('#tabs .tab').click( function() {
-      $(.tab).removeClass('active');
+  $('ul#tabs li.tab').click( function() {
+      $('li.tab').removeClass('active');
       if( $(this).attr('id') == 'flightsButton'){
         $('#regs').hide();
         $('#about').hide();
