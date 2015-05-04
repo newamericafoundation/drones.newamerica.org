@@ -180,13 +180,11 @@ li.tab {
   cursor: pointer; 
 }
 .content-uavs {
-  position: absolute;
   background: #fffaef;
-  top: 330px;
-  left: 0;
-  right: 0;
-  bottom: 0;
   border-top: 1px solid #ccc;
+  padding-left: 120px;
+  padding-right: 150px;
+  padding-top: 10px;
 }
 ul#tabs li.active {
   background: #eee;
@@ -194,7 +192,7 @@ ul#tabs li.active {
   border-bottom: 2px solid;
 }
 ul#tabs li.tab:hover {
-  border-bottom: 2px solid;
+  font-weight: bolder;
 }
 <!-- [type=radio]:checked ~ label ~ .content-uavs { -->
 <!--   z-index: 1; -->
@@ -314,7 +312,7 @@ ul#tabs li.tab:hover {
 
 <div id="masterContent">
 <div id="intro" > 
-<p><h1>World of Drones: Flights and Regulations</h1></p>
+<h1>World of Drones: Flights and Regulations</h1>
 
 <p>After decades of use by hobbyists and militaries, unmanned aircraft are now proliferating into a wide variety of new applications. The below maps document aspects of that proliferation. The tab to the left, marked "Flights", shows a database of recent uses of drones we consider worthy of note. The tab to the right, marked "Regulations", shows extant national regulations pertaining to civil drones, which vary widely from country to country.</p>
 </div>
@@ -331,7 +329,7 @@ ul#tabs li.tab:hover {
     <!--CONTENT-->
 
 
-           <div class="content-uavs" id="flights" style="padding-left: 120px; padding-right: 150px; padding-top: 70px;display: block;">
+           <div class="content-uavs" id="flights" style="display: block;">
               <!--FILTERS
                 <div id="flight-filters"><h4>Filters:</h4> 
                         <select id="MissionFilter" class="selectboxes">
@@ -364,11 +362,11 @@ ul#tabs li.tab:hover {
 
                   <iframe src="map-flights.html" style="width:100%; height:600px; margin: 0;"></iframe>
               </div>
-           <div class="content-uavs" id="regs" style="display:none; padding-left: 120px; padding-right: 150px; padding-top: 70px">
+           <div class="content-uavs" id="regs" style="display:none;">
              <!-- REGS -->
               <iframe src="map.html" style="width:100%; height:600px; margin: 0;"></iframe>
            </div>
-        <div class="content-uavs" id="about" style="display:none; padding-left: 120px; padding-right: 150px; padding-top: 70px;">
+        <div class="content-uavs" id="about" style="display:none;">
    <p>Small unmanned aircraft have existed for many decades, since the dawn of powered flight. However, they have recently become far more capable because of the advent of cheap, reliable, and small electronics that collect and communicate data and control the aircrafts’ flight. These technologies are crucially enabled by the widespread availability of the Global Positioning System, which guides aircraft in flight and situates the data they gather. These aircraft, which range widely in size, cost and endurance, are known as drones, as Unmanned Aerial Vehicles (UAVs), Unmanned Aerial Systems (UAS), Remotely Piloted Aerial Vehicles (RPAVs), and Remotely Piloted Aircraft Systems (RPAS).</p>
 
 <p>There are now more drones than manned aircraft in the world. Most drones are small and inexpensive, but nonetheless possess great power as data-collecting instruments, when properly equipped and used. That data, in the form of images, maps, and other environmental information, can be used by communities to improve the quality and character of their property rights. Drone surveillance can help conservationists to protect endangered wildlife and aid scientists in understanding the changing climate; drone imagery can be used by advocates and analysts to document and deter human rights violations. UAVs can be used by first responders to search for lost people, or to evaluate the extent of damage after natural disasters like earthquakes or hurricanes.</p>
