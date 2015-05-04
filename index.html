@@ -165,23 +165,21 @@ span#termname{
     font: inherit;
 }
 
-div#tabs {
+ul#tabs {
   position: relative;   
   min-height: 55px; /* This part sucks */
   clear: both;
   margin: 0 0 0 125px;
 }
-.tab {
-  float: left;
+li.tab {
+  display: inline-block;
+  list-style: none;
 }
 .tab label { 
   padding: 10px; 
   border: 1px solid #fffaef;  
   position: relative;
   left: 1px; 
-}
-.tab [type=radio] {
-  display: none;   
 }
 .content-uavs {
   position: absolute;
@@ -192,7 +190,7 @@ div#tabs {
   bottom: 0;
   border-top: 1px solid #ccc;
 }
-[type=radio]:checked ~ label {
+#tabs .active label {
   background: #eee;
   font-weight: bolder;
   border-bottom: 2px solid;
@@ -322,23 +320,18 @@ div#tabs {
 </div>
     
     <!--TABS-->
-   <div id="tabs">
-     <div class="tab" id="flightsButton">
-          <input type="radio" id="tab-1" name="tab-group-1" checked>
-           <label for="tab-1">Flights</label>
-     </div>
+   <ul id="tabs">
+     <li class="tab active" id="flightsButton">
+       <label for="tab-1">Flights</label>
+     </li>
 
-     <div class="tab" id="regsButton">
-          <input type="radio" id="tab-2" name="tab-group-1">
+     <li class="tab" id="regsButton">
            <label for="tab-2">Regulations</label>
-     </div>
-     <div class="tab" id="aboutButton">
-     <!-- ABOUT -->
-        <input type="radio" id="tab-3" name="tab-group-1">
-           <label for="tab-3">About these Maps</label>
-
-     </div>
-</div>
+     </li>
+     <li class="tab" id="aboutButton">
+       <label for="tab-3">About these Maps</label>
+     </li>
+   </ul>
 
   <div id="page-container">
     <!--CONTENT-->
@@ -377,11 +370,11 @@ div#tabs {
 
                   <iframe src="map-flights.html" style="width:100%; height:600px; margin: 0;"></iframe>
               </div>
-           <div class="content-uavs" id="regs" style="display:none; padding-left: 120px; padding-right: 150px;">
+           <div class="content-uavs" id="regs" style="display:none; padding-left: 120px; padding-right: 150px; padding-top: 70px">
              <!-- REGS -->
               <iframe src="map.html" style="width:100%; height:600px; margin: 0;"></iframe>
            </div>
-        <div class="content-uavs" id="about" style="display:none; padding-left: 120px; padding-right: 150px;">
+        <div class="content-uavs" id="about" style="display:none; padding-left: 120px; padding-right: 150px; padding-top: 70px;">
    <p>Small unmanned aircraft have existed for many decades, since the dawn of powered flight. However, they have recently become far more capable because of the advent of cheap, reliable, and small electronics that collect and communicate data and control the aircrafts’ flight. These technologies are crucially enabled by the widespread availability of the Global Positioning System, which guides aircraft in flight and situates the data they gather. These aircraft, which range widely in size, cost and endurance, are known as drones, as Unmanned Aerial Vehicles (UAVs), Unmanned Aerial Systems (UAS), Remotely Piloted Aerial Vehicles (RPAVs), and Remotely Piloted Aircraft Systems (RPAS).</p>
 
 <p>There are now more drones than manned aircraft in the world. Most drones are small and inexpensive, but nonetheless possess great power as data-collecting instruments, when properly equipped and used. That data, in the form of images, maps, and other environmental information, can be used by communities to improve the quality and character of their property rights. Drone surveillance can help conservationists to protect endangered wildlife and aid scientists in understanding the changing climate; drone imagery can be used by advocates and analysts to document and deter human rights violations. UAVs can be used by first responders to search for lost people, or to evaluate the extent of damage after natural disasters like earthquakes or hurricanes.</p>
@@ -406,21 +399,25 @@ div#tabs {
 
 <script id="jsbin-javascript">
 
-  $('#tabs div').click( function() {
+  $('#tabs .tab').click( function() {
+      $(.tab).removeClass('active');
       if( $(this).attr('id') == 'flightsButton'){
         $('#regs').hide();
         $('#about').hide();
         $('#flights').show();
+        $(this).addClass('active');
       }
       if( $(this).attr('id') == 'regsButton'){
         $('#flights').hide();
         $('#about').hide();
         $('#regs').show();
+        $(this).addClass('active');
       }
       if( $(this).attr('id') == 'aboutButton'){
         $('#regs').hide();
         $('#flights').hide();
         $('#about').show();
+        $(this).addClass('active');
       }
   });
 
