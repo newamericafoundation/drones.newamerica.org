@@ -35,6 +35,22 @@ L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM
 var map = L.mapbox.map('map', 'newamerica.l89jcfpc');
 map.scrollWheelZoom.disable();
 
+
+// use the filter function in leaflet to do the filters on the map
+/*var combat =  L.geoJson(data, {
+            onEachFeature: onEachFeature,
+            filter:function (feature, layer) {
+                if(feature.properties.woddata219_tier_ii_plus){
+                    return feature.properties.woddata219_used_armed_drones_in_combat == 1;
+                }
+                return false;
+            },
+            style: function (feature) {
+                return {color: '#081d58'};
+            }
+    });*/
+
+
         var markerOptions = {
             radius: 8,
             fillColor: "#2dbbb3",

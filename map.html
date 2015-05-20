@@ -5,7 +5,7 @@
 <title>WoD</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
-<script src='drones_world_borders_regulations_04232015.geojson'></script>
+<script src='drones_world_borders_regulations-05202015.geojson'></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
 <style>
@@ -91,11 +91,11 @@ map.scrollWheelZoom.disable();
             var layer = e.target;
 
 
-            if(layer.feature.properties.Regulations_04232015_Country == "United States of America" ||
-                layer.feature.properties.Regulations_04232015_Country == "Russia" ||
-                layer.feature.properties.Regulations_04232015_Country == "Canada" ||
-                layer.feature.properties.Regulations_04232015_Country == "Greenland" ||
-                layer.feature.properties.Regulations_04232015_Country == "Antarctica"){
+            if(layer.feature.properties.Regulations-05202015_Country == "United States of America" ||
+                layer.feature.properties.Regulations-05202015_Country == "Russia" ||
+                layer.feature.properties.Regulations-05202015_Country == "Canada" ||
+                layer.feature.properties.Regulations-05202015_Country == "Greenland" ||
+                layer.feature.properties.Regulations-05202015_Country == "Antarctica"){
                 map.fitBounds(layer.getBounds(), {padding: [-200,-200]});
             }
             else { map.fitBounds(layer.getBounds(), {padding: [200,200]}); }
@@ -128,8 +128,8 @@ map.scrollWheelZoom.disable();
             var props = feature.properties;
             if(props){
                 var reg_sources = [];
-                if(props.Regulations_04232015_reg_official_source){
-                    var reg_source = props.Regulations_04232015_reg_official_source;
+                if(props.Regulations-05202015_reg_official_source){
+                    var reg_source = props.Regulations-05202015_reg_official_source;
                     var reg_source_arr = reg_source.split("; ");
 
                     for(i=0;i< reg_source_arr.length; i++){
@@ -140,8 +140,8 @@ map.scrollWheelZoom.disable();
                 }
 
                 var reg_sec_sources = [];
-                if(props.Regulations_04232015_reg_secondary_source){
-                    var reg_sec_source = props.Regulations_04232015_reg_secondary_source;
+                if(props.Regulations-05202015_reg_secondary_source){
+                    var reg_sec_source = props.Regulations-05202015_reg_secondary_source;
                     var reg_sec_source_arr = reg_sec_source.split("; ");
 
                     for(i=0;i< reg_sec_source_arr.length; i++){
@@ -152,8 +152,8 @@ map.scrollWheelZoom.disable();
                 }
 
                 var preg_sources = [];
-                if(props.Regulations_04232015_pendingreg_official_source){
-                    var preg_source = props.Regulations_04232015_pendingreg_official_source;
+                if(props.Regulations-05202015_pendingreg_official_source){
+                    var preg_source = props.Regulations-05202015_pendingreg_official_source;
                     var preg_source_arr = preg_source.split("; ");
 
                     for(i=0;i< preg_source_arr.length; i++){
@@ -164,8 +164,8 @@ map.scrollWheelZoom.disable();
                 }
 
                 var preg_sec_sources = [];
-                if(props.Regulations_04232015_pendingreg_secondary_source){
-                    var preg_sec_source = props.Regulations_04232015_pendingreg_secondary_source;
+                if(props.Regulations-05202015_pendingreg_secondary_source){
+                    var preg_sec_source = props.Regulations-05202015_pendingreg_secondary_source;
                     var preg_sec_source_arr = preg_sec_source.split("; ");
 
                     for(i=0;i< preg_sec_source_arr.length; i++){
@@ -176,8 +176,8 @@ map.scrollWheelZoom.disable();
                 }
 
                 var emFlight_sources = [];
-                if(props.Regulations_04232015_exampleflight_refURL){
-                    var emFlight_source = props.Regulations_04232015_exampleflight_refURL;
+                if(props.Regulations-05202015_exampleflight_refURL){
+                    var emFlight_source = props.Regulations-05202015_exampleflight_refURL;
                     var emFlight_source_arr = emFlight_source.split("; ");
 
                     for(i=0;i< emFlight_source_arr.length; i++){
@@ -188,8 +188,8 @@ map.scrollWheelZoom.disable();
                 }
 
                 var enforcement_links = [];
-                if(props.Regulations_04232015_enforcement_action){
-                    var enforcement_link = props.Regulations_04232015_enforcement_action;
+                if(props.Regulations-05202015_enforcement_action){
+                    var enforcement_link = props.Regulations-05202015_enforcement_action;
                     var enforcement_link_arr = enforcement_link.split("; ");
 
                     for(i=0;i< enforcement_link_arr.length; i++){
@@ -200,16 +200,16 @@ map.scrollWheelZoom.disable();
                 }
 
                 var popupContent = '';
-                popupContent += "<h4>" + props.Regulations_04232015_Country 
-                    + "</h4><strong>Regulations: </strong>" + props.Regulations_04232015_reg_explainer
-                    + "<br/><strong>Status: </strong>" + props.Regulations_04232015_reg_status_flag
+                popupContent += "<h4>" + props.Regulations-05202015_Country 
+                    + "</h4><strong>Regulations: </strong>" + props.Regulations-05202015_reg_explainer
+                    //+ "<br/><strong>Status: </strong>" + props.Regulations-05202015_reg_status_flag
                     + "<br/><strong>Source(s):</strong> ";
                     for(i=0; i<reg_sources.length;i++){
                         if(i != reg_sources.length-1){ popupContent += reg_sources[i] + ", ";}
                         else { popupContent += reg_sources[i];}
                      }
 
-                    if(props.Regulations_04232015_reg_secondary_source){
+                    if(props.Regulations-05202015_reg_secondary_source){
                         popupContent += "<br /><strong>Secondary Source(s): </strong>";
                         for(i=0; i<reg_sec_sources.length;i++){
                             if(i != reg_sec_sources.length-1){ popupContent += reg_sec_sources[i] + ", ";}
@@ -217,26 +217,26 @@ map.scrollWheelZoom.disable();
                          }
                     }
                     
-                    if(props.Regulations_04232015_pendingreg_explainer){
-                        popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.Regulations_04232015_pendingreg_explainer
+                    if(props.Regulations-05202015_pendingreg_explainer){
+                        popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.Regulations-05202015_pendingreg_explainer
                         + "<br /><strong>Source(s): </strong>";
                         for(i=0; i<preg_sources.length;i++){
                             if(i != preg_sources.length-1){ popupContent += preg_sources[i] + ", ";}
                             else { popupContent += preg_sources[i];}
                         }
                         
-                        if(props.Regulations_04232015_pendingreg_secondary_source){
+                        if(props.Regulations-05202015_pendingreg_secondary_source){
                             popupContent += "<br /><strong>Secondary Source(s): </strong>";
                             for(i=0; i<preg_sec_sources.length;i++){
                                 if(i != preg_sec_sources.length-1){ popupContent += preg_sec_sources[i] + ", ";}
                                 else { popupContent += preg_sec_sources[i];}
                             }
                         }
-                    //+ "<br /><strong>Pending Regulations Status: </strong>" + props.Regulations_04232015_pendingreg_status_flag;
+                    //+ "<br /><strong>Pending Regulations Status: </strong>" + props.Regulations-05202015_pendingreg_status_flag;
                     }
 
-                    if(props.Regulations_04232015_exampleflight_description){
-                        popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + props.Regulations_04232015_exampleflight_description
+                    if(props.Regulations-05202015_exampleflight_description){
+                        popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + props.Regulations-05202015_exampleflight_description
                         + "<br /><strong>Source(s): </strong>";
                         for(i=0; i<emFlight_sources.length;i++){
                                 if(i != emFlight_sources.length-1){ popupContent += emFlight_sources[i] + ", ";}
@@ -244,7 +244,7 @@ map.scrollWheelZoom.disable();
                             }
                     }
                     
-                    if(props.Regulations_04232015_enforcement_action){
+                    if(props.Regulations-05202015_enforcement_action){
                         popupContent += "<br /><br /><strong>Enforcement Action: </strong>";
                         for(i=0; i<enforcement_links.length;i++){
                                 if(i != enforcement_links.length-1){ popupContent += enforcement_links[i] + ", ";}
