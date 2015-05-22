@@ -27,6 +27,35 @@
 </style>
 </head>
 <body>
+<!--FILTERS -->
+                <div id="flight-filters"><h4>Filters:</h4> 
+                        <select id="MissionFilter" class="selectboxes">
+                          <option value="default" label="Filter by Mission Type (All)">Select Mission Type</option>
+                          <option value="Agriculture" label="Agriculture">Agriculture</option>
+                          <option value="Archaeology" label="Archaeology">Archaeology</option>
+                          <option value="Armed Conflict Monitoring" label="Armed Conflict Monitoring">Armed Conflict Monitoring</option>
+                          <option value="Cargo" label="Cargo">Cargo</option>
+                          <option value="Community Mapping" label="Community Mapping">Community Mapping</option>
+                          <option value="Current Events" label="Current Events">Current Events</option>
+                          <option value="Disaster Response" label="Disaster Response">Disaster Response</option>
+                          <option value="Environmental Surveying" label="Environmental Surveying">Environmental Surveying</option>
+                          <option value="Search and Rescue" label="Search and Rescue">Search and Rescue</option>
+                          <option value="Training" label="Training">Training</option>
+                          <option value="Other" label="Other">Other</option>
+                          <option value="Wildlife Surveying" label="Wildlife Surveying">Wildlife Surveying</option>
+                        </select> 
+                        <select id="CostFilter" class="selectboxes">
+                          <option value="default" label="Filter by Cost (All) ($USD)">Cost</option>
+                          <option value="Under" label="Below $10K">Below $10K</option>
+                          <option value="Over" label="Above $10K">Above $10K</option>
+                          </select>
+                        <select id="TypeFilter" class="selectboxes">
+                          <option value="default" label="Filter by Drone Type (All)">Type of Drone</option>
+                          <option value="Multirotor" label="Multirotor">Multirotor</option>
+                          <option value="Fixed Wing" label="Fixed Wing">Fixed Wing</option>
+                          <option value="NA" label="Multiple, Other or Unknown">Multiple, Other or Unknown</option>
+                        </select>
+                    </div>
 
 <div id='map'></div>
 <script>
@@ -42,20 +71,6 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
         }
     });
         map.scrollWheelZoom.disable();
-
-// use the filter function in leaflet to do the filters on the map
-/*var combat =  L.geoJson(data, {
-            onEachFeature: onEachFeature,
-            filter:function (feature, layer) {
-                if(feature.properties.woddata219_tier_ii_plus){
-                    return feature.properties.woddata219_used_armed_drones_in_combat == 1;
-                }
-                return false;
-            },
-            style: function (feature) {
-                return {color: '#081d58'};
-            }
-    });*/
 
 
         var markerOptions = {
@@ -243,17 +258,46 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
                 return L.circleMarker(latlng, markerOptions);
             },
             onEachFeature: onEachFeature
-                /*filter:function (feature, layer) {
-                    if(feature.properties.woddata219_tier_ii_plus){
-                        return feature.properties.woddata219_used_armed_drones_in_combat == 1;
-                    }
-                    return false;
-                },*/
-
         }).addTo(map);
+
 
 </script>
 
+<script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select#MissionFilter option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    //$( "div" ).text( str );
+
+    if( str != "default"){
+    map.removeLayer(myLayer);
+
+    var filterLayer = L.geoJson(data, {
+            //style: style,
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, markerOptions);
+            },
+            onEachFeature: onEachFeature,
+            filter:function (feature, layer) {
+                    if(feature.properties.mission_tag1){
+                        return feature.properties.mission_tag1 == str || 
+                        feature.properties.mission_tag2 == str || 
+                        feature.properties.mission_tag3 == str ||
+                        feature.properties.mission_tag4 == str;
+                    }
+                    return false;
+            },
+
+        }).addTo(map);
+    }
+
+    console.log(str);
+  })
+  .change();
+</script>
 
 
 </body>
