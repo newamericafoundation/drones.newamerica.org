@@ -32,9 +32,16 @@
 <script>
 
 L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
-var map = L.mapbox.map('map', 'newamerica.l89jcfpc');
-map.scrollWheelZoom.disable();
-
+var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
+        maxZoom: 13,
+        minZoom: 2,
+        
+        tileLayer: {
+            continuousWorld: false,
+            noWrap: true
+        }
+    });
+        map.scrollWheelZoom.disable();
 
 // use the filter function in leaflet to do the filters on the map
 /*var combat =  L.geoJson(data, {
