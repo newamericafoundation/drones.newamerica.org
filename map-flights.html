@@ -7,7 +7,10 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 <script src='drones_flights_05012015.geojson'></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+
 <style>
   html, body { margin:0; padding:0; height: 100%; }
   #map { width:100%; height: 100%; }
@@ -28,8 +31,9 @@
 </head>
 <body>
 <!--FILTERS -->
-                <div id="flight-filters"><h4>Filters:</h4> 
-                        <select id="MissionFilter" class="selectboxes">
+                <div style="z-index:2; position:absolute; left: 80px" id="flight-filters">
+                  <h4 style="display:inline-block">Filters:</h4> 
+                        <select id="missionFilter" class="filter selectboxes">
                           <option value="default" label="Filter by Mission Type (All)">Select Mission Type</option>
                           <option value="Agriculture" label="Agriculture">Agriculture</option>
                           <option value="Archaeology" label="Archaeology">Archaeology</option>
@@ -44,17 +48,19 @@
                           <option value="Other" label="Other">Other</option>
                           <option value="Wildlife Surveying" label="Wildlife Surveying">Wildlife Surveying</option>
                         </select> 
-                        <select id="CostFilter" class="selectboxes">
+                        <select id="costFilter" class="filter selectboxes">
                           <option value="default" label="Filter by Cost (All) ($USD)">Cost</option>
                           <option value="Under" label="Below $10K">Below $10K</option>
                           <option value="Over" label="Above $10K">Above $10K</option>
                           </select>
-                        <select id="TypeFilter" class="selectboxes">
+                        <select id="typeFilter" class="filter selectboxes">
                           <option value="default" label="Filter by Drone Type (All)">Type of Drone</option>
                           <option value="Multirotor" label="Multirotor">Multirotor</option>
                           <option value="Fixed Wing" label="Fixed Wing">Fixed Wing</option>
                           <option value="NA" label="Multiple, Other or Unknown">Multiple, Other or Unknown</option>
                         </select>
+                        <span>Date Range:</span>
+                        <div id="date-range" style="display: inline-block; margin-left:20px; width:300px"></div>
                     </div>
 
 <div id='map'></div>
@@ -137,8 +143,6 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
             }
             var layer = e.target;
 
-            
-            
             $('.info').html(layer.feature.properties.popupContent);
 
             layer.setStyle({
@@ -151,11 +155,11 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
             if (!L.Browser.ie && !L.Browser.opera) {
                 layer.bringToFront();
             }
-        
+
             //$('.info').panel('open');
             lastClickedLayer = layer;
         }
-        
+
 
         function onEachFeature(feature, layer) {
             layer.on({
@@ -198,11 +202,11 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
 
             //actual infobox text
             var html = '<h4>' + props.location_descriptive + '</h4>';
-            
+
             html += '<strong>Operating Entity:</strong> ' + props.operating_entity + '<br/>';
 
             html += '<strong>Dates:</strong> ' + props.date_begun + ' - ' + props.date_ended + '<br/>';
-            
+
             html += '<strong>Drone Type:</strong> ';
               if(props.drone_type == 'N/A'){
                  html += 'Multiple, Other, or Unknown<br/>';
@@ -214,7 +218,7 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
                  html += 'Unknown or Not Applicable<br/>';
                 }
               else {html += props.drone_model_name + '<br/>';}
-            
+
             html += '<strong>Manufacturer:</strong> ';
               if(props.drone_manufacturer == 'N/A'){
                  html += 'Unknown or Not Applicable<br/>';
@@ -249,56 +253,91 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
               }
 
                 feature.properties.popupContent = html;
-            } 
+            }
 
-
-        myLayer = L.geoJson(data, {
-            //style: style,
-            pointToLayer: function (feature, latlng) {
-                return L.circleMarker(latlng, markerOptions);
+        function initFilters(data) {
+          var thisMonth = new Date().getFullYear() * 100 + new Date().getMonth() + 1;
+          var range = data.reduce(function(p,c) {
+              var date_begun = parseIntSafe(c.properties.date_begun, thisMonth);
+              var date_ended = parseIntSafe(c.properties.date_ended, thisMonth);
+              if(date_begun < 10000) { date_begun *= 100; }
+              if(date_ended < 10000) { date_ended *= 100; }
+              return {
+                "min": Math.min(p.min, date_begun),
+                "max": Math.max(p.max, date_ended)
+              }
             },
-            onEachFeature: onEachFeature
-        }).addTo(map);
+            { "min": thisMonth, "max": thisMonth });
 
+          $("#date-range").slider({
+            "range": true,
+            "min": range.min,
+            "max": range.max,
+            "values": [ range.min, range.max ],
+            "slide": applyFilters
+          });
+
+          $(".filter").change(applyFilters);
+        }
+
+        function parseIntSafe(s, def) { return isNaN(parseInt(s,10)) ? def : parseInt(s,10); }
+
+        // TODO: clean up global
+        function render(filteredData) {
+          if(myLayer) { map.removeLayer(myLayer); }
+
+          myLayer = L.geoJson(filteredData, {
+              pointToLayer: function (feature, latlng) {
+                  return L.circleMarker(latlng, markerOptions);
+              },
+              onEachFeature: onEachFeature
+          });
+
+          myLayer.addTo(map);
+        }
+
+        function applyFilters(e) {
+          var minDate = $("#date-range").slider("values", 0);
+          var maxDate = $("#date-range").slider("values", 1);
+
+          // `data` is a global
+          var filteredData = data.features.filter(function(d) {
+              var pass_mission_filter = [
+                  "default", // this is the "unfiltered" selection
+                  d.properties.mission_tag1,
+                  d.properties.mission_tag2,
+                  d.properties.mission_tag3,
+                  d.properties.mission_tag4
+                ].indexOf($("#missionFilter").val()) > -1;
+
+              var date_begun = parseIntSafe(d.properties.date_begun, 0);
+              var date_ended = parseIntSafe(d.properties.date_ended, 999912);
+              var pass_date_filter = (date_begun < maxDate && date_ended > minDate);
+
+              var pass_cost_filter = [
+                  "default",
+                  d.properties.over_under_10k
+                ].indexOf($("#costFilter").val()) > -1;
+
+              var pass_type_filter = [
+                  "default",
+                  d.properties.drone_type
+                ].indexOf($("#typeFilter").val()) > -1;
+
+              return pass_mission_filter &&
+                  pass_date_filter &&
+                  pass_cost_filter &&
+                  pass_type_filter;
+          });
+
+          render(filteredData);
+        }
+
+        $(document).ready(function() {
+          render(data.features);
+          initFilters(data.features);
+        });
 
 </script>
-
-<script>
-$( "select" )
-  .change(function () {
-    var str = "";
-    $( "select#MissionFilter option:selected" ).each(function() {
-      str += $( this ).text() + " ";
-    });
-    //$( "div" ).text( str );
-
-    if( str != "default"){
-    map.removeLayer(myLayer);
-
-    var filterLayer = L.geoJson(data, {
-            //style: style,
-            pointToLayer: function (feature, latlng) {
-                return L.circleMarker(latlng, markerOptions);
-            },
-            onEachFeature: onEachFeature,
-            filter:function (feature, layer) {
-                    if(feature.properties.mission_tag1){
-                        return feature.properties.mission_tag1 == str || 
-                        feature.properties.mission_tag2 == str || 
-                        feature.properties.mission_tag3 == str ||
-                        feature.properties.mission_tag4 == str;
-                    }
-                    return false;
-            },
-
-        }).addTo(map);
-    }
-
-    console.log(str);
-  })
-  .change();
-</script>
-
-
 </body>
 </html>
