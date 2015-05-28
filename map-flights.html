@@ -4,7 +4,6 @@
 <meta charset=utf-8 />
 <title>WoD</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='drones_flights_05012015.geojson'></script>
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -103,9 +102,35 @@
 
 <div id='map'></div>
 <script>
+var CKAN_SEARCH = "https://data.opentechinstitute.org/api/3/action/datastore_search";
+var CKAN_RESOURCE_FLIGHTS = "cdfe00c8-c34e-4273-b939-c2f08c8d24a2";
 
-L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
-var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
+// fetch the data
+$.ajax({
+  dataType: "json",
+  url: CKAN_SEARCH,
+  method: "POST",
+  data: JSON.stringify({ "resource_id": CKAN_RESOURCE_FLIGHTS, "limit": 100000 }),
+  success: initMap
+});
+
+// reformat the CKAN record into GeoJSON
+function toGeoJSONFeature(d) {
+  return {
+    "type": "Feature",
+    "geometry": d.geometry,
+    "properties": Object.keys(d)
+      .filter(function(k) { return k != "geometry"; })
+      .reduce(function(p,k) { p[k] = d[k]; return p; }, {})
+  };
+}
+
+// wrap all the map logic in a function
+function initMap(data) {
+  var geojson = { "type": "FeatureCollection", "features": data.result.records.map(toGeoJSONFeature) };
+
+  L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
+  var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
         maxZoom: 13,
         minZoom: 2,
         
@@ -374,7 +399,7 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
 
         function parseIntSafe(s, def) { return isNaN(parseInt(s,10)) ? def : parseInt(s,10); }
 
-        // TODO: clean up global
+        // TODO: clean up use of global `myLayer`
         function render(filteredData) {
           if(myLayer) { map.removeLayer(myLayer); }
 
@@ -402,8 +427,8 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
           var maxDate = parseInt($("#maxDate").val());
 
 
-          // `data` is a global
-          var filteredData = data.features.filter(function(d) {
+          // `geojson` is captured from outer scope
+          var filteredData = geojson.features.filter(function(d) {
 
               var pass_mission_filter = missionValue.some(function(v) {
                   return [
@@ -439,10 +464,10 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
         }
 
         $(document).ready(function() {
-          render(data.features);
-          initFilters(data.features);
+          render(geojson.features);
+          initFilters(geojson.features);
         });
-
+}
 </script>
 </body>
 </html>
