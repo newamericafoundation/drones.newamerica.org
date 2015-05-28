@@ -4,11 +4,15 @@
 <meta charset=utf-8 />
 <title>WoD</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 <script src='drones_flights_05012015.geojson'></script>
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css"/>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
 
 <style>
@@ -27,41 +31,75 @@
         margin: 0 0 5px;
         color: #333;
     }
+  #filters {
+    z-index:2;
+    position:absolute;
+    left: 50px;
+  }
 </style>
 </head>
 <body>
 <!--FILTERS -->
-                <div style="z-index:2; position:absolute; left: 80px" id="flight-filters">
-                  <h4 style="display:inline-block">Filters:</h4> 
-                        <select id="missionFilter" class="filter selectboxes">
-                          <option value="default" label="Filter by Mission Type (All)">Select Mission Type</option>
-                          <option value="Agriculture" label="Agriculture">Agriculture</option>
-                          <option value="Archaeology" label="Archaeology">Archaeology</option>
-                          <option value="Armed Conflict Monitoring" label="Armed Conflict Monitoring">Armed Conflict Monitoring</option>
-                          <option value="Cargo" label="Cargo">Cargo</option>
-                          <option value="Community Mapping" label="Community Mapping">Community Mapping</option>
-                          <option value="Current Events" label="Current Events">Current Events</option>
-                          <option value="Disaster Response" label="Disaster Response">Disaster Response</option>
-                          <option value="Environmental Surveying" label="Environmental Surveying">Environmental Surveying</option>
-                          <option value="Search and Rescue" label="Search and Rescue">Search and Rescue</option>
-                          <option value="Training" label="Training">Training</option>
-                          <option value="Other" label="Other">Other</option>
-                          <option value="Wildlife Surveying" label="Wildlife Surveying">Wildlife Surveying</option>
-                        </select> 
-                        <select id="costFilter" class="filter selectboxes">
-                          <option value="default" label="Filter by Cost (All) ($USD)">Cost</option>
-                          <option value="Under" label="Below $10K">Below $10K</option>
-                          <option value="Over" label="Above $10K">Above $10K</option>
-                          </select>
-                        <select id="typeFilter" class="filter selectboxes">
-                          <option value="default" label="Filter by Drone Type (All)">Type of Drone</option>
-                          <option value="Multirotor" label="Multirotor">Multirotor</option>
-                          <option value="Fixed Wing" label="Fixed Wing">Fixed Wing</option>
-                          <option value="NA" label="Multiple, Other or Unknown">Multiple, Other or Unknown</option>
-                        </select>
-                        <span>Date Range:</span>
-                        <div id="date-range" style="display: inline-block; margin-left:20px; width:300px"></div>
-                    </div>
+<div id="filters">
+  <div class="col-sm-12">
+    <div class="btn-group btn-group-xs">
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="missionLabel" data-toggle="dropdown" aria-expanded="true">
+          Filter by Mission Type
+          <span class="caret"></span>
+        </button>
+        <ul id="missionFilter" class="dropdown-menu" role="menu" aria-labelledby="missionLabel">
+          <li class="small"><a href="#">All Mission Types</a></li>
+          <li role="presentation" class="small divider"></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Agriculture"/> Agriculture</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Archaeology"/> Archaeology</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Armed Conflict Monitoring"/> Armed Conflict Monitoring</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Cargo"/> Cargo</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Community Mapping"/> Community Mapping</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Current Events"/> Current Events</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Disaster Response"/> Disaster Response</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Environmental Surveying"/> Environmental Surveying</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Search and Rescue"/> Search and Rescue</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Training" /> Training</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Other"/> Other</a></li>
+          <li class="small"><a href="#"><input type="checkbox" value="Wildlife Surveying"/> Wildlife Surveying</a></li>
+        </ul>
+      </div>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="costLabel" data-toggle="dropdown" aria-expanded="true">
+          Filter by Cost (USD)
+          <span class="caret"></span>
+        </button>
+        <ul id="costFilter" class="dropdown-menu" role="menu" aria-labelledby="costLabel">
+          <input type="hidden" value="default">
+          <li class="small"><a href="#" data-value="default">All Costs</a></li>
+          <li role="presentation" class="small divider"></li>
+          <li class="small"><a href="#" data-value="Under">Below $10K</a></li>
+          <li class="small"><a href="#" data-value="Over">Above $10K</a></li>
+        </ul>
+      </div>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="typeLabel" data-toggle="dropdown" aria-expanded="true">
+          Filter by Drone Type
+          <span class="caret"></span>
+        </button>
+        <ul id="typeFilter" class="dropdown-menu" role="menu" aria-labelledby="typeLabel">
+          <input type="hidden" value="default">
+          <li class="small"><a href="#" data-value="default">All Drone Types</a></li>
+          <li role="presentation" class="small divider"></li>
+          <li class="small"><a href="#" data-value="Multirotor">Multirotor</a></li>
+          <li class="small"><a href="#" data-value="Fixed Wing">Fixed Wing</a></li>
+          <li class="small"><a href="#" data-value="NA">Multiple, Other or Unknown</a></li>
+        </ul>
+      </div>
+      <div class="btn btn-primary">
+        <span style="display: inline-block; width:70px" id="minDateLabel"></span><input type="hidden" id="minDate">
+        <div id="date-range" style="display: inline-block; margin:0px 20px 0 20px; width:200px"></div>
+        <span id="maxDateLabel"></span><input type="hidden" id="maxDate">
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id='map'></div>
 <script>
@@ -205,7 +243,7 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
 
             html += '<strong>Operating Entity:</strong> ' + props.operating_entity + '<br/>';
 
-            html += '<strong>Dates:</strong> ' + props.date_begun + ' - ' + props.date_ended + '<br/>';
+            html += '<strong>Dates:</strong> ' + monthFormat(props.date_begun) + ' - ' + monthFormat(props.date_ended) + '<br/>';
 
             html += '<strong>Drone Type:</strong> ';
               if(props.drone_type == 'N/A'){
@@ -255,13 +293,26 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
                 feature.properties.popupContent = html;
             }
 
+        function monthFormat(yyyyMM) {
+          // converts to "MMM yyyy"
+          var d = parseIntSafe(yyyyMM, 1);
+          return new Date(d*10e-2, (d % 100) - 1, 1).toString().replace(/.{4}(.{3}).{4}(.{4}).*/,"$1 $2")
+        }
+
+        function monthGenerator(start, end) {
+          var months = [start];
+          while((last = months[months.length-1]) <= end) { months.push(last + (last%100 == 12 ? 89 : 1)); }
+          return months;
+        }
+
         function initFilters(data) {
           var thisMonth = new Date().getFullYear() * 100 + new Date().getMonth() + 1;
           var range = data.reduce(function(p,c) {
               var date_begun = parseIntSafe(c.properties.date_begun, thisMonth);
               var date_ended = parseIntSafe(c.properties.date_ended, thisMonth);
-              if(date_begun < 10000) { date_begun *= 100; }
-              if(date_ended < 10000) { date_ended *= 100; }
+              // protect against bad data (i.e. year-only data)
+              if(date_begun < 10000) { date_begun = date_begun*100 + 1; }
+              if(date_ended < 10000) { date_ended = date_ended*100 + 1; }
               return {
                 "min": Math.min(p.min, date_begun),
                 "max": Math.max(p.max, date_ended)
@@ -269,15 +320,56 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
             },
             { "min": thisMonth, "max": thisMonth });
 
+          var months = monthGenerator(range.min, range.max);
+          $("#minDate").val(range.min);
+          $("#maxDate").val(range.max);
+          $("#minDateLabel").text(monthFormat(range.min));
+          $("#maxDateLabel").text(monthFormat(range.max));
           $("#date-range").slider({
             "range": true,
-            "min": range.min,
-            "max": range.max,
-            "values": [ range.min, range.max ],
-            "slide": applyFilters
+            "min": 0,
+            "max": months.length-1,
+            "values": [0, months.length-1],
+            "slide": function(e, ui) {
+              $("#minDateLabel").text(monthFormat(months[ui.values[0]]));
+              $("#minDate").val(months[ui.values[0]]);
+              $("#maxDateLabel").text(monthFormat(months[ui.values[1]]));
+              $("#maxDate").val(months[ui.values[1]]);
+              applyFilters()
+            }
           });
 
-          $(".filter").change(applyFilters);
+          $("#missionFilter a").on("click", function (e) {
+            var $this = $(e.currentTarget);
+            var chk = $this.find("input")[0];
+            setTimeout(function () {
+              if (chk) {
+                chk.checked = !chk.checked;
+              } else {
+                $("#missionFilter input").prop("checked", false);
+              }
+              var $selected = $("#missionFilter input").filter(":checked");
+              var filterLabel = $selected.length ? ($selected.val() + ($selected.length > 1 ? " + " + ($selected.length - 1) + " more" : "")) : "All Mission Types";
+              $("#missionLabel").text(filterLabel);
+
+              applyFilters();
+            }, 0);
+
+            $(e.target).blur();
+            return !chk;
+          });
+
+          $("#costFilter a").on("click", function(e) {
+            $("#costFilter input").val($(this).data("value"));
+            $("#costLabel").text($(this).text());
+            applyFilters();
+          });
+
+          $("#typeFilter a").on("click", function(e) {
+            $("#typeFilter input").val($(this).data("value"));
+            $("#typeLabel").text($(this).text());
+            applyFilters();
+          });
         }
 
         function parseIntSafe(s, def) { return isNaN(parseInt(s,10)) ? def : parseInt(s,10); }
@@ -296,38 +388,51 @@ var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
           myLayer.addTo(map);
         }
 
-        function applyFilters(e) {
-          var minDate = $("#date-range").slider("values", 0);
-          var maxDate = $("#date-range").slider("values", 1);
+        function applyFilters() {
+          var missionValue = $("#missionFilter input")
+                .filter(function(idx, el) { return el.checked; })
+                .map(function(idx, el) { return el.value; }).get();
+          if(missionValue.length === 0) {
+            missionValue = ["default"];
+          }
+          var costValue = $("#costFilter input").val();
+          var typeValue = $("#typeFilter input").val();
+
+          var minDate = parseInt($("#minDate").val());
+          var maxDate = parseInt($("#maxDate").val());
+
 
           // `data` is a global
           var filteredData = data.features.filter(function(d) {
-              var pass_mission_filter = [
-                  "default", // this is the "unfiltered" selection
-                  d.properties.mission_tag1,
-                  d.properties.mission_tag2,
-                  d.properties.mission_tag3,
-                  d.properties.mission_tag4
-                ].indexOf($("#missionFilter").val()) > -1;
+
+              var pass_mission_filter = missionValue.some(function(v) {
+                  return [
+                    "default", // this is the "unfiltered" selection
+                    d.properties.mission_tag1,
+                    d.properties.mission_tag2,
+                    d.properties.mission_tag3,
+                    d.properties.mission_tag4
+                  ].indexOf(v) > -1;
+                });
+
+              var pass_cost_filter = [
+                  "default",
+                  d.properties.over_under_10k
+                ].indexOf(costValue) > -1;
+
+              var pass_type_filter = [
+                  "default",
+                  d.properties.drone_type
+                ].indexOf(typeValue) > -1;
 
               var date_begun = parseIntSafe(d.properties.date_begun, 0);
               var date_ended = parseIntSafe(d.properties.date_ended, 999912);
               var pass_date_filter = (date_begun < maxDate && date_ended > minDate);
 
-              var pass_cost_filter = [
-                  "default",
-                  d.properties.over_under_10k
-                ].indexOf($("#costFilter").val()) > -1;
-
-              var pass_type_filter = [
-                  "default",
-                  d.properties.drone_type
-                ].indexOf($("#typeFilter").val()) > -1;
-
               return pass_mission_filter &&
-                  pass_date_filter &&
                   pass_cost_filter &&
-                  pass_type_filter;
+                  pass_type_filter &&
+                  pass_date_filter;
           });
 
           render(filteredData);
