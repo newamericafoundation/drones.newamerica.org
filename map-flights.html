@@ -20,7 +20,7 @@
   .marker { 
     background-color: rgba(45, 187, 179, 0.75);
     border: 1px solid rgb(45, 187, 179);
-    padding: 7px;
+    padding: 5px;
   }
   .marker-circle {
     border-radius: 50%;
@@ -209,7 +209,7 @@ function initMap(data) {
     //actual infobox text
     var html = '<h4>' + p.location_descriptive + '</h5>';
     html += '<strong>Operating Entity:</strong> ' + p.operating_entity + '<br/>';
-    html += '<strong>Dates:</strong> ' + monthFormat(p.date_begun, p.date_begun) + ' - ' + monthFormat(p.date_ended, p.date_ended) + '<br/>';
+    html += '<strong>Date:</strong> ' + monthFormat(p.date_begun, p.date_begun) + (p.date_ended != p.date_begun ? ' - ' + monthFormat(p.date_ended, p.date_ended) : '') + '<br/>';
     html += '<strong>Drone Type:</strong> ' + (p.drone_type == 'N/A' ? "Multiple, Other, or Unknown" : p.drone_type) + '<br/>';
     html += '<strong>Model:</strong> ' + (p.drone_model_name == 'N/A' ? "Unknown or Not Applicable" : p.drone_model_name) + '<br/>';
     html += '<strong>Manufacturer:</strong> ' + (p.drone_manufacturer == 'N/A' ? "Unknown or Not Applicable" : p.drone_manufacturer) + '<br/>';
@@ -220,7 +220,7 @@ function initMap(data) {
     html += '<strong>Country:</strong> ' + p.country_name + '<br/>';
     html += '<strong>Location Description:</strong> ' + p.location_descriptive + '<br/>';
     html += '<strong>Description:</strong> ' + p.mission_description + '<br/>';
-    html += '<strong>Source(s):</strong> ' + p.sources.sources.map(function(s) { return '<a href="' + s.url + '" target="_blank" >' + s.name + '</a>'; }).join(", ");
+    html += '<strong>Source(s):</strong> ' + p.sources.map(function(s) { return '<a href="' + s.url + '" target="_blank" >' + s.name + '</a>'; }).join(", ");
     p.popupContent = html;
   }
 

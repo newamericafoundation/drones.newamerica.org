@@ -41,7 +41,7 @@
   <div id="detail"></div>
 </div>
 <div id="noneknown">
-  <h5 class="text-center">Countries for which we have been unable to find explicit drone regulations are displayed in grey.</h5>
+  <h6 class="text-center">Countries for which we have been unable to find explicit drone regulations are displayed in grey.</h6>
 </div>
 <div id='map'></div>
 <script>
@@ -255,9 +255,9 @@ function initMap(data) {
       var unknown = feature.properties.reg_status_flag == "NONE KNOWN";
       return {
         color: unknown ? "#999" : "#2dbbb3",
-        weight: 3,
-        fillOpacity: unknown ? 0.2 : 0,
-        fillColor: "#999"
+        weight: 2,
+        fillOpacity: unknown ? 0.5 : 0,
+        fillColor: "#ddd"
       };
     },
     onEachFeature: onEachFeature
