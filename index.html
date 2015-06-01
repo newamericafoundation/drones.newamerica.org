@@ -21,14 +21,14 @@ nav{
   border-bottom: 1px solid #ccc;
 }
 
-.content-uavs #flights, #about, #regs {
+.content-uavs #flight-content, #about-content, #reg-content {
   padding: 10px 100px 10px 90px;
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.content-uavs #about p{
+.content-uavs #about-content p{
   background-size:cover;
   border-color: #aaa;
   padding: 10px 100px 10px 90px;
@@ -176,8 +176,12 @@ ul#tabs {
 li.tab {
   display: inline-block;
   list-style: none;
-  padding: 10px; 
   border: 1px solid #fffaef;
+}
+li.tab>a {
+  color: inherit;
+  display: block;
+  padding: 10px;
   cursor: pointer; 
 }
 .content-uavs {
@@ -320,24 +324,24 @@ ul#tabs li.tab:hover {
     
     <!--TABS-->
    <ul id="tabs">
-     <li class="tab active" id="flightsButton">Flights</li>
+     <li class="tab active" id="flights" data-tab-content="#flight-content"><a href="#flights">Flights</a></li>
 
-     <li class="tab" id="regsButton">Regulations</li>
-     <li class="tab" id="aboutButton">About these Maps</li>
+     <li class="tab" id="regulations" data-tab-content="#regs-content"><a href="#regulations">Regulations</a></li>
+     <li class="tab" id="about" data-tab-content="#about-content"><a href="#about">About these Maps</a></li>
    </ul>
 
   <div id="page-container">
     <!--CONTENT-->
 
 
-           <div class="content-uavs" id="flights" style="display: block;">
+           <div class="content-uavs" id="flight-content" style="display: block;">
                   <iframe src="map-flights.html" style="width:100%; height:600px; margin: 0;"></iframe>
               </div>
-           <div class="content-uavs" id="regs" style="display:none;">
+           <div class="content-uavs" id="regs-content" style="display:none;">
              <!-- REGS -->
               <iframe src="map.html" style="width:100%; height:600px; margin: 0;"></iframe>
            </div>
-        <div class="content-uavs" id="about" style="display:none;">
+        <div class="content-uavs" id="about-content" style="display:none;">
     <p>Unmanned aircraft have existed for many decades, since the dawn of powered flight. However, they have recently become far more capable because of the advent of cheap, reliable, and small electronics that control flight, collect data, and communicate. These technologies are crucially enabled by the widespread availability of the Global Positioning System, which guides aircraft in flight and situates the data they gather. These aircraft, which range widely in size, cost and endurance, are known as drones, as Unmanned Aerial Vehicles (UAVs), Unmanned Aerial Systems (UAS), Remotely Piloted Aerial Vehicles (RPAVs), and Remotely Piloted Aircraft Systems (RPAS).</p>
 
 <p>There are now more drones than manned aircraft in the world. Most drones are small and inexpensive, but nonetheless possess great power as data-collecting instruments, when properly equipped and used. That data, in the form of images, maps, and other environmental information, can be used by communities to improve the quality and character of their property rights. Drone surveillance can help conservationists to protect endangered wildlife and aid scientists in understanding the changing climate; drone imagery can be used by advocates and analysts to document and deter human rights violations. UAVs can be used by first responders to search for lost people, or to evaluate the extent of damage after natural disasters like earthquakes or hurricanes.</p>
@@ -361,30 +365,24 @@ ul#tabs li.tab:hover {
 
 
 <script id="jsbin-javascript">
+$(document).ready(function() {
 
-  $('ul#tabs li.tab').click( function() {
-      $('li.tab').removeClass('active');
-      if( $(this).attr('id') == 'flightsButton'){
-        $('#regs').hide();
-        $('#about').hide();
-        $('#flights').show();
-        $(this).addClass('active');
-      }
-      if( $(this).attr('id') == 'regsButton'){
-        $('#flights').hide();
-        $('#about').hide();
-        $('#regs').show();
-        $(this).addClass('active');
-      }
-      if( $(this).attr('id') == 'aboutButton'){
-        $('#regs').hide();
-        $('#flights').hide();
-        $('#about').show();
-        $(this).addClass('active');
-      }
+  $(".tab").click(function() {
+    $(".tab").each(function(e) { $($(this).data("tab-content")).hide(); }).removeClass('active');
+    $(this).addClass("active");
+    $($(this).data("tab-content")).show();
   });
 
-
+  // poor-mans hash-tab hook:
+  $(window).bind("hashchange", hashNavigate);
+  function hashNavigate() {
+    if(location.hash.length && $(location.hash).length) {
+      $(location.hash).click();
+      window.scrollTo(0,0);
+    }
+  }
+  hashNavigate();
+});
 </script>
 
 
