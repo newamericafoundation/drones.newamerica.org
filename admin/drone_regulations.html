@@ -1,0 +1,371 @@
+<!doctype html>
+<html data-ng-app="AdminDroneRegulationModule">
+<head>
+<title>Data Input: Drone Regulations</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="md5.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<style>
+* { 
+    font-family: Lato, sans-serif;
+}
+
+#result, #title {
+  font-family: Menlo, Lucida Console, fixed;
+  font-size: 10px;
+}
+</style>
+</head>
+<body data-ng-controller="AdminDroneRegulationCtrl">
+<div id="success" style="position:fixed;width:100%;z-index:10;" class="hide alert alert-success" role="alert">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span> Data saved successfully.
+</div>
+
+<div id="error" style="position:fixed;width:100%;z-index:10;" class="hide alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span> Data was not saved.
+</div>
+<div class="container">
+  <h2><span ng-bind="title()"></span></h2>
+  <div class="row">
+    <div class="col-md-6">
+      <form action class="form-horizontal">
+        <div class="row">
+          <div class="col-sm-12"><h4>Current Regulatory Status</h4></div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="region">Current Status</label>
+          <div class="col-sm-8">
+            <select ng-model="item.reg_status_flag" class="form-control" id="reg_status_flag">
+              <option value="YES">Yes</option>
+              <option value="NONE KNOWN">None Known</option>
+              <option value="PARTIAL">Partial</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="reg_explainer">Explanation</label>
+          <div class="col-sm-8">
+            <textarea ng-model="item.reg_explainer" class="form-control" id="reg_explainer" rows="3" placeholder="A brief explanation of current regulations"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="sources">Gov't Sources
+            <div><small class="text-muted">Official government source(s) of regulations</small></div>
+          </label>
+          <div class="col-sm-8">
+            <table class="table table-striped table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="src in item.reg_official_source">
+                  <td class="col-md-4">
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.reg_official_source, src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <input class="form-control" ng-model="src.name" type="text">
+                  </td>
+                  <td><input class="form-control" ng-model="src.url" type="text"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><button type="button" class="btn btn-primary btn-xs" ng-click="addSource(item.reg_official_source)">Add Source</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="sources">Secondary Sources
+            <div><small class="text-muted">Press account(s) or other secondary source(s) about regulations</small></div>
+          </label>
+          <div class="col-sm-8">
+            <table class="table table-striped table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="src in item.reg_secondary_source">
+                  <td class="col-md-4">
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.reg_secondary_source, src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <input class="form-control" ng-model="src.name" type="text">
+                  </td>
+                  <td><input class="form-control" ng-model="src.url" type="text"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><button type="button" class="btn btn-primary btn-xs" ng-click="addSource(item.reg_secondary_source)">Add Source</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="sources">Enforcement Actions</label>
+          <div class="col-sm-8">
+            <table class="table table-striped table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="src in item.enforcement_action">
+                  <td class="col-md-4">
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.enforcement_action, src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <input class="form-control" ng-model="src.name" type="text">
+                  </td>
+                  <td><input class="form-control" ng-model="src.url" type="text"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><button type="button" class="btn btn-primary btn-xs" ng-click="addSource(item.enforcement_action)">Add Source</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <form action class="form-horizontal">
+        <div class="row">
+          <div class="col-sm-12"><h4>Pending Regulations</h4></div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="region">Pending Regulations</label>
+          <div class="col-sm-8">
+            <select ng-model="item.pendingreg_status_flag" class="form-control" id="pendingreg_status_flag">
+              <option value="YES">Yes</option>
+              <option value="NONE KNOWN">None Known</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="pendingreg_explainer">Explanation</label>
+          <div class="col-sm-8">
+            <textarea ng-model="item.pendingreg_explainer" class="form-control" id="pendingreg_explainer" rows="3" placeholder="A brief explanation of pending regulations"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="sources">Gov't Sources
+            <div><small class="text-muted">Official government source(s) of regulations</small></div>
+          </label>
+          <div class="col-sm-8">
+            <table class="table table-striped table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="src in item.pendingreg_official_source">
+                  <td class="col-md-4">
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.pendingreg_official_source, src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <input class="form-control" ng-model="src.name" type="text">
+                  </td>
+                  <td><input class="form-control" ng-model="src.url" type="text"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><button type="button" class="btn btn-primary btn-xs" ng-click="addSource(item.pendingreg_official_source)">Add Source</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="sources">Secondary Sources
+            <div><small class="text-muted">Press account(s) or other secondary source(s) about regulations</small></div>
+          </label>
+          <div class="col-sm-8">
+            <table class="table table-striped table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="src in item.pendingreg_secondary_source">
+                  <td class="col-md-4">
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.pendingreg_secondary_source, src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <input class="form-control" ng-model="src.name" type="text">
+                  </td>
+                  <td><input class="form-control" ng-model="src.url" type="text"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><button type="button" class="btn btn-primary btn-xs" ng-click="addSource(item.pendingreg_secondary_source)">Add Source</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="exampleflight_description">Precedent Flight</label>
+          <div class="col-sm-8">
+            <input ng-model="item.exampleflight_description" type="text" class="form-control" id="exampleflight_description" placeholder="Precedential drone flight(s) description">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="sources">Example Flights</label>
+          <div class="col-sm-8">
+            <table class="table table-striped table-condensed">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="src in item.exampleflight_refurl">
+                  <td class="col-md-4">
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.exampleflight_refurl, src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <input class="form-control" ng-model="src.name" type="text">
+                  </td>
+                  <td><input class="form-control" ng-model="src.url" type="text"></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><button type="button" class="btn btn-primary btn-xs" ng-click="addSource(item.exampleflight_refurl)">Add Source</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-4 text-right">ID</div>
+          <div class="col-sm-4"><input type="text" ng-model="item.id" disabled class="form-control" id="id"></div>
+          <div class="col-sm-4 text-right">
+            <button data-loading-text="Saving..." class="btn btn-block btn-primary" type="button" id="save" ng-click="save(item, sources, $event)">Save Entry</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+var NAF = {
+  "qs": function(k) {
+     return (NAF._qs||(NAF._qs=location.search.slice(1).split("&").reduce(function(p,c){c=c.split("=");p[c[0]]=decodeURIComponent(c[1]);return p;},{})))[k];
+  }
+};
+
+var app = angular.module("AdminDroneRegulationModule", []);
+app.controller("AdminDroneRegulationCtrl", ["$scope", "$http", function ($scope, $http) {
+  var CKAN_UPSERT = "https://data.opentechinstitute.org/api/3/action/datastore_upsert";
+  var CKAN_SEARCH = "https://data.opentechinstitute.org/api/3/action/datastore_search";
+  var RESOURCE = "64ea51b2-96d4-4cb6-8684-f855b512588b";
+  var headers = { 
+    // TODO: hard-coded to use my personal API key for now 
+    "Authorization": "1eb64664-050b-44f8-a9e1-08bbd93d3ec8", 
+    "Content-Type": "application/json" 
+  };
+
+  $scope.item = newItem(); 
+
+  $scope.title = function title() { return $scope.item.id ? "Edit Regulations for " + $scope.item.country : "New Drone Regulations"; };
+
+  $scope.addSource = function(list) {
+    list.push({});
+  };
+
+  $scope.removeSource = function(list, src) {
+    var idx = list && list.indexOf(src);
+    list.splice(idx, 1);
+  };
+  
+  var saving = false;
+  $scope.save = function save(item, sources, $event) {
+    if(saving) { return; }
+    saving = true;
+    $($event.currentTarget).button("loading");
+
+    var body = { 
+      "resource_id": RESOURCE, 
+      "records": [toRecord(item, sources)]
+    };
+
+    $http.post(CKAN_UPSERT, body, { "headers": headers })
+    .success(function(data) {
+      saving = false;
+      $($event.currentTarget).button("reset");
+      $("#success").removeClass("hide").show().delay(5000).fadeOut();
+    })
+    .error(function() {
+      saving = false;
+      $($event.currentTarget).button("reset");
+      $("#error").removeClass("hide").show().delay(5000).fadeOut();
+    });
+  };
+
+  if(NAF.qs("id")) {
+    // query for entry
+    var params = { "resource_id": RESOURCE, "filters": { "id": NAF.qs("id") } };
+    $http.post(CKAN_SEARCH, params).success(function item_handler(data) {
+      if(data.result.records.length) {
+        toForm(data.result.records[0], $scope);
+      }
+    });
+  }
+
+}]);
+function newItem() {
+  var yesterday = new Date(new Date().getTime()-86400000);
+  return { };
+};
+
+function toForm(obj, $scope) {
+  $scope.item = obj;
+  $scope.item.reg_official_source = obj.reg_official_source || [];
+  $scope.item.reg_secondary_source = obj.reg_secondary_source || [];
+  $scope.item.pendingreg_official_source = obj.pendingreg_official_source || [];
+  $scope.item.pendingreg_secondary_source = obj.pendingreg_secondary_source || [];
+  $scope.item.exampleflight_refurl = obj.exampleflight_refurl || [];
+  $scope.item.enforcement_action = obj.enforcement_action || [];
+}
+
+function toRecord(obj) {
+  var rec = $.extend({}, obj);
+
+  // clean values
+  Object.keys(rec).forEach(function(k) {
+    if(rec[k].length === 0) { rec[k] = null; }
+  });
+
+  rec.id = rec.id || md5(JSON.stringify(rec)).slice(0,7);
+  obj.id = rec.id;
+  delete rec._id;
+  return rec;
+}
+</script>
+</body>
+</html>
+
+
