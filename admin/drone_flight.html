@@ -110,7 +110,7 @@
       <form action class="form-horizontal">
         <div class="form-group">
           <label class="control-label col-sm-4" for="target_type">Mission Type</label>
-          <div class="col-sm-4" ng-repeat="missionList in MISSION_TYPES | cols:2">
+          <div class="col-sm-4" ng-repeat="missionList in MISSION_TYPES">
             <div class="checkbox" ng-repeat="mission in missionList">
               <label>
                 <input type="checkbox" ng-click="toggleMission(item, mission)" ng-checked="item.mission_type.indexOf(mission) > -1" /> {{mission}} 
@@ -171,15 +171,7 @@ var NAF = {
 };
 
 var app = angular.module("AdminDroneFlightModule", []);
-app.filter("cols", function() {
-  return function(input, cols) {
-    var len = input.length / cols;
-    return input.reduce(function(p,c,i) {
-      (p[Math.floor(i/len)] = p[Math.floor(i/len)] || []).push(c);
-      return p;
-      }, []);
-  };
-}).controller("AdminDroneFlightCtrl", ["$scope", "$http", function ($scope, $http) {
+app.controller("AdminDroneFlightCtrl", ["$scope", "$http", function ($scope, $http) {
   var CKAN_UPSERT = "https://data.opentechinstitute.org/api/3/action/datastore_upsert";
   var CKAN_DELETE = "https://data.opentechinstitute.org/api/3/action/datastore_delete";
   var CKAN_SEARCH = "https://data.opentechinstitute.org/api/3/action/datastore_search";
@@ -190,6 +182,14 @@ app.filter("cols", function() {
     "Content-Type": "application/json" 
   };
 
+  var toColumns = function(input, cols) {
+    var len = input.length / cols;
+    return input.reduce(function(p,c,i) {
+      (p[Math.floor(i/len)] = p[Math.floor(i/len)] || []).push(c);
+      return p;
+      }, []);
+  };
+
   $scope.DRONE_TYPES = [
     "Multirotor",
     "Fixed Wing",
@@ -197,7 +197,7 @@ app.filter("cols", function() {
     "N/A"
   ];
 
-  $scope.MISSION_TYPES = [ 
+  $scope.MISSION_TYPES = toColumns([ 
     "Agriculture",
     "Archaeology",
     "Armed Conflict Monitoring",
@@ -210,7 +210,9 @@ app.filter("cols", function() {
     "Training",
     "Wildlife Surveying",
     "Other"
-  ];
+  ], 2);
+
+
   $scope.COST_RANGES = [
     "UNDER $1K",
     "$1K-$5K",
