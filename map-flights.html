@@ -149,7 +149,14 @@ function initMap(data) {
     };
   }
 
-    var geojson = { "type": "FeatureCollection", "features": data.result.records.map(toGeoJSONFeature) };
+  function validGeoJSON(d) {
+    return d.geometry.coordinates.every(function(s) { return s !== null && !isNaN(s); });
+  };
+
+  var geojson = {
+    "type": "FeatureCollection",
+    "features": data.result.records.filter(validGeoJSON).map(toGeoJSONFeature)
+  };
 
   L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
   var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
