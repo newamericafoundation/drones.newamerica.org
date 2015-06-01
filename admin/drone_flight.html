@@ -137,7 +137,7 @@
               <tbody>
                 <tr ng-repeat="src in item.sources">
                   <td class="col-md-4">
-                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(src)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a style="position:absolute;cursor:pointer" ng-click="removeSource(item.sources, src)"><span class="glyphicon glyphicon-remove"></span></a>
                     <input class="form-control" ng-model="src.name" type="text">
                   </td>
                   <td><input class="form-control" ng-model="src.url" type="text"></td>
@@ -156,7 +156,7 @@
           <div class="col-sm-4 text-right">ID</div>
           <div class="col-sm-4"><input type="text" ng-model="item.id" disabled class="form-control" id="id"></div>
           <div class="col-sm-4 text-right">
-            <button data-loading-text="Saving..." class="btn btn-block btn-primary" type="button" id="save" ng-click="save(item, sources, $event)">Save Entry</button>
+            <button data-loading-text="Saving..." class="btn btn-block btn-primary" type="button" id="save" ng-click="save(item, $event)">Save Entry</button>
           </div>
         </div>
       </form>
@@ -225,23 +225,24 @@ app.controller("AdminDroneFlightCtrl", ["$scope", "$http", function ($scope, $ht
 
   $scope.title = function title() { return $scope.item.id ? "Edit " + $scope.item.id : "New Drone Flight"; };
 
-  $scope.addSource = function(sources) {
-    sources.push({});
+  $scope.addSource = function(list) {
+    list.push({});
   };
 
-  $scope.removeSource = function(src) {
-    $scope.sources = $scope.sources.filter(function(s) { return s != src; } );
+  $scope.removeSource = function(list, src) {
+    var idx = list && list.indexOf(src);
+    list.splice(idx, 1);
   };
   
   var saving = false;
-  $scope.save = function save(item, sources, $event) {
+  $scope.save = function save(item, $event) {
     if(saving) { return; }
     saving = true;
     $($event.currentTarget).button("loading");
 
     var body = { 
       "resource_id": RESOURCE, 
-      "records": [toRecord(item, sources)]
+      "records": [toRecord(item)]
     };
 
     $http.post(CKAN_UPSERT, body, { "headers": headers })
