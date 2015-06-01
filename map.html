@@ -120,132 +120,43 @@ function initMap(data) {
               click: highlightFeature
           });
 
+      var toLink = function(d) { return '<a href="' + d.url + '" target="_blank" >' + d.name + '</a>'; };
       var props = feature.properties;
       if(props){
-          var reg_sources = [];
-          if(props.reg_official_source){
-              var reg_source = props.reg_official_source;
-              var reg_source_arr = reg_source.split("; ");
 
-              for(i=0;i< reg_source_arr.length; i++){
-                    var t = reg_source_arr[i].split(": ");
-                    var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                    reg_sources.push(p);
-              }
-          }
-
-          var reg_sec_sources = [];
-          if(props.reg_secondary_source){
-              var reg_sec_source = props.reg_secondary_source;
-              var reg_sec_source_arr = reg_sec_source.split("; ");
-
-              for(i=0;i< reg_sec_source_arr.length; i++){
-                    var t = reg_sec_source_arr[i].split(": ");
-                    var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                    reg_sec_sources.push(p);
-              }
-          }
-
-          var preg_sources = [];
-          if(props.pendingreg_official_source){
-              var preg_source = props.pendingreg_official_source;
-              var preg_source_arr = preg_source.split("; ");
-
-              for(i=0;i< preg_source_arr.length; i++){
-                    var t = preg_source_arr[i].split(": ");
-                    var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                    preg_sources.push(p);
-              }
-          }
-
-          var preg_sec_sources = [];
-          if(props.pendingreg_secondary_source){
-              var preg_sec_source = props.pendingreg_secondary_source;
-              var preg_sec_source_arr = preg_sec_source.split("; ");
-
-              for(i=0;i< preg_sec_source_arr.length; i++){
-                    var t = preg_sec_source_arr[i].split(": ");
-                    var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                    preg_sec_sources.push(p);
-              }
-          }
-
-          var emFlight_sources = [];
-          if(props.exampleflight_refurl){
-              var emFlight_source = props.exampleflight_refurl;
-              var emFlight_source_arr = emFlight_source.split("; ");
-
-              for(i=0;i< emFlight_source_arr.length; i++){
-                    var t = emFlight_source_arr[i].split(": ");
-                    var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                    emFlight_sources.push(p);
-              }
-          }
-
-          var enforcement_links = [];
-          if(props.enforcement_action){
-              var enforcement_link = props.enforcement_action;
-              var enforcement_link_arr = enforcement_link.split("; ");
-
-              for(i=0;i< enforcement_link_arr.length; i++){
-                    var t = enforcement_link_arr[i].split(": ");
-                    var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                    enforcement_links.push(p);
-              }
-          }
-
-          var popupContent = '';
-          popupContent += "<h4>" + props.country
+        var reg_sources = (props.reg_official_source || []).map(toLink);
+        var reg_sec_sources = (props.reg_secondary_source || []).map(toLink);
+        var preg_sources = (props.pendingreg_official_source || []).map(toLink);
+        var preg_sec_sources = (props.pendingreg_secondary_source || []).map(toLink);
+        var emFlight_sources = (props.exampleflight_refurl || []).map(toLink);
+        var enforcement_links = (props.enforcement_action || []).map(toLink);
+        var popupContent = '';
+        popupContent += "<h4>" + props.country
               + "</h4><strong>Regulations: </strong>" + props.reg_explainer
               //+ "<br/><strong>Status: </strong>" + props.reg_status_flag
-              + "<br/><strong>Source(s):</strong> ";
-              for(i=0; i<reg_sources.length;i++){
-                  if(i != reg_sources.length-1){ popupContent += reg_sources[i] + ", ";}
-                  else { popupContent += reg_sources[i];}
-                }
+              + "<br/><strong>Source(s):</strong> " + reg_sources.join(", ")
 
-              if(props.reg_secondary_source){
-                  popupContent += "<br /><strong>Secondary Source(s): </strong>";
-                  for(i=0; i<reg_sec_sources.length;i++){
-                      if(i != reg_sec_sources.length-1){ popupContent += reg_sec_sources[i] + ", ";}
-                      else { popupContent += reg_sec_sources[i];}
-                    }
-              }
+        if(props.reg_secondary_source){
+            popupContent += "<br /><strong>Secondary Source(s): </strong>" + reg_sec_sources.join(", ");
+        }
 
-              if(props.pendingreg_explainer){
-                  popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.pendingreg_explainer
-                  + "<br /><strong>Source(s): </strong>";
-                  for(i=0; i<preg_sources.length;i++){
-                      if(i != preg_sources.length-1){ popupContent += preg_sources[i] + ", ";}
-                      else { popupContent += preg_sources[i];}
-                  }
+        if(props.pendingreg_explainer){
+            popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.pendingreg_explainer
+            + "<br /><strong>Source(s): </strong>" + preg_sources.join(", ")
+            if(props.pendingreg_secondary_source){
+                popupContent += "<br /><strong>Secondary Source(s): </strong>" + preg_sec_sources.join(", ");
+            }
+        //+ "<br /><strong>Pending Regulations Status: </strong>" + props.pendingreg_status_flag;
+        }
 
-                  if(props.pendingreg_secondary_source){
-                      popupContent += "<br /><strong>Secondary Source(s): </strong>";
-                      for(i=0; i<preg_sec_sources.length;i++){
-                          if(i != preg_sec_sources.length-1){ popupContent += preg_sec_sources[i] + ", ";}
-                          else { popupContent += preg_sec_sources[i];}
-                      }
-                  }
-              //+ "<br /><strong>Pending Regulations Status: </strong>" + props.pendingreg_status_flag;
-              }
+        if(props.exampleflight_description){
+            popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + props.exampleflight_description
+            + "<br /><strong>Source(s): </strong>" + emFlight_sources.join(", ");
+        }
 
-              if(props.exampleflight_description){
-                  popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + props.exampleflight_description
-                  + "<br /><strong>Source(s): </strong>";
-                  for(i=0; i<emFlight_sources.length;i++){
-                          if(i != emFlight_sources.length-1){ popupContent += emFlight_sources[i] + ", ";}
-                          else { popupContent += emFlight_sources[i];}
-                      }
-              }
-
-              if(props.enforcement_action){
-                  popupContent += "<br /><br /><strong>Enforcement Action: </strong>";
-                  for(i=0; i<enforcement_links.length;i++){
-                          if(i != enforcement_links.length-1){ popupContent += enforcement_links[i] + ", ";}
-                          else { popupContent += enforcement_links[i];}
-                      }
-              }
+        if(props.enforcement_action){
+            popupContent += "<br /><br /><strong>Enforcement Action: </strong>" + enforcement_links.join(", ");
+        }
           feature.properties.popupContent = popupContent;
       }
   }
