@@ -4,257 +4,381 @@
 <meta charset=utf-8 />
 <title>WoD</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
-<script src='drones_flights_05012015.geojson'></script>
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' />
+
 <style>
   html, body { margin:0; padding:0; height: 100%; }
   #map { width:100%; height: 100%; }
-  .info {
-        padding: 6px 8px;
-        font: 12px/14px Arial, Helvetica, sans-serif;
-        background: white;
-        background: rgba(255,255,255,1);
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        border-radius: 5px;
-        width: 300px;
-    }
-    .info h4 {
-        margin: 0 0 5px;
-        color: #333;
-    }
+  .marker { 
+    background-color: rgba(45, 187, 179, 0.75);
+    border: 1px solid rgb(45, 187, 179);
+    padding: 5px;
+  }
+  .marker-circle {
+    border-radius: 50%;
+  }
+  .marker-highlight {
+    background-color: rgba(45, 187, 179, 0.5);
+    box-shadow: 0px 0px 2px 3px rgba(45, 187, 179, 0.5);
+  }
+  #filters {
+    z-index:1001;
+    position:absolute;
+  }
+  #filters .btn-group-xs>.btn:first-child {
+    border-radius: 0px 0px 0px 0px;
+  }
+  #filters .btn-group-xs>.btn:last-child {
+    border-radius: 0px 0px 3px 0px;
+  }
+  .leaflet-top .leaflet-control {
+    top: 30px;
+  }
+  #popup {
+    z-index:2;
+    position:absolute;
+    right:0px;
+    top:0px;
+    font-size: 12px;
+    padding: 6px 8px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    border-radius: 0px 0px 0px 5px;
+    width: 300px;
+  }
 </style>
 </head>
 <body>
-
+<!--FILTERS -->
+<div id="filters">
+  <div class="btn-group btn-group-xs">
+    <div class="btn-group btn-group-xs">
+      <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="missionLabel" data-toggle="dropdown" aria-expanded="true">
+        Filter by Mission Type
+        <span class="caret"></span>
+      </button>
+      <ul id="missionFilter" class="dropdown-menu" role="menu" aria-labelledby="missionLabel">
+        <li class="small"><a href="#">All Mission Types</a></li>
+        <li role="presentation" class="small divider"></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Agriculture"/> Agriculture</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Archaeology"/> Archaeology</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Armed Conflict Monitoring"/> Armed Conflict Monitoring</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Cargo"/> Cargo</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Community Mapping"/> Community Mapping</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Current Events"/> Current Events</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Disaster Response"/> Disaster Response</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Environmental Surveying"/> Environmental Surveying</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Search and Rescue"/> Search and Rescue</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Training" /> Training</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Other"/> Other</a></li>
+        <li class="small"><a href="#"><input type="checkbox" value="Wildlife Surveying"/> Wildlife Surveying</a></li>
+      </ul>
+    </div>
+    <div class="btn-group btn-group-xs">
+      <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="costLabel" data-toggle="dropdown" aria-expanded="true">
+        Filter by Cost (USD)
+        <span class="caret"></span>
+      </button>
+      <ul id="costFilter" class="dropdown-menu" role="menu" aria-labelledby="costLabel">
+        <input type="hidden" value="default">
+        <li class="small"><a href="#" data-value="default">All Costs</a></li>
+        <li role="presentation" class="small divider"></li>
+        <li class="small"><a href="#" data-value="Under">Below $10K</a></li>
+        <li class="small"><a href="#" data-value="Over">Above $10K</a></li>
+      </ul>
+    </div>
+    <div class="btn-group btn-group-xs">
+      <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="typeLabel" data-toggle="dropdown" aria-expanded="true">
+        Filter by Drone Type
+        <span class="caret"></span>
+      </button>
+      <ul id="typeFilter" class="dropdown-menu" role="menu" aria-labelledby="typeLabel">
+        <input type="hidden" value="default">
+        <li class="small"><a href="#" data-value="default">All Drone Types</a></li>
+        <li role="presentation" class="small divider"></li>
+        <li class="small"><a href="#" data-value="Multirotor">Multirotor</a></li>
+        <li class="small"><a href="#" data-value="Fixed Wing">Fixed Wing</a></li>
+        <li class="small"><a href="#" data-value="Other,N/A">Multiple, Other or Unknown</a></li>
+      </ul>
+    </div>
+    <div class="btn btn-primary">
+      <span style="display: inline-block; width:70px" id="minDateLabel"></span><input type="hidden" id="minDate">
+      <div id="date-range" style="display: inline-block; margin:0px 20px 0 20px; width:200px"></div>
+      <span id="maxDateLabel"></span><input type="hidden" id="maxDate">
+    </div>
+  </div>
+</div>
+<!-- end filters -->
+<div id="popup">
+  <h5 id="prompt" class="text-center">Click to learn about a drone flight</h5>
+  <div id="detail"></div>
+</div>
 <div id='map'></div>
 <script>
+var CKAN_SEARCH = "https://data.opentechinstitute.org/api/3/action/datastore_search";
+var CKAN_RESOURCE_FLIGHTS = "cdfe00c8-c34e-4273-b939-c2f08c8d24a2";
 
-L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
-var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
-        maxZoom: 13,
-        minZoom: 2,
-        
-        tileLayer: {
-            continuousWorld: false,
-            noWrap: true
-        }
+// fetch the data
+$.ajax({
+  dataType: "json",
+  url: CKAN_SEARCH,
+  method: "POST",
+  data: JSON.stringify({ "resource_id": CKAN_RESOURCE_FLIGHTS, "limit": 100000 }),
+  success: initMap
+});
+
+// wrap all the map logic in a function
+function initMap(data) {
+
+  // reformat the CKAN record into GeoJSON
+  function toGeoJSONFeature(d) {
+    return {
+      "type": "Feature",
+      "geometry": d.geometry,
+      "properties": Object.keys(d)
+        .filter(function(k) { return k != "geometry"; })
+        .reduce(function(p,k) { p[k] = d[k]; return p; }, {})
+    };
+  }
+
+  function validGeoJSON(d) {
+    return d.geometry.coordinates.every(function(s) { return s !== null && !isNaN(s); });
+  };
+
+  var geojson = {
+    "type": "FeatureCollection",
+    "features": data.result.records.filter(validGeoJSON).map(toGeoJSONFeature)
+  };
+
+  L.mapbox.accessToken = 'pk.eyJ1IjoibmV3YW1lcmljYSIsImEiOiIyM3ZnYUtrIn0.57fFgg_iM7S1wLH2GQC71g';
+  var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
+    maxZoom: 13,
+    minZoom: 2,
+    tileLayer: {
+      continuousWorld: false,
+      noWrap: true
+    }
+  });
+  map.scrollWheelZoom.disable();
+
+  var squareMarker = L.divIcon({ "className": "marker" });
+  var squareHighlightMarker = L.divIcon({ "className": "marker marker-highlight" });
+  
+  var circleMarker = L.divIcon({ "className": "marker marker-circle" });
+  var circleHighlightMarker = L.divIcon({ "className": "marker marker-circle marker-highlight" });
+  
+  // TODO: clean up use of global `myLayer` and `lastClicked`
+  var myLayer;
+  var lastClicked;
+
+  function render(filteredData) {
+    if(myLayer) { map.removeLayer(myLayer); }
+
+    myLayer = L.geoJson(filteredData, {
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, { "icon": feature.properties.drone_type == "Multirotor" ? squareMarker : circleMarker });
+        },
+        onEachFeature: onEachFeature
     });
-        map.scrollWheelZoom.disable();
 
-// use the filter function in leaflet to do the filters on the map
-/*var combat =  L.geoJson(data, {
-            onEachFeature: onEachFeature,
-            filter:function (feature, layer) {
-                if(feature.properties.woddata219_tier_ii_plus){
-                    return feature.properties.woddata219_used_armed_drones_in_combat == 1;
-                }
-                return false;
-            },
-            style: function (feature) {
-                return {color: '#081d58'};
-            }
-    });*/
+    myLayer.addTo(map);
+  }
 
+  function resetHighlight() {
+    if(lastClicked) {
+      lastClicked.setIcon(lastClicked.options.icon == squareHighlightMarker ? squareMarker : circleMarker)
+    }
+    $("#prompt").show();
+    $("#detail").hide();
+  }
 
-        var markerOptions = {
-            radius: 8,
-            fillColor: "#2dbbb3",
-            color: "#000",
-            weight: 0.5,
-            opacity: 0.5,
-            fillOpacity: 0.8
-          };
+  function highlightFeature(e) {
+    resetHighlight();
+    $("#prompt").hide();
+    $("#detail").show().html(e.target.feature.properties.popupContent);
+    e.target.setIcon(e.target.options.icon == squareMarker ? squareHighlightMarker : circleHighlightMarker);
+    lastClicked = e.target;
+  }
 
-        function style(feature) {
-            return {
-                color: '#2dbbb3',
-                weight: 1.5,
-                fillOpacity: 0.05,
-                fillColor: "#fff"
-            };
+  function onEachFeature(feature, layer) {
+    layer.on({ "click": highlightFeature });
+
+    var p = feature.properties;
+
+    //actual infobox text
+    var html = '<h4>' + p.location_descriptive + '</h5>';
+    html += '<strong>Operating Entity:</strong> ' + p.operating_entity + '<br/>';
+    html += '<strong>Date:</strong> ' + monthFormat(p.date_begun, p.date_begun) + (p.date_ended != p.date_begun ? ' - ' + monthFormat(p.date_ended, p.date_ended) : '') + '<br/>';
+    html += '<strong>Drone Type:</strong> ' + (p.drone_type == 'N/A' ? "Multiple, Other, or Unknown" : p.drone_type) + '<br/>';
+    html += '<strong>Model:</strong> ' + (p.drone_model_name == 'N/A' ? "Unknown or Not Applicable" : p.drone_model_name) + '<br/>';
+    html += '<strong>Manufacturer:</strong> ' + (p.drone_manufacturer == 'N/A' ? "Unknown or Not Applicable" : p.drone_manufacturer) + '<br/>';
+    html += '<strong>Camera:</strong> ' + (p.camera_equipment == 'N/A' ? "Unknown or Not Applicable" : p.camera_equipment) + '<br/>';
+    html += '<strong>Cost:</strong> ' + (p.cost_range == 'N/A' ? "Unknown or Not Applicable" : p.cost_range) + '<br/><br/>';
+    html += '<strong>Type(s) of Mission:</strong> ' + p.mission_type.join(", ");
+    html +='<br/>';
+    html += '<strong>Country:</strong> ' + p.country_name + '<br/>';
+    html += '<strong>Location Description:</strong> ' + p.location_descriptive + '<br/>';
+    html += '<strong>Description:</strong> ' + p.mission_description + '<br/>';
+    html += '<strong>Source(s):</strong> ' + p.sources.map(function(s) { return '<a href="' + s.url + '" target="_blank" >' + s.name + '</a>'; }).join(", ");
+    p.popupContent = html;
+  }
+
+  function parseIntSafe(s, def) { return isNaN(parseInt(s,10)) ? def : parseInt(s,10); }
+
+  function monthFormat(yyyyMM, def) {
+    // converts to "MMM yyyy"
+    var d = parseIntSafe(yyyyMM, -1);
+    return d == -1 ? def : new Date(d*10e-2, (d % 100) - 1, 1).toString().replace(/.{4}(.{3}).{4}(.{4}).*/,"$1 $2")
+  }
+
+  function monthGenerator(start, end) {
+    var months = [start];
+    while((last = months[months.length-1]) <= end) { months.push(last + (last%100 == 12 ? 89 : 1)); }
+    return months;
+  }
+
+  function initFilters(data) {
+    var thisMonth = new Date().getFullYear() * 100 + new Date().getMonth() + 1;
+    
+    // calculate the range of months from the data
+    var range = data.reduce(function(p,c) {
+        var date_begun = parseIntSafe(c.properties.date_begun, thisMonth);
+        var date_ended = parseIntSafe(c.properties.date_ended, thisMonth);
+        // protect against bad data (i.e. year-only data)
+        if(date_begun < 10000) { date_begun = date_begun*100 + 1; }
+        if(date_ended < 10000) { date_ended = date_ended*100 + 1; }
+        return {
+          "min": Math.min(p.min, date_begun),
+          "max": Math.max(p.max, date_ended)
         }
+      },
+      { "min": thisMonth, "max": thisMonth });
+    
+    //generate the full set of months
+    var months = monthGenerator(range.min, range.max);
 
-        // control that shows state info on hover
-        var info = L.control();
+    // setup date filter / render:
+    $("#minDate").val(range.min);
+    $("#maxDate").val(range.max);
+    $("#minDateLabel").text(monthFormat(range.min));
+    $("#maxDateLabel").text(monthFormat(range.max));
+    $("#date-range").slider({
+      "range": true,
+      "min": 0,
+      "max": months.length-1,
+      "values": [0, months.length-1],
+      "slide": function(e, ui) {
+        // N.B.: the `months` value is captured
+        $("#minDateLabel").text(monthFormat(months[ui.values[0]]));
+        $("#minDate").val(months[ui.values[0]]);
+        $("#maxDateLabel").text(monthFormat(months[ui.values[1]]));
+        $("#maxDate").val(months[ui.values[1]]);
+        applyFilters()
+      }
+    });
 
-        info.onAdd = function (map) {
-            this._div = L.DomUtil.create('div', 'info');
-            this.update();
-            return this._div;
-        };
-
-        info.update = function (props) {
-            this._div.innerHTML = '<h4>Click to learn about a drone flight.</h4>';
-        };
-
-        info.addTo(map);
-
-        var myLayer;
-
-        function highlightFeature(e) {
-            var layer = e.target;
-            $('.info').html(layer.feature.properties.popupContent);
-            layer.setStyle({
-                weight: 5,
-                color: '#2dbbb3',
-                fillOpacity: 0.5,
-                fillColor: "#2dbbb3"
-            });
-
-            if (!L.Browser.ie && !L.Browser.opera) {
-                layer.bringToFront();
-            }
+    $("#missionFilter a").on("click", function (e) {
+      var $this = $(e.currentTarget);
+      var chk = $this.find("input")[0];
+      setTimeout(function () {
+        if (chk) {
+          chk.checked = !chk.checked;
+        } else {
+          $("#missionFilter input").prop("checked", false);
         }
+        var $selected = $("#missionFilter input").filter(":checked");
+        var filterLabel = $selected.length ? ($selected.val() + ($selected.length > 1 ? " + " + ($selected.length - 1) + " more" : "")) : "All Mission Types";
+        $("#missionLabel").text(filterLabel);
 
+        applyFilters();
+      }, 0);
 
-        function resetHighlight(e) {
-            myLayer.resetStyle(e.target);
-            $('.info').html('<h4>Click on a country.</h4>');
-        }
+      $(e.target).blur();
+      return !chk;
+    });
 
-        var lastClickedLayer;
+    $("#costFilter a").on("click", function(e) {
+      $("#costFilter input").val($(this).data("value"));
+      $("#costLabel").text($(this).text());
+      applyFilters();
+    });
 
-        function zoomToFeature(e) {
-            if(lastClickedLayer){
-                myLayer.resetStyle(lastClickedLayer);
-            }
-            var layer = e.target;
+    $("#typeFilter a").on("click", function(e) {
+      $("#typeFilter input").val($(this).data("value"));
+      $("#typeLabel").text($(this).text());
+      applyFilters();
+    });
+  }
 
-            
-            
-            $('.info').html(layer.feature.properties.popupContent);
+  function applyFilters() {
+    // collect values from around the DOM
+    // costly performance: do this before the `filter(...)`
+    var missionValue = $("#missionFilter input")
+          .filter(function(idx, el) { return el.checked; })
+          .map(function(idx, el) { return el.value; }).get();
+    if(missionValue.length === 0) {
+      missionValue = ["default"];
+    }
+    var costValue = $("#costFilter input").val();
+    var typeValue = $("#typeFilter input").val();
 
-            layer.setStyle({
-                weight: 5,
-                color: '#2dbbb3',
-                fillOpacity: 0.5,
-                fillColor: "#2dbbb3"
-            });
+    var minDate = parseInt($("#minDate").val());
+    var maxDate = parseInt($("#maxDate").val());
 
-            if (!L.Browser.ie && !L.Browser.opera) {
-                layer.bringToFront();
-            }
-        
-            //$('.info').panel('open');
-            lastClickedLayer = layer;
-        }
-        
+    // N.B. `geojson` is captured from outer scope
+    // Filter values are also captured
+    var filteredData = geojson.features.filter(function(d) {
+        // for each datum, determine if it passes each filter:
+        var pass_mission_filter = missionValue.some(function(v) {
+            return [
+              "default", // this is the "unfiltered" selection
+              d.properties.mission_tag1,
+              d.properties.mission_tag2,
+              d.properties.mission_tag3,
+              d.properties.mission_tag4
+            ].indexOf(v) > -1;
+          });
 
-        function onEachFeature(feature, layer) {
-            layer.on({
-                    //mouseover: highlightFeature,
-                    //mouseout: resetHighlight,
-                    click: zoomToFeature
-                });
+        var pass_cost_filter = [
+            "default",
+            d.properties.over_under_10k
+          ].indexOf(costValue) > -1;
 
-            var props = feature.properties;
-            //sources
-            var source = props.reference_url1;
-            var source_arr = source.split("; ");
-            var sources = [];
+        var pass_type_filter = typeValue.split(",").some(function(v) {
+            return [
+            "default",
+            d.properties.drone_type
+          ].indexOf(v) > -1;
+        });
 
-             for(i=0;i< source_arr.length; i++){
-                     var t = source_arr[i].split(": ");
-                     var p = '<a href="' + encodeURI(t[1]) + '" target="_blank" >' + t[0] + '</a>';
-                     sources.push(p);
-                   }
+        var date_begun = parseIntSafe(d.properties.date_begun, 0);
+        var date_ended = parseIntSafe(d.properties.date_ended, 999912);
+        var pass_date_filter = (date_begun < maxDate && date_ended > minDate);
 
-            //missions
-            var missionTag1 = props.mission_tag1;
-            var missionTag2 = props.mission_tag2;
-            var missionTag3 = props.mission_tag3;
-            var missionTag4 = props.mission_tag4;
-            var mission_arr = [];
+        return pass_mission_filter &&
+            pass_cost_filter &&
+            pass_type_filter &&
+            pass_date_filter;
+    });
 
-            if(missionTag1){
-              mission_arr.push(missionTag1);
-            }
-            if(missionTag2){
-              mission_arr.push(missionTag2);
-            }
-            if(missionTag3){
-              mission_arr.push(missionTag3);
-            }
-            if(missionTag4){
-              mission_arr.push(missionTag4);
-            }
+    render(filteredData);
+  }
 
-            //actual infobox text
-            var html = '<h4>' + props.location_descriptive + '</h4>';
-            
-            html += '<strong>Operating Entity:</strong> ' + props.operating_entity + '<br/>';
-
-            html += '<strong>Dates:</strong> ' + props.date_begun + ' - ' + props.date_ended + '<br/>';
-            
-            html += '<strong>Drone Type:</strong> ';
-              if(props.drone_type == 'N/A'){
-                 html += 'Multiple, Other, or Unknown<br/>';
-                }
-              else {html += props.drone_type + '<br/>';}
-
-            html += '<strong>Model:</strong> ';
-              if(props.drone_model_name == 'N/A'){
-                 html += 'Unknown or Not Applicable<br/>';
-                }
-              else {html += props.drone_model_name + '<br/>';}
-            
-            html += '<strong>Manufacturer:</strong> ';
-              if(props.drone_manufacturer == 'N/A'){
-                 html += 'Unknown or Not Applicable<br/>';
-                }
-              else {html += props.drone_manufacturer + '<br/>';}
-
-            html += '<strong>Camera:</strong> ';
-              if(props.camera_equipment == 'N/A'){
-                 html += 'Unknown or Not Applicable<br/>';
-                }
-              else {html += props.camera_equipment + '<br/>';}
-
-            html += '<strong>Cost:</strong> ';
-              if(props.cost_range == 'N/A'){
-                 html += 'Unknown or Not Applicable<br/><br/>';
-                }
-              else {html += props.cost_range + '<br/><br/>';}
-
-            html += '<strong>Type(s) of Mission:</strong> ';
-            for(i=0; i<mission_arr.length;i++){
-                if(i != mission_arr.length-1){ html += mission_arr[i] + ", ";}
-                else { html += mission_arr[i];}
-              }
-            html +='<br/>';
-            html += '<strong>Country:</strong> ' + props.country_name + '<br/>';
-            html += '<strong>Location Description:</strong> ' + props.location_descriptive + '<br/>';
-            html += '<strong>Description:</strong> ' + props.mission_description + '<br/>';
-            html += '<strong>Source(s):</strong> ';
-            for(i=0; i<sources.length;i++){
-                if(i != sources.length-1){ html += sources[i] + ", ";}
-                else { html += sources[i];}
-              }
-
-                feature.properties.popupContent = html;
-            } 
-
-
-        myLayer = L.geoJson(data, {
-            //style: style,
-            pointToLayer: function (feature, latlng) {
-                return L.circleMarker(latlng, markerOptions);
-            },
-            onEachFeature: onEachFeature
-                /*filter:function (feature, layer) {
-                    if(feature.properties.woddata219_tier_ii_plus){
-                        return feature.properties.woddata219_used_armed_drones_in_combat == 1;
-                    }
-                    return false;
-                },*/
-
-        }).addTo(map);
-
+  // one-time / setup 
+  $(document).ready(function() {
+    $("#map").click(resetHighlight);
+    render(geojson.features);
+    initFilters(geojson.features);
+  });
+}
 </script>
-
-
-
 </body>
 </html>
