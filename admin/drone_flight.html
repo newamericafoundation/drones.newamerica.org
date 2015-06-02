@@ -328,7 +328,7 @@ function toRecord(obj) {
   });
 
   rec.date_begun = new String(obj.date_begun.getFullYear()*100 + obj.date_begun.getMonth() + 1);
-  rec.date_ended = obj.date_ended && !isNaN(obj.date_ended) ? obj.date_ended.getFullYear()*100 + obj.date_ended.getMonth() + 1 : "ONGOING";
+  rec.date_ended = obj.date_ended && !isNaN(obj.date_ended) ? new String(obj.date_ended.getFullYear()*100 + obj.date_ended.getMonth() + 1) : "ONGOING";
 
   // calculated fields
   rec.geometry = {
