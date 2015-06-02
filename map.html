@@ -20,6 +20,7 @@
     border-radius: 0px 5px 0px 0px;
     padding: 0px 4px 0px 10px;
     background: rgba(255,255,255,.75);
+    font-size: 10px;
   }
   #popup {
     z-index:2;
@@ -132,7 +133,7 @@ function initMap(data) {
         var enforcement_links = (props.enforcement_action || []).map(toLink);
         var popupContent = '';
         popupContent += "<h4>" + props.country
-              + "</h4><strong>Regulations: </strong>" + props.reg_explainer
+              + "</h4><strong>Regulations: </strong>" + (props.reg_explainer||"")
               //+ "<br/><strong>Status: </strong>" + props.reg_status_flag
               + "<br/><strong>Source(s):</strong> " + reg_sources.join(", ")
 
@@ -141,7 +142,7 @@ function initMap(data) {
         }
 
         if(props.pendingreg_explainer){
-            popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + props.pendingreg_explainer
+            popupContent += "<br /><br /><strong>Pending Regulations: </strong>" + (props.pendingreg_explainer||"")
             + "<br /><strong>Source(s): </strong>" + preg_sources.join(", ")
             if(props.pendingreg_secondary_source){
                 popupContent += "<br /><strong>Secondary Source(s): </strong>" + preg_sec_sources.join(", ");
@@ -150,7 +151,7 @@ function initMap(data) {
         }
 
         if(props.exampleflight_description){
-            popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + props.exampleflight_description
+            popupContent += "<br /><br /><strong>Example Flight(s): </strong>" + (props.exampleflight_description||"")
             + "<br /><strong>Source(s): </strong>" + emFlight_sources.join(", ");
         }
 
