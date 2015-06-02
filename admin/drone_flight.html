@@ -324,7 +324,7 @@ function toRecord(obj) {
 
   // clean values
   Object.keys(rec).forEach(function(k) {
-    if(rec[k] === "") { rec[k] = null; }
+    if(rec[k] !== null && rec[k].length === 0) { rec[k] = null; }
   });
 
   rec.date_begun = new String(obj.date_begun.getFullYear()*100 + obj.date_begun.getMonth() + 1);

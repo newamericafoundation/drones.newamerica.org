@@ -356,7 +356,7 @@ function toRecord(obj) {
 
   // clean values
   Object.keys(rec).forEach(function(k) {
-    if(rec[k].length === 0) { rec[k] = null; }
+    if(rec[k] !== null && rec[k].length === 0) { rec[k] = null; }
   });
 
   rec.id = rec.id || md5(JSON.stringify(rec)).slice(0,7);
