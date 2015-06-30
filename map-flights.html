@@ -17,10 +17,29 @@
 <style>
   html, body { margin:0; padding:0; height: 100%; }
   #map { width:100%; height: 100%; }
+  #legend {
+    z-index:2;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    border-radius: 5px 0px 0px 0px;
+    padding: 5px;
+    background: rgba(255,255,255,.75);
+    font-size: 10px;
+  }
+  #legend> div {
+    display:flex;
+    margin:5px;
+  }
+  #legend .marker {
+    width:16px;
+    height:16px;
+    margin-right:5px;
+    display:inline-block;
+  }
   .marker { 
     background-color: rgba(45, 187, 179, 0.75);
     border: 1px solid rgb(45, 187, 179);
-    padding: 5px;
   }
   .marker-circle {
     border-radius: 50%;
@@ -121,6 +140,11 @@
   <h5 id="prompt" class="text-center">Click to learn about a drone flight</h5>
   <div id="detail"></div>
 </div>
+<div id="legend">
+  <div><div class="marker"></div> Multirotor Drone</div>
+  <div><div class="marker marker-circle"></div> Fixed wing or Other</div>
+  <div>Size indicates cost of drone</div>
+</div>
 <div id='map'></div>
 <script>
 var CKAN_SEARCH = "https://data.opentechinstitute.org/api/3/action/datastore_search";
@@ -162,18 +186,10 @@ function initMap(data) {
   var map = L.mapbox.map('map', 'newamerica.l89jcfpc', {
     maxZoom: 13,
     minZoom: 2,
-    tileLayer: {
-      continuousWorld: false,
-      noWrap: true
-    }
+    maxBounds:[[90,-190],[-90,190]],
+    attributionControl: false
   });
   map.scrollWheelZoom.disable();
-
-  var squareMarker = L.divIcon({ "className": "marker" });
-  var squareHighlightMarker = L.divIcon({ "className": "marker marker-highlight" });
-  
-  var circleMarker = L.divIcon({ "className": "marker marker-circle" });
-  var circleHighlightMarker = L.divIcon({ "className": "marker marker-circle marker-highlight" });
   
   // TODO: clean up use of global `myLayer` and `lastClicked`
   var myLayer;
@@ -184,7 +200,9 @@ function initMap(data) {
 
     myLayer = L.geoJson(filteredData, {
         pointToLayer: function (feature, latlng) {
-          return L.marker(latlng, { "icon": feature.properties.drone_type == "Multirotor" ? squareMarker : circleMarker });
+          var iconClass = feature.properties.drone_type == "Multirotor" ? "marker" : "marker marker-circle";
+          var iconSize = feature.properties.over_under_10k == "Over" ? L.point(16,16) : L.point(9,9);
+          return L.marker(latlng, { "icon": L.divIcon({ "iconSize": iconSize, "className": iconClass }) });
         },
         onEachFeature: onEachFeature
     });
@@ -194,7 +212,7 @@ function initMap(data) {
 
   function resetHighlight() {
     if(lastClicked) {
-      lastClicked.setIcon(lastClicked.options.icon == squareHighlightMarker ? squareMarker : circleMarker)
+      lastClicked.options.icon.options.className = lastClicked.options.icon.options.className.split(" ").filter(function(c) { return c != "marker-highlight"; }).join(" ");
     }
     $("#prompt").show();
     $("#detail").hide();
@@ -204,7 +222,7 @@ function initMap(data) {
     resetHighlight();
     $("#prompt").hide();
     $("#detail").show().html(e.target.feature.properties.popupContent);
-    e.target.setIcon(e.target.options.icon == squareMarker ? squareHighlightMarker : circleHighlightMarker);
+    e.target.options.icon.options.className = e.target.options.icon.options.className + " marker-highlight";
     lastClicked = e.target;
   }
 
