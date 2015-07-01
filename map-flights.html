@@ -21,13 +21,13 @@
     z-index:2;
     position:absolute;
     bottom:0px;
-    right:0px;
+    left:0px;
     border-radius: 5px 0px 0px 0px;
     padding: 5px;
-    background: rgba(255,255,255,.75);
+    background: rgba(255,255,255,1);
     font-size: 10px;
   }
-  #legend> div {
+  #legend>div {
     display:flex;
     margin:5px;
   }
@@ -38,8 +38,8 @@
     display:inline-block;
   }
   .marker { 
-    background-color: rgba(45, 187, 179, 0.75);
-    border: 1px solid rgb(45, 187, 179);
+    background-color: rgba(127,127,127,0.75);
+    border: 1px solid rgb(127,127,127);
   }
   .marker-circle {
     border-radius: 50%;
@@ -48,6 +48,19 @@
     background-color: rgba(45, 187, 179, 0.5);
     box-shadow: 0px 0px 2px 3px rgba(45, 187, 179, 0.5);
   }
+  .color-agriculture { background:rgba(51,160,44,0.75); border:1px solid rgb(51,160,44); }
+  .color-archaeology { background:rgba(255,127,0,0.75); border:1px solid rgb(255,127,0); }
+  .color-armed-conflict-monitoring { background:rgba(227,26,28,0.75); border:1px solid rgb(227,26,28); }
+  .color-cargo { background:rgba(177,89,40,0.75); border:1px solid rgb(177,89,40); }
+  .color-community-mapping { background:rgba(166,206,227,0.75); border:1px solid rgb(166,206,227); }
+  .color-current-events { background:rgba(31,120,180,0.75); border:1px solid rgb(31,120,180); }
+  .color-disaster-response { background:rgba(106,61,154,0.75); border:1px solid rgb(106,61,154); }
+  .color-environmental-surveying { background:rgba(45,187,179,0.75); border:1px solid rgb(45,187,179); }
+  .color-search-and-rescue { background:rgba(251,154,153,0.75); border:1px solid rgb(251,154,153); }
+  .color-training { background:rgba(255,255,153,0.75); border:1px solid rgb(255,255,153); }
+  .color-other { background:rgba(253,191,111,0.75); border:1px solid rgb(253,191,111); }
+  .color-wildlife-surveying { background:rgba(178,223,138,0.75); border:1px solid rgb(178,223,138); }
+
   #filters {
     z-index:1001;
     position:absolute;
@@ -141,6 +154,20 @@
   <div id="detail"></div>
 </div>
 <div id="legend">
+  <div>Color indicates mission type:</div> 
+  <div><div class="marker color-agriculture"></div> Agriculture</div>
+  <div><div class="marker color-archaeology"></div> Archaeology</div>
+  <div><div class="marker color-armed-conflict-monitoring"></div> Armed Conflict Monitoring</div>
+  <div><div class="marker color-cargo"></div> Cargo</div>
+  <div><div class="marker color-community-mapping"></div> Community Mapping</div>
+  <div><div class="marker color-current-events"></div> Current Events</div>
+  <div><div class="marker color-disaster-response"></div> Disaster Response</div>
+  <div><div class="marker color-environmental-surveying"></div> Environmental Surveying</div>
+  <div><div class="marker color-search-and-rescue"></div> Search and Rescue</div>
+  <div><div class="marker color-training"></div> Training</div>
+  <div><div class="marker color-other"></div> Other</div>
+  <div><div class="marker color-wildlife-surveying"></div> Wildlife Surveying</div>
+  <div>Shape indicates drone type:</div>
   <div><div class="marker"></div> Multirotor Drone</div>
   <div><div class="marker marker-circle"></div> Fixed wing or Other</div>
   <div>Size indicates cost of drone</div>
@@ -202,6 +229,7 @@ function initMap(data) {
         pointToLayer: function (feature, latlng) {
           var iconClass = feature.properties.drone_type == "Multirotor" ? "marker" : "marker marker-circle";
           var iconSize = feature.properties.over_under_10k == "Over" ? L.point(16,16) : L.point(9,9);
+          iconClass += " color-" + feature.properties.mission_type[0].replace(/\s/g,"-").toLowerCase();
           return L.marker(latlng, { "icon": L.divIcon({ "iconSize": iconSize, "className": iconClass }) });
         },
         onEachFeature: onEachFeature
@@ -235,11 +263,11 @@ function initMap(data) {
     var html = '<h4>' + p.location_descriptive + '</h5>';
     html += '<strong>Operating Entity:</strong> ' + p.operating_entity + '<br/>';
     html += '<strong>Date:</strong> ' + monthFormat(p.date_begun, p.date_begun) + (p.date_ended != p.date_begun ? ' - ' + monthFormat(p.date_ended, p.date_ended) : '') + '<br/>';
-    html += '<strong>Drone Type:</strong> ' + (p.drone_type == 'N/A' ? "Multiple, Other, or Unknown" : p.drone_type) + '<br/>';
-    html += '<strong>Model:</strong> ' + (p.drone_model_name == 'N/A' ? "Unknown or Not Applicable" : p.drone_model_name) + '<br/>';
-    html += '<strong>Manufacturer:</strong> ' + (p.drone_manufacturer == 'N/A' ? "Unknown or Not Applicable" : p.drone_manufacturer) + '<br/>';
-    html += '<strong>Camera:</strong> ' + (p.camera_equipment == 'N/A' ? "Unknown or Not Applicable" : p.camera_equipment) + '<br/>';
-    html += '<strong>Cost:</strong> ' + (p.cost_range == 'N/A' ? "Unknown or Not Applicable" : p.cost_range) + '<br/><br/>';
+    html += '<strong>Drone Type:</strong> ' + ((p.drone_type||"N/A") == 'N/A' ? "Multiple, Other, or Unknown" : p.drone_type) + '<br/>';
+    html += '<strong>Model:</strong> ' + ((p.drone_model_name||"N/A") == 'N/A' ? "Unknown or Not Applicable" : p.drone_model_name) + '<br/>';
+    html += '<strong>Manufacturer:</strong> ' + ((p.drone_manufacturer||"N/A") == 'N/A' ? "Unknown or Not Applicable" : p.drone_manufacturer) + '<br/>';
+    html += '<strong>Camera:</strong> ' + ((p.camera_equipment||"N/A") == 'N/A' ? "Unknown or Not Applicable" : p.camera_equipment) + '<br/>';
+    html += '<strong>Cost:</strong> ' + ((p.cost_range||"N/A") == 'N/A' ? "Unknown or Not Applicable" : p.cost_range) + '<br/><br/>';
     html += '<strong>Type(s) of Mission:</strong> ' + p.mission_type.join(", ");
     html +='<br/>';
     html += '<strong>Country:</strong> ' + p.country_name + '<br/>';
