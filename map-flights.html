@@ -64,6 +64,11 @@
   #filters {
     z-index:1001;
     position:absolute;
+    width:100%;
+  }
+  #filters .bg-primary {
+    position:relative;
+    z-index:2
   }
   #filters .btn-group-xs>.btn:first-child {
     border-radius: 0px 0px 0px 0px;
@@ -75,10 +80,9 @@
     top: 30px;
   }
   #popup {
-    z-index:2;
     position:absolute;
     right:0px;
-    top:0px;
+    z-index:1;
     font-size: 12px;
     padding: 6px 8px;
     background: white;
@@ -91,6 +95,7 @@
 <body>
 <!--FILTERS -->
 <div id="filters">
+  <div class="bg-primary">
   <div class="btn-group btn-group-xs">
     <div class="btn-group btn-group-xs">
       <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="missionLabel" data-toggle="dropdown" aria-expanded="true">
@@ -148,12 +153,16 @@
     </div>
   </div>
 </div>
-<!-- end filters -->
-<div id="popup">
+  <div id="popup">
   <h5 id="prompt" class="text-center">Click to learn about a drone flight</h5>
   <div id="detail"></div>
 </div>
+
+</div>
+<!-- end filters -->
 <div id="legend">
+  <a class="btn btn-block btn-default btn-xs" href="#legend">Show Legend</a>
+  <span>
   <div>Color indicates mission type:</div> 
   <div><div class="marker color-agriculture"></div> Agriculture</div>
   <div><div class="marker color-archaeology"></div> Archaeology</div>
@@ -171,19 +180,28 @@
   <div><div class="marker"></div> Multirotor Drone</div>
   <div><div class="marker marker-circle"></div> Fixed wing or Other</div>
   <div>Size indicates cost of drone</div>
+  </span>
 </div>
 <div id='map'></div>
 <script>
 var CKAN_SEARCH = "https://data.opentechinstitute.org/api/3/action/datastore_search";
 var CKAN_RESOURCE_FLIGHTS = "cdfe00c8-c34e-4273-b939-c2f08c8d24a2";
 
-// fetch the data
-$.ajax({
-  dataType: "json",
-  url: CKAN_SEARCH,
-  method: "POST",
-  data: JSON.stringify({ "resource_id": CKAN_RESOURCE_FLIGHTS, "limit": 100000 }),
-  success: initMap
+$(document).ready(function() {  
+  // fetch the data
+  $.ajax({
+    dataType: "json",
+    url: CKAN_SEARCH,
+    method: "POST",
+    data: JSON.stringify({ "resource_id": CKAN_RESOURCE_FLIGHTS, "limit": 100000 }),
+    success: initMap
+  });
+
+  $("#legend a").click(function() {
+    var next = $(this).next();
+    $(this).text((next.is(":visible") ? "Show" : "Hide") + " Legend");
+    next.slideToggle();
+  }).next().hide();
 });
 
 // wrap all the map logic in a function
