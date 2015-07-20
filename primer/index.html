@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta keywords="UAV, drone, RPAS, RPAV, UAS, drones, remote sensing, imagery, disaster response, drone regulation, FAA, ICAO, New America drone database, unmanned aircraft, RPA, VANT, COA, 333, airplane, property rights, Phantom, DJI, CAA, Transport Canada, CASA, hyperspectral, lidar, Conservation Drones, eBee, Sensefly, DIY Drones">
+<meta description="After decades of use by hobbyists and militaries,
+unmanned aircraft are now proliferating into a wide variety of new
+applications around the world. This primer describes aspects of that proliferation.">
+<style>
+@import "http://www.newamerica.org/assets/css/main.7bcb95ed.css";
+@import "http://www.newamerica.org/assets/css/wide.796fa3c5.css";
+body{
+  margin: 10px;
+}
+nav{
+  z-index:400001;
+}
+
+#intro {
+  background-size:cover;
+  border-color: #aaa;
+  padding: 10px;
+  display: inline-block;
+  width:80%;
+  margin-top: 100px;
+  margin-left: 100px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content-uavs #flight-content, #about-content, #reg-content {
+  padding: 10px 180px 10px 100px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.content-uavs #about-content p{
+  background-size:cover;
+  border-color: #aaa;
+  padding: 10px 100px 10px 90px;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+}
+
+.content-uavs .selectboxes #MissionFilter, #YearStartFilter, #YearEndFilter, #CostFilter, #TypeFilter {
+  display: inline-block;
+}
+
+#footer {
+  display: inline-block;
+  top: 90%;
+}
+div#page-container {
+  display: inline-block;
+  top: 25px;
+  width: 100%;
+}
+div#search-field{
+  width: 75%;
+  height: 50px;
+  display: inline-block;
+}
+form#search-form{
+  width: 100%;
+  height: 40px;
+  margin: 25px 0px 0 100px;
+  padding: 0 auto;
+  display: block;
+}
+form#search-form div.selectboxes select {
+  display: inline-block;
+}
+div#term-heading {
+  display: block;
+  margin-bottom: 20px;
+}
+div#search-result {
+  margin: 25px 100px 0 100px;
+  left: 10px;
+  width: 100%;
+  display: inline-block;
+  clear: both;
+}
+div#adv-search input[type=checkbox] {
+  margin-right: 3px;
+}
+div#adv-search label {
+  margin-right: 20px;
+}
+ul#term-tabs {
+  display: inline-block;
+  width: 35%;
+  float: left;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+ul#term-tabs li {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 2px;
+}
+ul#term-tabs li a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1em;
+}
+ul#term-tabs li.active{
+  background: #aaa;
+}
+ul#term-tabs li:hover {
+  background: #ccc;
+}
+div#term-defs {
+  display: inline-block;
+  margin-left: 10%;
+  margin-right: 20%;
+  padding: 1em;
+  border: 1px solid #aaa;
+}
+div#term-defs .citation {
+  font-size: 0.85em;
+  margin: 10px 0 0;
+  font-style: italic;
+  border-top: 1px dotted #aaa;
+  border-bottom: 1px solid #aaa;
+  padding: 0 1em 2em 0;
+}
+
+.content-uavs  div#flight-filters {
+  display: inline-flex;
+  border: 5px;
+  margin-bottom: 10px;
+}
+
+.content-uavs div#flight-filters select {
+  margin: 8px 7px 0px 7px;
+}
+
+div.showhide {
+  width: 100%;
+  clear: both;
+  float: right;
+}
+div.showhide.hiding {
+  background: #eee;
+  border-bottom: 1px solid #aaa;
+}
+div.showhide .heading {
+  float: left;
+}
+div.showhide .link {
+  float: right;
+}
+div.card {
+  clear: both;
+}
+div#deeplink {
+  width: 70%;
+  font-weight: bold;
+  margin-top: 20px
+}
+span#termname{
+  font-weight: bold;
+}
+
+#resetFilter {
+    height: 1.25em;
+    display: inline;
+    font: inherit;
+}
+
+ul#tabs {
+  position: relative;   
+  min-height: 55px; /* This part sucks */
+  clear: both;
+  margin: 10px 0 0 125px;
+  z-index: 1;
+}
+li.tab {
+  display: inline-block;
+  list-style: none;
+  border: 1px solid #fffaef;
+}
+li.tab>a {
+  color: inherit;
+  display: block;
+  padding: 10px;
+  cursor: pointer; 
+}
+.content-uavs {
+  background: #fffaef;
+  padding-left: 120px;
+  padding-right: 150px;
+  padding-top: 10px;
+}
+ul#tabs li.active {
+  background: #eee;
+  font-weight: bolder;
+  border-bottom: 2px solid;
+}
+ul#tabs li.tab:hover {
+  background: #eee;
+}
+<!-- [type=radio]:checked ~ label ~ .content-uavs { -->
+<!--   z-index: 1; -->
+<!-- } -->
+</style>
+
+
+<script type="text/javascript" src="newamerica/static/js/modernizr-latest.js"></script>
+
+  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
+  <![endif]-->
+
+  <!-- 3rd party JS libraries -->
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+
+
+</head>
+<body>
+
+  <nav class="na-bar " id="na-main-bar">
+    <a href="http://newamerica.org"><img src="newamerica/static/media/icons/na-menu.svg" style="width:35px; display:inline; position:absolute; top:25px; left:25px;"></a>
+    <h1 class="left-vr"><div class="page-offset"><a href="http://drones.newamerica.org/" class="org-name" id="theOrg">World of Drones</a>
+</div><div class="fr archive"><a href="http://newamerica.net/archived" target="_blank">Archived Site</a></div></h1>
+
+  </nav>
+<nav id="organization" class="org-nav">
+  <button type="button" data-related-to="orgMenu" id="ob" class="org-home light icon oti org-btn">OTI Menu</button>
+  <div class="js-menu org-links right" id="orgMenu">
+    <ul class="oti ">
+                    <li><a href="http://newamerica.org/oti/">OTI</a></li>
+                    <li><a href="http://newamerica.org/international-security">ISP</a></li>
+                    <li><a href="http://securitydata.newamerica.net">International Security Data</a></li>
+                    <li><a href="http://www.newamerica.org/our-story/">About New America</a></li>
+    </ul>
+  </div>  
+</nav>
+
+<div id="masterContent">
+<div id="intro" >
+<h1>DRONES AND AERIAL OBSERVATION:</h1> <h2>New Technologies for
+  Property Rights, Human Rights, and Global Development</h2>
+  <h2><i>A Primer</i></h2>
+<div style="display: block;">
+<p>
+Clear and secure rights to property—land, natural resources, and other
+  goods and assets—are crucial to human prosperity. Most people lack
+  such rights. That lack is in part a consequence of political and
+  social breakdowns, and in part driven by informational
+  deficits. Unmanned Aerial Vehicles (UAVs), also known as drones, are able to gather large amounts
+  of information cheaply and efficiently by virtue of their aerial perspective, as can unpowered platforms like kites and balloons.
+</p>
+
+<a href="DronesAndAerialObservation.pdf"> <img src="00-Primer-Cover.jpg" style="display: block;" height="350" align="left" hspace="15"></img></a>
+<p>
+That information, in the form of images, maps, and other data, can be used by communities to improve the quality and
+  character of their property rights. These same tools are also useful
+  in other, related aspects of global development. Drone surveillance
+  can help conservationists protect endangered wildlife and aid
+  scientists in understanding the changing climate; drone imagery can
+  be used by advocates and analysts to document and deter human rights
+  violations; UAVs can be used by first responders to search for lost
+  people or to evaluate the extent of damage after natural disasters
+  like earthquakes or hurricanes.
+</p>
+  <p>
+   This primer discusses the capabilities and limitations of unmanned
+  aerial vehicles in advancing property rights, human rights and
+  development more broadly. It contains both nuts-and-bolts advice to
+  drone operators and policy guidance. 
+  </p>
+  <p>
+  Click below to download the text of this primer, or on the
+  corresponding link for a particular chapter.
+  </p>
+  <hr>
+<p>
+</div>
+<div style="position: relative;">
+<a href="DronesAndAerialObservation.pdf">Full Text</a><br>
+<a href="01-Primer-Foreword.pdf">Foreword</a><br>
+<a href="02-Executive Summary.pdf">Executive Summary</a><br>
+<a href="Chapter 1.pdf">Chapter 1: What Drones Can Do
+and How They Can Do It</a><br>
+<a href="Chapter 2.pdf">Chapter 2: The Political Geography Of Aerial Imaging</a><br>
+<a href="Chapter 3.pdf">Chapter 3: Drone Regulation–Privacy and Property Rights</a><br>
+<a href="Chapter 4.pdf">Chapter 4: How To Make Maps With Drones</a><br>
+<a href="Chapter 5.pdf">Chapter 5: Mapping In Practice</a><br>
+<a href="Chapter 6.pdf">Chapter 6: UAVs And Humanitarian Response</a><br>
+<a href="Chapter 7.pdf">Chapter 7: Drones And Conservation</a><br>
+<a href="Chapter 8.pdf">Chapter 8: Drones And Human Rights</a><br>
+<a href="Chapter 9.pdf">Chapter 9: Case Study—Inside The World’s Largest Drone Archaeology Program</a><br>
+<a href="Chapter 10.pdf">Chapter 10: Case Study—The UN’s Drones and Congo’s War</a><br>
+<a href="Conclusion">Conclusion</a>
+</p>
+<p>
+APPENDICES<br>
+<a href="Appendix 1-Glossary.pdf.pdf">Appendix 1: Glossary</a><br>
+<a href="Appendix 2-Flight Checklist.pdf">Appendix 2: UAV Flight Checklists</a><br>
+<a href="Appendix 3-Online Resources.pdf">Appendix 3: Online Resources</a>
+</p>
+<hr>
+<p>
+This primer is a joint effort of New America's International Security
+Program and Open Technology Institute. It is part of a larger project
+which builds on the policy and technical expertise of both programs to
+provide critical analyses of the challenges facing those who would use
+drones and other aerial surveillance platforms to combat poverty and
+insecurity. It is made possible with the support of Omidyar
+Network and Humanity United.
+</p>
+<hr>
+<p>
+Konstantin Kakaes, a fellow at New America, edited the primer and
+wrote Chapters 1, 3, 8, and 10.<br>
+Faine Greenwood, a field analyst at New America, wrote Chapters 4, 5, and 9.<br>
+Mathew Lippincott and Shannon Dosemagen of Public Lab wrote Chapter 2.<br>
+Patrick Meier of the Qatar Computing Research Institute and UAViators wrote Chapter 6.<br>
+Serge Wich of Liverpool John Moores University wrote Chapter 7.<br>
+Cover illustration and interior illustrations are copyright Valerie Altounian.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+    <div class="scripted_styling"></div>
+    <script src="newamerica/static/js/jquery.widowFix-1.3.2.min.js"></script> 
+
+    <script src="http://www.newamerica.org/assets/js/components/nav.js"></script> 
+    <script src="http://www.newamerica.org/assets/js/components/carosel.js"></script> 
+    <script src="http://www.newamerica.org/assets/js/core.8d266e97.js"></script> 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-368921-33', 'auto');
+
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
