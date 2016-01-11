@@ -232,8 +232,9 @@ function initMap(data) {
     maxZoom: 13,
     minZoom: 2,
     maxBounds:[[90,-190],[-90,190]],
-    attributionControl: false
+    attributionControl: true
   });
+
   map.scrollWheelZoom.disable();
   
   // TODO: clean up use of global `myLayer` and `lastClicked`
