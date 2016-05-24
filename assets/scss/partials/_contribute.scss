@@ -1,0 +1,48 @@
+@import "../bourbon/bourbon"; 
+@import "../neat/neat"; 
+@import "../bitters/bitters"; 
+
+@import "_vars.scss";
+@import "_utils.scss";
+
+/* Also see wide.scss */
+
+[id=contribute] {
+	article li {
+		margin: 0px;
+	} 
+	.half, .full{
+		margin-right: 0;
+		list-style: none;
+	}
+	.half{
+		padding-right: 1em;
+	}
+	.bbdr {
+		border-bottom: 0;
+	}
+}	
+.contriblvl {
+	padding: 3em 0;
+	margin: 2em 0;
+
+	p {
+		@extend .serif;
+	}
+	
+	button, .button {
+		@extend button[type=submit];
+		line-height: 3;
+		margin-top: -15px;
+		@include media($down-medium-large-screen) {
+			margin-top: -36px;
+		}
+	}
+}
+
+.contrib-tier {
+	@include clearfix;
+	margin: 3.2em 0 1em 0;
+	color: $highlightA;
+	font-size: 1.1em;
+}

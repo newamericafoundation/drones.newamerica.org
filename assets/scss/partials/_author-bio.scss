@@ -1,0 +1,127 @@
+@import "_vars.scss";
+
+.authorbio {
+	[id=media-contacts] {
+		padding: 6.2em 0;
+	}
+	article{
+		@include omega();
+		&:first-of-type{
+			@include shift(0);
+		}
+		&:last-of-type{
+			padding-top: 6.2em;
+		}
+		.breaker{
+			padding-top: 6em;
+		}
+    ul{
+      padding-left: 0;
+    }
+	}
+}
+
+aside.sharing{
+	position: absolute;
+	width: auto;
+	left: 2em;
+	padding-right: 0;
+	@include media($up-medium-screen) {
+		position: relative;
+		left: 0;
+		li{
+			display: inline-block;
+			margin-right: .5em;
+		}
+	}
+  @include media($up-medium-screen) {
+    padding-left: 50px;
+  }
+  @include media($up-small-medium-screen) {
+      padding-left: 0px;
+    }
+  @include media($up-small-screen) {
+    padding-left: 0px;
+  }
+
+	@include media($down-medium-screen) {
+		padding-bottom: 0;
+		&.stickey{
+			padding-bottom: 0;
+			position: fixed;
+			top: 102px;
+			background: #fffaef;
+			padding: 0 1em;
+			margin-left: -1em;
+			@include media($down-medium-large-screen) {
+				margin-left: 9px;
+			}
+		}
+		&.stickeybottom{
+			position: absolute;
+		}
+	}
+}
+
+.author-pg-jobtitle {
+	@extend .txtc;
+	font-family: $sansSerif;
+	margin: -2em auto 3.1em;
+}
+
+.author-pg-photo {
+	margin: 0 auto 3.1em;
+	img {
+		display:block;
+		margin: 0 auto;
+		max-width: 60%;
+		height: auto;
+		@include media($down-medium-screen) {
+			max-width: 400px;
+		}
+	} 
+}
+
+[id=author-pg-programs]{
+	.icon {
+		background-size: 20px auto;
+		border-bottom: 0;
+		height: 35px;
+		width: 30px; 
+    font-size: 36px;
+    top: 4px;
+    b{
+      font: normal .375em $sansSerif;
+      left: 100%;
+	  }
+  }
+}
+
+.page [id=author-pg-expertise] {
+	font-weight: 700;
+  font-size: 18px;
+  font-family: $sansSerif;
+  a:link{
+    border-bottom: none;
+  }
+  a:hover{
+		border-bottom-color: $highlightA;
+	}
+}
+
+[id=author-pg-expertise] {
+	text-transform: capitalize;
+	margin: 0;
+}
+article[id=author-pubs] > h2{
+  padding-left: 0;
+}
+
+article[id=author-contact]{
+  padding-bottom: 30px;
+}
+
+.pubs-list{
+  margin-top: 100px;
+  @include shift(0);
+}

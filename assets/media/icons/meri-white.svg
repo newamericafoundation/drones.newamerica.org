@@ -1,0 +1,32 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="14.8px" height="37.8px" viewBox="0 0 14.8 37.8" enable-background="new 0 0 14.8 37.8"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g class="start">
+	<g>
+		<g>
+			<rect x="2.3" y="6.9" fill="#fffaef" width="1.4" height="7.3"/>
+		</g>
+		<g>
+			<rect x="5.3" y="6.9" fill="#fffaef" width="1.4" height="7.3"/>
+		</g>
+		<g>
+			<rect x="8.1" y="6.9" fill="#fffaef" width="1.4" height="7.3"/>
+		</g>
+		<g>
+			<rect x="11.1" y="6.9" fill="#fffaef" width="1.4" height="7.3"/>
+		</g>
+	</g>
+	<g>
+		<polygon fill="#fffaef" points="14.8,6.6 7.4,4.4 0,6.6 0,5.1 7.4,2.9 14.8,5.1 		"/>
+	</g>
+	<g>
+		<rect y="13.5" fill="#fffaef" width="14.8" height="1.4"/>
+	</g>
+	<g>
+		<polygon fill="#fffaef" points="8.1,3.7 6.7,3.7 6.7,0 9.6,0 9.6,1.4 8.1,1.4 		"/>
+	</g>
+</g>
+</svg>

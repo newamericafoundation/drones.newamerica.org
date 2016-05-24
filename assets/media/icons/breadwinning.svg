@@ -1,0 +1,33 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="12.6px" height="35.1px" viewBox="0 0 12.6 35.1" enable-background="new 0 0 12.6 35.1"
+	 xml:space="preserve">
+<defs>
+</defs>
+<g class="start">
+	<g>
+		<rect x="0.3" y="3" fill="#333232" width="1.5" height="9.1"/>
+	</g>
+	<g>
+		<circle fill="#333232" cx="1.1" cy="1.1" r="1.1"/>
+	</g>
+	<g>
+		<rect x="3.8" y="5" fill="#333232" width="1.5" height="7.2"/>
+	</g>
+	<g>
+		<circle fill="#333232" cx="4.6" cy="3.1" r="1.1"/>
+	</g>
+	<g>
+		<rect x="7.3" y="3" fill="#333232" width="1.5" height="9.1"/>
+	</g>
+	<g>
+		<circle fill="#333232" cx="8" cy="1.1" r="1.1"/>
+	</g>
+	<g>
+		<rect x="10.7" y="5" fill="#333232" width="1.5" height="7.2"/>
+	</g>
+	<g>
+		<circle fill="#333232" cx="11.5" cy="3.1" r="1.1"/>
+	</g>
+</g>
+</svg>

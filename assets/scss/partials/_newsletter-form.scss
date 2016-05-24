@@ -1,0 +1,37 @@
+@import "_vars.scss";
+
+/*=======================================
+Styles for newsletter signup form
+=======================================*/
+
+.newsletter {
+	@include clearfix;
+	position: relative;
+	
+	p{
+		font-family: $serif;
+		margin: auto 0 67px 0;
+	}
+	
+	h4 {
+		font-size: 1px;
+		color: transparent;
+		position: relative;
+		left: -12px;
+		height: 202px;
+		width: 141px;
+		background: url(../media/logos/weekly-wonk-logo-02.svg) -6px -10px no-repeat;
+		background-size: 100% 100%;
+		@include media($up-small-medium-screen) {
+			height: 150px;
+			width: 100px;
+		}
+	}
+	
+	input[type=email] { 
+		padding: 10px 23px 0;
+		margin-bottom: 42px;
+	}
+
+}
+

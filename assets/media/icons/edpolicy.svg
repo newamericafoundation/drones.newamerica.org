@@ -1,0 +1,36 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="14.9px" height="34.9px" viewBox="0 0 14.9 34.9" enable-background="new 0 0 14.9 34.9"
+	 xml:space="preserve">
+<defs></defs>
+<g class="start">
+	<g>
+		<rect x="13.1" fill="#333232" width="1.8" height="12"/>
+	</g>
+	<g>
+		<rect x="9.4" fill="#333232" width="1.8" height="12"/>
+	</g>
+	<g>
+		<rect x="5.8" fill="#333232" width="1.8" height="12"/>
+	</g>
+	<g>
+		
+			<rect x="-1.6" y="6.6" transform="matrix(-0.4921 0.8705 -0.8705 -0.4921 11.1879 8.3818)" fill="#333232" width="9.5" height="1.8"/>
+	</g>
+</g>
+<g opacity="0.5">
+	<g>
+		<rect x="13.1" y="22.9" fill="#333232" width="1.8" height="12"/>
+	</g>
+	<g>
+		<rect x="9.4" y="22.9" fill="#333232" width="1.8" height="12"/>
+	</g>
+	<g>
+		<rect x="5.8" y="22.9" fill="#333232" width="1.8" height="12"/>
+	</g>
+	<g>
+		
+			<rect x="-1.6" y="29.5" transform="matrix(-0.4921 0.8705 -0.8705 -0.4921 31.0956 42.6001)" fill="#333232" width="9.5" height="1.8"/>
+	</g>
+</g>
+</svg>

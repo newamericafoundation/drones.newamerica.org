@@ -1,0 +1,43 @@
+/*===================================
+FOOTER
+====================================*/
+
+[id=masterContent] > footer{
+	font-family: $sansSerif;
+	border-top: 2px solid $black10;
+	padding-top: 80px;
+
+	& > div {
+		@include clearfix;
+		background: $black10;
+		color: $black50;		
+		margin: 80px 0 0 0;
+		padding: 80px 0;
+	}
+	
+	.fl, .fr {
+		float: none;
+	}
+
+	.links {	
+		margin-bottom: 20px;
+		
+		li{
+			white-space: nowrap;
+			padding-right: 10px;
+		}
+	}
+	
+	
+	
+	a{
+		&:link, &:visited{
+			color: $black50 !important;
+		}
+		&:hover{
+			color: $black70 !important;
+			border-bottom: 2px solid $black70;
+		}
+	}
+
+}

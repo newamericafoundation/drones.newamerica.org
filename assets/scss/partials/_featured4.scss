@@ -1,0 +1,156 @@
+/*===================================
+Featured box for home page, 
+organization fronts
+====================================*/
+
+[id=featured]{
+	@include clearfix;
+	
+	> p {
+		@include clearfix;
+	}
+	
+	> header {
+		padding: 0 0 3.5em;
+		@include media($up-small-medium-screen) {
+			padding: 0 0 2.625em;
+		}
+		@include media($up-small-screen) {
+			padding: 0 0 1.75em;
+		}
+	}
+	
+	&.half{
+		padding-bottom: 3.1em;
+		@include media($up-small-medium-screen) {
+			padding-bottom: 2.25em;
+		}
+		@include media($up-small-screen) {
+			padding-bottom: 1.5em;
+		}
+	}
+	@include media($down-medium-large-screen) {
+		header{
+			margin-bottom: 12px;
+		}	
+	}	
+	.feature {
+		margin-bottom: 21px;
+		@include media($up-small-medium-screen) {
+			padding-bottom: 1.5em;
+		}
+		@include media($up-small-screen) {
+			padding-bottom: 1em;
+		}
+		@include media($down-medium-screen) {
+			> a {
+				max-height: 175px;
+				overflow: hidden;
+				display: block;
+				margin-bottom: 1em;
+				float: left;
+			}
+		}
+		@include media($down-medium-large-screen) {
+			> a {
+				max-height: 125px;
+				overflow: hidden;
+				display: block;
+				margin-bottom: 1em;
+				float: left;
+			}
+		}
+	}
+	ul {
+		li {
+			@include span-columns(3 of 6);
+			@include omega(2n);
+			float: left;
+			@include media($up-small-screen){
+				width: 100%
+			}
+		}
+	}
+	// if no events display features 4-up 
+	&.fourup{
+		ul {
+			li {
+				@include media($down-medium-large-screen) {
+					@include omega-reset(2n);
+					@include span-columns(3 of 12);
+					@include omega(4n);
+				}
+				@include media($up-medium-large-screen) {
+					@include omega-reset(2n);
+					@include span-columns(6);
+					@include omega(2n);
+				}
+				@include media($up-medium-screen) {
+					@include omega-reset(1n);
+					@include span-columns(6);
+					@include omega(2n);
+				}
+				@include media($up-small-medium-screen) {
+					@include omega-reset(2n);
+					@include span-columns(12);
+					@include omega(1n);
+				}
+				@include media($up-small-screen) {
+					@include span-columns(12);
+					@include omega(1n);
+				}
+			}
+		}
+	}
+}
+
+.feature {
+	// border-bottom: 1px solid $black20;	
+	float: left;
+	padding-bottom: 2em;
+	@include media($up-small-medium-screen) {
+		padding-bottom: 1.5em;
+	}
+	@include media($up-small-screen) {
+		padding-bottom: 1em;
+	}
+		
+	img {
+		display: block;
+		border: 1px solid $black10;
+		height: auto;
+		margin-bottom: .7em;
+		width: 100%;
+    @include media($up-small-screen) {
+      max-width: 100%;
+    }
+		
+	}
+	
+	.type {
+		line-height: 1;
+		padding: 0 .5em 0 0;
+		margin: 4px .5em 0 0;
+		border-right: 2px solid $black10;
+    &.na{
+      border-right: none;
+    }
+	}
+	
+	.icon {		
+		b {
+			top: -4px;
+		}
+	}
+}
+
+/*==========================
+Home page
+==========================*/
+@include media($down-medium-large-screen){
+	.featurewrap {
+		width: 100%;
+		display: block;
+		float: left;
+	}	
+}

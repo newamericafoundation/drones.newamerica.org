@@ -1,0 +1,856 @@
+/*=========================================
+Mobile-specific top navigation < 1250px
+==========================================*/
+@import "_vars.scss";
+@import "../bitters/grid-settings"; 
+
+
+[id=na-global-nav], [id=organization] {
+  font: 14px / 1 $sansSerif;  
+  z-index: 800;
+
+  ul{
+    list-style-type: none;
+    padding-left: 0!important;
+
+    @include media($up-medium-large-screen) {
+      padding-right: 0!important;
+    }
+  }
+  
+  li{
+    @include clearfix;
+    float: left;
+    display: inline-block;
+    
+    a {
+      display: block;
+      padding: 1em 1em;
+      color: $white;
+    }
+  }
+
+  .org-links{
+    a {
+      @include media($up-medium-large-screen) {
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 0;
+      }
+
+      @include media($up-medium-screen) {
+        max-width: 85px;
+      }
+    }
+  }
+  i, b{
+    font-style: normal;
+    font-weight: normal;
+  }
+} 
+
+[id=na-nav] {
+  padding: 10px 10px 0px 20px;
+}
+
+
+.nav#na-main-bar{
+  @include media($up-small-screen) {
+    position: fixed;
+  }
+}
+[id=na-global-nav], [id=na-sub-nav],[id=na-sub-nav-s] {
+  left: 0;
+  background-color: $highlightA;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  @include media($up-small-screen) {
+    position: relative;
+    height: 0;
+    #mainMenu{
+      position: relative;
+    }
+  }
+  [id=na-nav] {
+    li {
+      float: left;
+      display: inline-block;
+      @include media($up-small-screen) {
+        float: none;
+        display: block;
+      }
+    }
+    a, a:visited{ 
+      color: $creme; 
+    }
+  }
+  [id=program-nav], [id=page-nav]{
+    margin-top: 7em;
+    @include media($up-small-medium-screen) {
+      margin: 7em 0 0 0;
+      padding: 0 1em 0 0;
+    }
+    @include media($up-small-screen) {
+      margin: 0;
+    }
+    .wrapper{
+      @include media($up-small-screen) {
+        margin-left: 0;
+      }
+    }
+    a, a:visited{ 
+      color: $white;
+      @include opacity(0.6);
+
+      @include media($up-small-medium-screen) {
+        padding-right: 0;
+      }
+    }
+    a:hover {
+      @include opacity(0.7);  
+    }
+    .asset-building a {
+      background: url(../media/icons/assetbuilding-white.svg) 2.3em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .breadwinning-caregiving a {
+      background: url(../media/icons/breadwinning-white.svg) 2.4em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .economic-growth a {
+      background: url(../media/icons/econ-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+      background-position: 33px 10px;
+    }
+    .education-policy a {
+      background: url(../media/icons/edpolicy-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .fellows a {
+      background: url(../media/icons/fellows-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .future-of-war a{
+      background: url(../media/icons/intsec-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .future-tense a {
+      background: url(../media/icons/future-white.svg) 2em 1rem no-repeat;
+      background-size: auto 45px;
+      background-position: 28px 9px;
+    }
+
+    .international-security a{
+      background: url(../media/icons/intsec-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .live a{
+      background: url(../media/icons/live-white.svg) 2em 1rem no-repeat;
+      background-size: auto 45px;
+      background-position: 28px 14px;
+    }
+    .open-markets a{
+      background: url(../media/icons/meri-white.svg) 2em 1.2rem no-repeat;
+      background-size: auto 40px;
+      background-position: 28px 10px;
+    }
+    .nyc a{
+      background: url(../media/icons/nyc-white.svg) 2em 1rem no-repeat;
+      background-size: auto 45px;
+      background-position: 28px 10px;
+    }
+    .oti a{
+      background: url(../media/icons/oti-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+      background-position: 28px 9px;
+    }
+    .political-reform a{
+      background: url(../media/icons/pref-white.svg) 2em .8rem no-repeat;
+      background-size: auto 45px;
+    }
+    .postsecondary-national-policy-institute a {
+      background: url(../media/icons/psnpi-white.svg) 2em 1.5rem no-repeat;
+      background-size: auto 45px;
+      background-position: 25px 12px;
+    }
+    .weekly-wonk a {
+      fill: $white;
+      background: url(../media/icons/weekly-wonk-logo-white.svg) 2em 0.5rem no-repeat;
+      background-size: auto 25px;
+    }
+    .x-lab a {
+      background: url(../media/icons/xlab-white.svg) 2em 1rem no-repeat;
+      background-size: auto 45px;
+      background-position: 31px 11px;
+    }
+  }
+
+  [id=program-list] {
+
+    @include shift(1);
+    @include span-columns(9);
+    ol {
+      @include span-columns(3 of 9);
+    }
+    li {
+      display: block;
+      float: none;
+      a { 
+        display:block;
+        padding-left: 5em;
+      }
+      
+    }
+    @include media($up-medium-screen) {
+      @include shift(0);
+      @include span-columns(12);
+      ol {
+        @include span-columns(4 of 12);
+      }
+    }
+    @include media($up-small-screen) {
+      @include shift(0);
+      @include span-columns(12);
+      @include omega(1n);
+      ol {
+        @include span-columns(12);
+        padding-left: 6px;
+      }
+    }
+  }
+}
+  
+[id=organization] {
+  position: fixed;
+  top: 0;
+  @include media($down-small-medium-screen) {
+    left: 80px;
+    //position: absolute;
+  }
+  z-index: 2000;
+  @include transition(all 0.3s);
+  ul {
+    position: fixed;
+    padding: 20px;
+    height: 80px;
+    &.oti{
+      left: 460px;
+    }
+    &.open-markets, &.asset-building, &.future-tense, &.future-of-war{
+      left: 330px;
+    }
+    &.breadwinning-caregiving{
+      left: 475px;
+    }
+    &.economic-growth{
+      left: 380px;
+    }
+    &.education-policy{
+      left: 360px;
+    }
+    &.fellows{
+      left: 280px;
+    }
+    &.international-security{
+      left: 420px;
+    }
+    &.live, &.nyc, &.political-reform{
+      left: 350px;
+    }
+    &.postsecondary-national-policy-institute{
+      left: 590px;
+    }
+    &.x-lab{
+      left: 270px;
+    }
+  }
+  &.na-menu-open{
+    top: 400px;
+    @include transition(all 0.3s);
+    @include media($up-small-screen) {
+      top: 1100px;
+      position: absolute;
+    }
+  }
+  @include media($up-small-medium-screen) {
+    right: 0;
+    ul{
+      display: none;
+    }
+  }
+  @include media($up-small-screen) {
+    position: absolute;
+  }
+}
+
+
+  
+.has-sub-nav {
+      
+  > a {
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%209.2%2010.4%22%20enable-background%3D%22new%200%200%209.2%2010.4%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%40media%20screen%20and%20(min-width%3A%2011px)%20%7B%20rect%2C%20polygon%7B%20fill%3A%20%23333232%3B%20%7D%20%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Crect%20x%3D%223.7%22%20fill%3D%22%23fffbef%22%20width%3D%221.5%22%20height%3D%229.2%22%2F%3E%3Cpolygon%20fill%3D%22%23FFFBF0%22%20points%3D%220%2C5.8%201.1%2C4.7%204.5%2C8.1%207.9%2C4.7%209%2C5.8%204.5%2C10.3%22%2F%3E%3C%2Fsvg%3E") 20% center no-repeat;
+    background-size: 11px auto;
+  }
+  
+  > ul {
+    @include transition(all 500ms ease-in);
+    max-height: 0;
+    overflow: hidden; 
+    left:0;
+    width: 100%;
+  }
+
+  li {
+    background:$black10;
+    display: block;
+    margin:0;
+    width: 100%;
+  }
+
+  &.open {
+    & > ul {
+      display:block;
+      max-height: 1000px;
+      height: auto;
+    }     
+  }
+  
+/*----------------------------
+Programs submenu
+-----------------------------*/  
+}
+
+[id=searchform] {
+  background: $white;
+  border-bottom: 1px solid $black10;
+
+  p {
+    background-color: $black20; 
+    margin: 0;  
+  }
+  input, button, .button{
+    background: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+  button[type=submit], .button {
+    @extend .search;
+    background-repeat: no-repeat;
+    background-position: 20% 70%;
+    border: none;
+    color: transparent;
+    height: 20px;
+    width: 5%;
+    position: relative;
+    top: 20px;    
+  }
+}
+
+input[name=q]{
+  border: none;
+  padding-left: 1.5em;
+  width: 90%;
+  z-index: 3;
+  
+  &:focus {
+    @include placeholder-colors($black, transparent);
+  }
+}
+
+
+.asset-building [id=na-global-nav] {
+  background-color: rgba( darken($asset-building, 5%), 1);
+} 
+
+.breadwinning-caregiving [id=na-global-nav] {
+  background-color: rgba(darken($breadwinning-caregiving, 10%), 1);
+}
+.economic-growth [id=na-global-nav]{
+  background-color: rgba( darken($economic-growth, 10%), 1);
+}
+.education-policy [id=na-global-nav]{
+  background-color: rgba( darken($education-policy, 10%), 1);
+}
+.fellows [id=na-global-nav] {
+  background-color: rgba( darken($fellows, 10%), 1);
+}   
+.future-of-war [id=na-global-nav] {
+  background-color: rgba( darken($future-of-war, 10%), 1);
+}
+.future-tense [id=na-global-nav] {
+  background-color: rgba( darken($future-tense, 10%), 1);
+}
+.international-security [id=na-global-nav] {
+  background-color: rgba( darken($international-security, 10%), 1);
+}
+.open-markets [id=na-global-nav] {
+  background-color: rgba( darken($meri, 10%), 1);
+} 
+
+.live [id=na-global-nav] {
+  background-color: rgba( darken($new-america-live, 10%), 1);
+}
+
+.nyc [id=na-global-nav] {
+  background-color: rgba( darken($new-america-nyc, 10%), 1);
+}
+.oti [id=na-global-nav] {
+  background-color: rgba( darken($open-technology-institute,10%), 1);
+}
+
+.political-reform [id=na-global-nav]{
+  background-color: rgba( darken($political-reform, 10%), 1);
+}
+.postsecondary-national-policy-institute [id=na-global-nav] {
+  background-color: rgba( darken($postsecondary-national-policy-institute, 10%), 1);
+}
+
+.weekly-wonk [id=na-global-nav] {
+  background-color: rgba( darken($weekly-wonk, 10%), 1);
+}
+
+.x-lab [id=na-global-nav]{
+  background-color: rgba( darken($xlab, 10%), 1);
+}
+
+/* SLIDING MENUS */
+
+.na-menu {
+  position: fixed;
+  background: $black;
+  height: 400px;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  z-index: 10;
+  @include media($up-small-screen) {
+    height: 1100px;
+  }
+}
+
+.na-menu-top {
+  top: -400px;
+  @include media($up-small-screen) {
+    top: -1100px;
+  }
+  &.na-menu-open {
+    top: 0px;
+  }
+}
+
+.na-menu-top-sub{
+  top: -400px;
+  @include media($up-small-screen) {
+    top: -1100px;
+  }
+  &.na-menu-open {
+    top: 80px;
+  }
+}
+
+.na-menu-push {
+  position: relative;
+  overflow-x: hidden;
+  left: 0;
+  top: 0;
+}
+
+.top-push-toBottom {
+  top: 400px;
+  @include media($up-small-screen) {
+    // top: 1100px;
+    top: 0px;
+  }
+}
+
+.na-menu,
+.na-bar,
+.na-menu-push,
+.na-menu-open,
+.org-nav {
+  @include transition(all 0.3s);
+}
+
+// .index .na-bar > h1:after{
+//   display: block;
+//   content: '';
+//   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2014%2011.8%22%20enable-background%3D%22new%200%200%2014%2011.8%22%3E%3Crect%20x%3D%22.8%22%20y%3D%225%22%20fill%3D%22%23fffaef%22%20width%3D%2211.8%22%20height%3D%222%22%2F%3E%3Cpolygon%20fill%3D%22%23fffaef%22%20points%3D%228.3%2C11.7%206.9%2C10.3%2011.2%2C6%206.9%2C1.7%208.3%2C0.3%2014%2C6%22%2F%3E%3C%2Fsvg%3E");
+//   width: 30px;
+//   height: 30px;
+//   @include transform(rotate(90deg));
+//   background-repeat: no-repeat;
+//   position: absolute;
+//   left: 23px;
+//   top: 60px;
+//   @include transition(all 0.3s);
+//   opacity: .5;
+// }
+.index .na-bar > h1.moved:after,
+.index .na-bar > h1.hovered:after,
+.index .na-bar.na-menu-open > h1:after{
+  opacity: 0;
+  @include transition(all 0.3s);
+}
+
+.na-bar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  @include media($up-small-screen) {
+    position: absolute;
+  }
+  z-index: 2000;
+  height: 80px;
+  width: 100%;
+  background-color:  $highlightA;
+  > h1 {
+    font-family: $displayFont;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    line-height: 1;
+    padding-top: 0.7em;
+    margin-top: 0.7em;
+    padding-bottom: 0.7em;
+    margin-bottom: 0.7em;
+    
+    &.left-vr{
+      @include media($down-small-medium-screen) {
+        margin-left: 90px;
+        border-left: 1px solid $black20;
+      }
+      @include media($up-small-medium-screen) {
+        margin-left: 0;
+        border-left: none;
+      }
+    }
+    [id=nav-arrow] {
+      padding-left: 12px;
+      position: relative;
+      top: -2px;
+      font-size: 0.8rem;
+    }
+    span {
+      padding: 30px 0;
+      color: #fffaef;
+    }
+    .top-menu-push, .drop-menu, .org-name, .org-btn{
+      cursor: pointer;
+      @include opacity(1);
+      @include transition(all 0.3s);
+      &.hovered {
+        @include opacity(0.7);
+      }
+    }
+    .org-name{
+      color: $white!important;
+      @include media($up-small-screen) {
+        font-size: 80%;
+      }
+    }
+    .archive{
+      font-size: 0.8em;
+      font-family: $sansSerif;
+      margin-right: 2em;
+      position: relative;
+      @include media($down-small-medium-screen) {
+        display: inline;
+      }
+      @include media($up-medium-screen) {
+        display: none;
+      }
+      a{
+        text-transform: capitalize;
+        color: $white;
+      }
+    }
+  }
+
+  @include media($up-small-medium-screen) {
+    > h1{
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+  &.na-menu-open{
+    top: 400px;
+    @include media($up-small-screen) {
+      top: 1100px;
+    }
+  }
+  &.asset-building {
+    background-color:  $asset-building;
+  }
+  &.breadwinning-caregiving {
+    background-color:  $breadwinning-caregiving;
+  }
+  &.economic-growth {
+    background-color:  $economic-growth;
+  }
+  &.education-policy {
+    background-color:  $education-policy;
+  }
+  &.fellows {
+    background-color:  $fellows;
+  }
+  &.future-of-war {
+    background-color:  $future-of-war;
+  }
+  &.future-tense {
+    background-color:  $future-tense;
+  }
+  &.international-security {
+    background-color:  $international-security;
+  }
+  &.live {
+    background-color:  $live;
+  }
+  &.open-markets {
+    background-color:  $meri;
+  }
+  &.new-america {
+    background-color:  $new-america-live;
+  }
+  &.nyc {
+    background-color:  $nyc;
+  } 
+  &.oti {
+    background-color:  $oti;
+  }             
+  &.political-reform {
+    background-color:  $political-reform;
+  }
+  &.postsecondary-national-policy-institute {
+    background-color:  $postsecondary-national-policy-institute;
+  }
+  &.x-lab {
+    background-color:  $xlab;
+  }
+}
+
+.postsecondary-national-policy-institute {
+  .na-bar > h1 {
+    .page-offset{
+      @include media($up-small-screen) {
+        margin-top: -12px
+      }
+    }
+    .org-name{
+      @include media($up-small-medium-screen) {
+          font-size: 80%;
+      }
+      @include media($up-small-screen) {
+        font-size: 70%;
+      }
+      span.pnpi-line{
+        @include media($up-small-screen) {
+          margin-left: -88px;
+        }
+      }
+    }
+  }
+}
+
+
+.index, [id=index]{
+  .na-bar{
+    @include media($up-small-medium-screen) {
+      > h1{
+        padding-left: 90px;
+        text-align: left;
+      }
+    }
+  }
+  .page-offset{
+    margin-left: 72px;
+  }
+}
+
+.na-offset,
+.index-offset,
+.page-offset{
+  display: inline;
+}
+.page-offset{
+  @include media($down-small-medium-screen) {
+    margin-left: 80px;
+  }
+  @include media($up-small-medium-screen) {
+    display: block;
+    .org-name{
+      margin-left: -90px;
+    }
+  }
+}
+.na-offset{
+  margin-left: -80px;
+}
+
+.js-menu-trigger, .org-home{
+  width: 80px;
+  height: 80px;
+  border: 0;
+  color: transparent;
+  cursor: pointer;
+  float: left;
+  position: relative;
+  &:focus{
+    outline: none;
+  }
+}
+.js-menu-trigger.drop-menu{
+  color: $white;
+  width: 10px;
+  height: 10px;
+  top: 14px;
+  padding-left: 1em;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -ms-animation: #{$animation};
+  animation: #{$animation};
+}
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+
+@include keyframes(bounce) {
+  0%, 20%, 50%, 80%, 100% {
+    @include transform( rotate(90deg) translateX(0) );
+  }
+  40% {
+    @include transform( rotate(90deg) translateX(-20px) );
+  }
+  60% {
+    @include transform( rotate(90deg) translateX(-10px) );
+  }
+}
+@include keyframes(bounceOpposite) {
+  0%, 20%, 50%, 80%, 100% {
+    @include transform( rotate(270deg) translateX(0) );
+  }
+  40% {
+    @include transform( rotate(270deg) translateX(10px) );
+  }
+  60% {
+    @include transform( rotate(270deg) translateX(10px) );
+  }
+}
+
+.na-bar{
+  [data-related-to=mainMenu]{
+    background: url(../media/icons/na-menu.svg) center no-repeat;
+    background-size: 32px auto;
+    @include opacity(1);
+    @include transition(opacity 0.3s);
+    &.hovered {
+      @include animation(bounce 2s infinite);
+      @include opacity(0.7);
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2014%2011.8%22%20enable-background%3D%22new%200%200%2014%2011.8%22%3E%3Crect%20x%3D%22.8%22%20y%3D%225%22%20fill%3D%22%23fffaef%22%20width%3D%2211.8%22%20height%3D%222%22%2F%3E%3Cpolygon%20fill%3D%22%23fffaef%22%20points%3D%228.3%2C11.7%206.9%2C10.3%2011.2%2C6%206.9%2C1.7%208.3%2C0.3%2014%2C6%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: 24px auto;
+    }
+  }
+
+  &.na-menu-open{
+    [id=showTopPush]{
+      @include media($up-small-screen) {
+        background-color: $black;
+      }
+    }
+    [data-related-to=mainMenu].hovered {
+      @include opacity(0.7);
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2014%2011.8%22%20enable-background%3D%22new%200%200%2014%2011.8%22%3E%3Crect%20x%3D%22.8%22%20y%3D%225%22%20fill%3D%22%23fffaef%22%20width%3D%2211.8%22%20height%3D%222%22%2F%3E%3Cpolygon%20fill%3D%22%23fffaef%22%20points%3D%228.3%2C11.7%206.9%2C10.3%2011.2%2C6%206.9%2C1.7%208.3%2C0.3%2014%2C6%22%2F%3E%3C%2Fsvg%3E") center no-repeat;
+      background-size: 24px auto;
+      @include animation(bounceOpposite 2s infinite);
+    }
+  }
+}
+
+.icon[data-related-to=orgMenu]{
+  background-color: transparent;
+  background-position: 55% 27px;
+  background-repeat: no-repeat;
+  background-size: 27px auto;
+  height: 80px;
+  margin-left: 16px;
+  @include transition(all 0.3s);
+  &.hovered{
+    @include opacity(0.7);  
+  }
+  &.education-policy, &.fellows {
+    background-position: 55% 30px;
+  }
+  &.breadwinning-caregiving, &.asset-building {
+    background-position: 55% 22px;
+  }
+  &.oti {
+    background-position: center 20px;
+  }
+  &.education-policy {
+    background-position: center 26px;
+  }
+  &.postsecondary-national-policy-institute {
+    background-size: 30px auto;
+  }
+}
+.js-menu-screen{
+  background: $black60;
+}
+
+[id=page-list]{
+  @include outer-container;
+  ol {
+    @include span-columns(12);
+    li{
+      @include span-columns(4);
+      @include omega(3n);
+      margin-bottom: 1em;
+      @include media($up-small-screen) {
+        @include span-columns(12);
+        @include omega(1n);
+      }
+      a { 
+        display: block;
+        padding-left: 5em;
+      }
+    }
+  }
+}
+
+.morePages[data-related-to=orgMenu]{
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2014%2011.8%22%20enable-background%3D%22new%200%200%2014%2011.8%22%3E%3Crect%20x%3D%22.8%22%20y%3D%225%22%20fill%3D%22%23fffaef%22%20width%3D%2211.8%22%20height%3D%222%22%2F%3E%3Cpolygon%20fill%3D%22%23fffaef%22%20points%3D%228.3%2C11.7%206.9%2C10.3%2011.2%2C6%206.9%2C1.7%208.3%2C0.3%2014%2C6%22%2F%3E%3C%2Fsvg%3E");
+  width: 15px;
+  height: 15px;
+  @include transform(rotate(90deg));
+  background-repeat: no-repeat;
+  top: 12px;
+  left: 12px;
+}
+
+.spacer{
+  position: relative;
+  display: inline;
+  height: 30px;
+  border-left: 1px solid $black20;
+}

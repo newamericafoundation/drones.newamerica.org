@@ -1,0 +1,26 @@
+@import "../bourbon/bourbon"; 
+@import "../neat/neat"; 
+@import "../bitters/bitters"; 
+
+@import "_vars.scss";
+@import "_utils.scss";
+
+[id=contact] {
+	article {
+		@include span-columns(6);
+		@include shift(3);
+	}
+	section {
+		border-top: 1px solid #d6d2c9;
+		padding-top: 90px;
+	}
+	h2 {
+		padding-bottom: 25px;
+	}
+	.locations {
+		margin: 0px 0px 50px 0px;
+		overflow: hidden;
+	}
+
+}
+

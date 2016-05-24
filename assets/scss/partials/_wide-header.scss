@@ -1,0 +1,53 @@
+/*===============================
+HEADER: Wide screen > 1023px
+================================*/
+
+[id=masterContent] {
+
+	@include transition(all 0.5s ease-in);
+
+	.orgLogo, .orgDescription{
+	}
+				
+	.socmed {
+		position: absolute;
+		bottom: -3em;
+		right: 2em;
+	}
+}
+.orgLogo{
+	width: 203px;
+	height: 69px;
+	margin: 0 3.75em auto 0;
+	padding: 0;
+	
+	svg{
+		height: 100%;
+	}
+}
+.orgDescription{
+	@include transform(translateY(-50%));
+	font-size: 1.125em;
+	width: 60%;
+	min-height: 100px;
+	height: 205px;
+	position: absolute;
+	margin-left: 260px;
+	top: 100px;
+    position: relative;
+}
+
+[id=mast-newsletter] {
+	@extend .db;
+	
+	p {
+		float:left;
+	}
+	p:first-child {
+		width: 415px;
+	}
+	p:last-child {
+		width: 120px;
+		margin-left: 26px;
+	}
+}
