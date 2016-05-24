@@ -1,0 +1,68 @@
+@import "_vars.scss";
+
+#newsletter{
+	button, .button{
+		float: left;
+	}
+}
+[id=newsletterList] {
+	div{
+		padding-bottom: 75px;
+	}
+	.nl-prog p {
+		font-family: $sansSerifBold;
+	}
+	ul {
+		@extend %default-ul;
+		list-style-type: none;
+	}
+	li {
+		margin-bottom: 1em;
+		&:hover{
+			color: $new-america-live;
+		}
+	}
+    li{
+        list-style-type: none;
+    }
+	.nl-prog ul{
+		height: 0;
+		display: none;
+	}	
+	.nl-prog.open ul{
+		height: auto;
+		display: block;
+		transition: height .25s;
+	}
+	.nl-prog.alwaysOpen ul{
+		height: inherit;
+		display: inherit;
+		list-style: none;
+	}
+}
+.subscribe {
+	.width8 {
+	    @include span-columns(8);
+	    @include shift(2);
+	    @include media($up-small-medium-screen) {
+	    	width: initial;
+			padding-right: 75px;
+			padding-left: 75px;
+			margin: 0 auto;
+			float: initial;
+	    	[id=newsletterList] div:first-of-type{
+				padding-bottom: 0;
+			}
+		}
+	    @include media($up-small-screen) {
+			padding-right: 25px;
+			padding-left: 25px;
+		}
+		@include media($down-small-medium-screen) {
+			.width4-8 {
+			    @include span-columns(4 of 8);
+			}
+		}
+
+	}
+}

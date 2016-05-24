@@ -1,0 +1,561 @@
+@import "_vars.scss";
+
+[id=filters] {
+	background-color: rgba($black10opaque,.9);
+	font: 14px / 1 $sansSerif;
+	line-height: 2;
+	text-transform: uppercase;
+	z-index: 4;
+	padding: 25px 0px;
+	ul {
+		@include outer-container;
+		.drop-filters {
+			display: none;
+		}
+	}
+	.current, a:hover{
+		border-bottom: 2px solid transparent;
+	}
+	.wrapper {
+		@include media($up-medium-large-screen) {
+			padding-left: 50px;
+		}
+	}
+	
+	a {
+		@extend .blklnk;
+	}
+}
+
+@include media($up-forFilter-screen) {
+	[id=filters] ul{
+		&:before {
+			display: block;
+			padding-left: 50px;
+			padding-right: 50px;
+			content: "What are you looking for?";
+			background-color: rgba($black10opaque,.9);
+			padding-top: 22px;
+			font-family: $sansSerifBold;
+			@include clearfix;
+		}
+		&:after{
+			background-repeat: no-repeat;
+			@include transform(rotate(135deg));
+			content: " ";
+			min-height: 1.2em;
+			min-width: 1.2em;
+			position: relative;
+			display: inline;
+			@include ne-arrow($black10);
+			float: right;
+			top: -25px;
+			right: 50px;
+		}
+		ul {
+			li {
+				display: none;
+			}
+			// .drop-filters {
+
+			// }
+		}
+	}
+}
+@include media($up-small-screen){
+	[id=filters]{
+		.wrapper{
+			ul{
+				height: auto;
+				padding-bottom: 25px;
+				a{
+					li {
+						&:first-of-type {
+							margin-top: 0;
+						}
+						&:after {
+							content: '\00a0\00a0';
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.index, .page {
+  blockquote{
+    border-color: $highlightA;
+  }
+	[id=filters] {
+		.current, a:hover{
+			border-bottom-color: $highlightA;
+		}
+		a:hover{
+			color: $highlightA;
+		}
+	}
+  a{
+    color: $highlightA;
+  }
+}
+	
+.asset-building {
+  blockquote{
+    border-color: $asset-building;
+    color: $asset-building;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $asset-building;
+		}
+		
+		a:hover {
+			color: $asset-building;
+		}
+  }
+  .content a{
+    color: $asset-building;
+    &:hover{
+      color: $asset-building;
+      border-color: $asset-building;
+    }
+	}
+}
+
+.breadwinning-caregiving {
+  blockquote{
+    border-color: $breadwinning-caregiving;
+    color: $breadwinning-caregiving;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $breadwinning-caregiving;		
+		}
+		
+		a:hover {
+			color:  $breadwinning-caregiving;
+		}
+	}
+
+  .content a{
+    color: $breadwinning-caregiving;
+    &:hover{
+      color: $breadwinning-caregiving;
+      border-color: $breadwinning-caregiving;
+    }
+  }
+}
+
+.economic-growth {
+  blockquote{
+    border-color: $economic-growth;
+    color: $economic-growth;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $economic-growth;
+		}
+		a:hover {
+			color: $economic-growth;
+		}
+	}
+
+  .content a{
+    color: $economic-growth;
+    &:hover{
+      color: $economic-growth;
+      border-color: $economic-growth;
+    }
+  }
+}
+
+.education-policy {
+  blockquote{
+    border-color: $education-policy;
+    color: $education-policy;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $education-policy;
+		}
+		a:hover {
+			color: $education-policy;
+		}
+	}
+
+  .content a{
+    color: $education-policy;
+    &:hover{
+      color: $education-policy;
+      border-color: $education-policy;
+    }
+  }
+}
+
+.fellows {
+  blockquote{
+    border-color: $fellows;
+    color: $fellows;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $fellows;
+		}
+		a:hover {
+			color: $fellows;
+		}
+	}
+
+  .content a{
+    color: $fellows;
+    &:hover{
+      color: $fellows;
+      border-color: $fellows;
+    }
+  }
+}
+
+.future-of-war {
+  blockquote{
+    border-color: $future-of-war;
+    color: $future-of-war;
+  }
+  [id=filters] {
+    .current, a:hover {
+      border-bottom-color: $future-of-war;
+      color: $future-of-war;
+    }
+    a:hover {
+      border-bottom-color: $future-of-war;
+    }
+  } 
+
+  .content a{
+    color: $future-of-war;
+    &:hover{
+      color: $future-of-war;
+      border-color: $future-of-war;
+    }
+  }
+}
+
+.future-tense {
+  blockquote{
+    border-color: $future-tense;
+    color: $future-tense;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $future-tense;
+		}
+		a:hover {
+			color: $future-tense;
+		}
+	}
+
+  .content a{
+    color: $future-tense;
+    &:hover{
+      color: $future-tense;
+      border-color: $future-tense;
+    }
+  }
+}
+
+.international-security {
+  blockquote{
+    border-color: $international-security;
+    color: $international-security;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $international-security;
+			color: $international-security;
+		}
+		a:hover {
+			border-bottom-color: $international-security;
+		}
+	}	
+
+  .content a{
+    color: $international-security;
+    &:hover{
+      color: $international-security;
+      border-color: $international-security;
+    }
+  }
+}
+
+.open-markets {
+  blockquote{
+    border-color: $meri;
+    color: $meri;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $meri;
+		}
+		a:hover {
+			color: $meri;
+		}
+	}
+
+  .content a{
+    color: $meri;
+    &:hover{
+      color: $meri;
+      border-color: $meri;
+    }
+  }
+}
+
+.live {
+  blockquote{
+    border-color: $live;
+    color: $live;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $new-america-live;
+		}
+		a:hover {
+			color: $new-america-live;
+		}
+	}
+
+  .content a{
+    color: $new-america-live;
+    &:hover{
+      color: $new-america-live;
+      border-color: $live;
+    }
+  }
+}
+
+.nyc {
+  blockquote{
+    border-color: $nyc;
+    color: $nyc;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $new-america-nyc;
+		}
+		a:hover {
+			color: $new-america-nyc;
+		}
+	}
+
+  .content a{
+    color: $new-america-nyc;
+    &:hover{
+      color: $new-america-nyc;
+      border-color: $nyc;
+    }
+  }
+}
+
+
+.oti{
+  blockquote{
+    border-color: $oti;
+    color: $oti;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $open-technology-institute;
+		}
+		
+		a:hover {
+			color: $open-technology-institute;
+		}
+	}
+
+  .content a{
+    color: $oti;
+    &:hover{
+      color: $oti;
+      border-color: $oti;
+    }
+  }
+}
+
+.political-reform {
+  blockquote{
+    border-color: $political-reform;
+    color: $political-reform;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $political-reform;
+		}
+		a:hover {
+			color: $political-reform;
+		}
+	}
+
+  .content a{
+    color: $political-reform;
+    &:hover{
+      color: $political-reform;
+      border-color: $political-reform;
+    }
+  }
+}
+
+.postsecondary-national-policy-institute {
+  blockquote{
+    border-color: $postsecondary-national-policy-institute;
+    color: $postsecondary-national-policy-institute;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $postsecondary-national-policy-institute;
+		}
+		a:hover {
+			color: $postsecondary-national-policy-institute;
+		}
+	}
+
+  .content a{
+    color: $postsecondary-national-policy-institute;
+    &:hover{
+      color: $postsecondary-national-policy-institute;
+      border-color: $postsecondary-national-policy-institute;
+    }
+  }
+}
+ 
+.weekly-wonk {
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $weekly-wonk;
+		}
+		a:hover {
+			color: $weekly-wonk;
+		}
+	}
+}
+
+.x-lab {
+  blockquote{
+    border-color: $xlab;
+    color: $xlab;
+  }
+	[id=filters] {
+		.current, a:hover {
+			border-bottom-color: $xlab;
+		}
+		a:hover {
+			color: $xlab;
+		}
+	}	
+
+  .content a{
+    color: $xlab;
+    &:hover{
+      color: $xlab;
+      border-color: $xlab;
+    }
+  }
+}
+
+@include media($down-forFilter-screen) {
+	[id=filters] ul{
+		&:after, &:before{
+			display: none;
+		}
+		a {
+			display: inline;
+			margin: 0 20px 0 0;
+			li {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@include media($up-forFilter-screen) {
+	[id=filters] {
+		.wrapper{
+			padding-left: 0;
+			padding-right: 0;
+			margin: 0
+
+		}
+		padding-top: 0;
+		padding-bottom: 0;
+		ul{
+			height: 0;
+			padding-bottom: 0;
+			> a {
+				padding-top: 5px;
+				display: none;
+				padding-left: 50px;
+				padding-right: 50px;
+				&:hover, &.current{
+					background: rgba(0,0,0,.1);
+					border-bottom: 0;
+					color: $white!important;
+				}
+			}
+			> a:first-of-type{
+				margin-top: 32px;
+			}
+			&:before{
+				cursor: pointer;
+				&:hover{
+					opacity: 0.75;
+				}
+			}
+			&:after{
+				cursor: pointer;
+				@include transform(rotate(135deg));
+				right: 20px;
+				&:hover{
+					color: $white!important;
+					fill: $white!important;
+				}
+			}
+			&.open{
+				height: auto;
+				padding-bottom: 50px;
+				> a{
+					display: block;
+					padding-right: 4px;
+				}
+				&:after{
+					@include transform(rotate(-45deg));
+					right: 20px;
+					top: 10px;
+					position: relative;
+					&:hover{
+						color: $white!important;
+					}
+				}
+			}
+		}
+	}
+}
+@include media($up-small-medium-screen) {
+	[id=filters] {
+		ul{
+			> a, &:before {
+				padding-left: 75px;
+				padding-right: 75px;
+			}
+		}
+	}
+}
+
+@include media($up-small-screen) {
+	[id=filters] {
+		ul{
+			> a, &:before {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+		}
+	}
+}

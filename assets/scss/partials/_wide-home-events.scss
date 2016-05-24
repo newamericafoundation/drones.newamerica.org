@@ -1,0 +1,122 @@
+/*===================================
+Home page events List
+====================================*/
+
+[id=upcomingEvents]{
+	&.just-events{
+    border-right: none;
+  }
+	.event {
+		&:hover, &:focus {
+			.eventDescription {
+				// display: block;
+			}
+		}
+		.eventDescription {
+			display: none;
+		}
+	}
+	
+	.now {
+		font-weight: bold;
+		color: $highlightA;
+	}
+
+	.eventDescription {
+		width: 100%;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		left: 110%;
+		z-index: 2;
+
+		&.asset-building {
+			> div { background-color: $asset-building; }
+		}
+
+		&.breadwinning-caregiving {
+			> div { background-color: $breadwinning-caregiving; }
+		}
+
+		&.economic-growth {
+			> div { background-color: $economic-growth; }
+		}
+
+		&.education-policy {
+			> div { background-color: $education-policy; }
+		}
+
+		&.fellows {
+			> div { background-color: $fellows; }
+		}
+
+		&.future-tense {
+			> div { background-color: $future-tense; }
+		}
+
+		&.international-security {
+			> div { background-color: $international-security; }
+		}
+
+		&.live {
+			> div { background-color: $live; }
+		}
+
+		&.open-markets {
+			> div { background-color: $open-markets; }
+		}
+
+		&.nyc {
+			> div { background-color: $nyc; }
+		}
+
+		&.oti {
+			> div { background-color: $oti; }
+		}
+
+		&.political-reform {
+			> div { background-color: $political-reform; }
+		}
+
+		&.postsecondary-national-policy-institute {
+			> div {
+				background-color: $postsecondary-national-policy-institute;
+			}
+		}
+
+		&.x-lab {
+			> div { background-color: $x-lab; }
+		}
+
+	
+		a:link, a:visited{
+			color: $white;
+			
+			b{
+				font-weight:normal;
+			}
+		}
+		
+		a:hover{
+			b {
+				border-bottom: 1px solid $white;
+			}
+		}
+		
+		.eventMeta {
+			font-family:serif;
+		}
+		
+		.eventTime, .eventDate {
+			padding: 0;
+		}	
+	}
+	
+	&.half:only-child {
+		.eventDescription {
+			left: 50%;
+			width: 50%;
+		}	
+	}
+}
+

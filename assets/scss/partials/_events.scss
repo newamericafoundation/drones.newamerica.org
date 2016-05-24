@@ -1,0 +1,55 @@
+@import "_vars.scss";
+
+[id=locations] {
+	li{
+		color: $black50;
+		cursor: pointer;
+		display: inline;
+		&.active{
+			color: $black;
+			border-color: $highlightA;
+			border-bottom: 2px solid;
+		}
+		&:hover{
+			color: $black;
+		}
+	}
+}
+button.viewMore, .button.viewMore{
+	background: none;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	&:hover{
+		color: $highlightA;
+		border-color: $highlightA;
+		border-bottom: 2px solid;
+	}
+	&.hidden{
+		visibility: hidden;
+	}
+}
+.page{
+	.results-heading{
+		margin-bottom: 0;
+	}
+	#events-content{
+		section{
+			margin-top: 0;
+		}
+		ul.event-list{
+			margin-top: 100px;
+		}
+	}
+}
+.event-list li{
+	margin-bottom: 60px;
+}
+
+.null-state{
+	display: block;
+	&.hidden{
+		display: none;
+	}
+}

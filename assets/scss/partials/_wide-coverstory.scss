@@ -1,0 +1,21 @@
+@import "_vars.scss";
+
+
+/*===============================
+COVER STORY Item
+================================*/
+
+[id=cover-story] {
+	header {
+		@include span-columns(8);
+	}
+	h1 {
+		font: normal 4.5em / 1.3 $displayFont;
+	}
+	.summary {
+		display: block;
+		@include span-columns(4);
+		float: right;
+		font-family: $serif;
+	}
+}

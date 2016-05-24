@@ -1,0 +1,47 @@
+@import "_vars.scss";
+
+/*=======================================
+Styles for newsletter signup form
+=======================================*/
+
+.newsletter {
+	margin: auto;
+	max-width: $maxwidth;	
+	// margin: auto 6.2em;
+	
+	> *{
+		float: left;
+	}
+	
+	h4 {
+		height: 113px;
+		width: 80px;
+		position: relative;
+		left: 0px;
+	}
+	
+	p{
+		width: 35%;
+		margin: auto 0 auto 50px;
+	}
+
+	div{
+		float:right;
+		width: 50%;
+	}
+	
+	button[type=submit], input[type=button], .button{
+		display: inline-block;
+		font-family: $sansSerif;
+		width: 140px;
+		vertical-align: top;
+	}
+	
+	input[type=email] { 
+		display: inline-block;
+		width: 68%;
+		margin: auto 1em auto auto;
+		vertical-align: top;
+	}
+
+}

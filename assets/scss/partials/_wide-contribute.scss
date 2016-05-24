@@ -1,0 +1,39 @@
+@import "../bourbon/bourbon"; 
+@import "../neat/neat"; 
+@import "../bitters/bitters"; 
+
+@import "_vars.scss";
+@import "_utils.scss";
+
+.contriblvl {	
+	form {
+		float: right;
+		width: 10.5em;
+	}
+
+	p, h4{
+		float:left;
+		width: 60%;
+	}
+	button, .button {
+		white-space: nowrap;
+	}
+}
+
+.col-2 {
+	@include clearfix;
+	
+	li {
+		width: 45%;
+		margin: 0 5% .5em 0;
+	}
+	
+	li:nth-child(odd) {
+		float:left;
+	}	
+	li:nth-child(even) {
+		float:right;
+	}
+}	
+
+

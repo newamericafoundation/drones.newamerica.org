@@ -1,0 +1,88 @@
+/*===================================
+Home page events List
+====================================*/
+
+[id=upcomingEvents]{
+	position: relative;
+	
+	> header {
+		padding: 0 0 3.5em;
+		@include media($up-small-medium-screen) {
+			padding: 0 0 2.625em;
+		}
+		@include media($up-small-screen) {
+			padding: 0 0 1.75em;
+		}
+	}
+	.event {
+		margin-bottom: 1em;
+		
+		header {
+			padding: 0;
+		}
+		
+		h3 {
+			margin: 0 0 0 0;
+			font-size: 2em;
+			line-height: 1.15em;
+		}
+				
+		// &:hover, &:focus {
+		// 	.eventDescription {
+		// 		display: none;
+		// 	}
+		// }
+	}
+  &.just-events{
+    @include shift(2);
+    @include media($up-medium-large-screen) {
+      @include shift(0);
+    }
+  }
+	
+	.eventCategory, .eventDate {
+		text-transform: uppercase;
+		&:after {
+			content: '|';
+			color: $black20;
+			padding: 0 .8em;
+			font-family: $sansSerif;		
+		}
+	}	
+	
+	.now {
+		font-weight: bold;
+		color: $highlightA;
+	}	
+	.eventLoc {
+		background-size: 7px auto;
+		font-size: 1em;
+		font-style: italic;
+		padding-left: 10px;
+		color: inherit;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	.eventDescription {
+		display: none;
+	}
+		
+	.more {
+		margin-top: 2em;
+	}
+	.eventMeta {
+		font-size: .9em;
+	}
+	.eventMeta, .programs {
+		margin: .5em 0;
+	}
+	.progname {
+		top: -4px;
+	}
+}
+.eventLoc {
+	background: url(../media/icons/location.svg) 0 45% no-repeat;
+}

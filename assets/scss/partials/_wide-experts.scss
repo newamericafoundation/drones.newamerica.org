@@ -1,0 +1,111 @@
+@import "_vars.scss";
+
+[id=page-intro]{
+	border-bottom: none;
+}
+
+[id=page-intro]{
+	@include outer-container;
+	p{
+		@include shift(3);
+		@include span-columns(6);
+	}
+}
+
+[id=expert-search] {
+	label {
+		display: none;		
+	}
+}
+
+.expert-list {
+	@include clearfix;
+}
+
+p.description {
+	width: 50%;
+}
+.expert-list-item {
+	@include clearfix;
+	font-size: .9em;
+	line-height: 1.25;
+	width: 25%;	
+	height: 110px;
+	margin: 0 0 3em 0;
+	
+	p {
+		margin: 0;
+		padding-left: 8em;
+	}
+}
+
+.eli-author {
+	font-family: $sansSerifBold;
+	color: $highlightA;
+}
+
+section{
+	// border-bottom: 1px solid $light-gray;
+	header{
+		margin-top: 0px;
+		padding-top: 0px;
+	}
+}
+.breaker{
+	position: relative;
+	border-bottom: 1px solid $light-gray;
+	&:before, &:after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  width: 9999px;
+	  border-bottom: 1px solid $light-gray;
+	} 
+	&:before {
+	  right: 100%; 
+	}
+	&:after {
+	  left: 100%;
+	}
+}
+.anchor{
+  display: block;
+  height: 115px; 
+  margin-top: -115px;
+  visibility: hidden;
+}
+
+#fellowList, #staffList, #councilList, #boardList{
+	@include outer-container;
+	.expert-container{
+	    @include span-columns(3);
+		@include omega(4n);
+		margin-bottom: 60px;
+		&:last-child{
+			margin-bottom: 135px;
+		}
+		.crop {
+		    width: 80px;
+		    height: 80px;
+		    overflow: hidden;
+		    float: left;
+		    margin-right: 10px;
+			img {
+			    width: 80px;
+			    -webkit-filter: grayscale(1);
+			  	filter: grayscale(1);
+			}
+		}
+		ul{
+			margin-top: 16px;
+			li{
+				font-size: 13px;
+				line-height: 1;
+			}
+		}
+		a{
+			color: $highlightA;
+		}
+	}
+}

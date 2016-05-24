@@ -1,0 +1,230 @@
+@import "_vars.scss";
+
+
+/*===============================
+COVER STORY Item
+================================*/
+
+[id=cover-story] {
+  color: $white;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  
+  a:link, a:visited {
+    color: $white;
+  }
+  
+  .program {
+    @extend .prel;
+    height: inherit;
+    padding: 150px 0 100px;
+  }
+  
+  .authors {
+    margin: auto;
+    width: auto;
+    font-size: 1.3em;
+    
+    &:last-child:after {
+      content: '';
+    }
+  }
+
+  &.index {
+    .program {
+      background: rgba(40,160,151,.5);
+      padding: 150px 0 100px;
+    }
+  }
+    
+  &.asset-building {
+    .program {
+      background: rgba($asset-building, .5);
+    }
+  }
+  &.breadwinning-caregiving {
+    .program {
+      background: rgba($breadwinning-caregiving, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.economic-growth {
+    .program {
+      background: rgba($economic-growth, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.education-policy {
+    .program {
+      background: rgba($education-policy, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.fellows {
+    .program {
+      background: rgba($fellows, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.future-of-war {
+    .program {
+      background: rgba($future-of-war, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.future-tense {
+    .program {
+      background: rgba($future-tense, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.international-security {
+    .program {
+      background: rgba($international-security, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.live {
+    .program {
+      background: rgba($live, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.open-markets, &.open-markets {
+    .program {
+      background: rgba($meri, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.new-america {
+    .program {
+      background: rgba($new-america-live, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.nyc {
+    .program {
+      background: rgba($nyc, .5);
+      // padding: 75px 0 50px;
+    }
+  } 
+  &.oti {
+    .program {
+      background: rgba($oti, .5);
+      // padding: 75px 0 50px;
+    }
+  }         
+  &.political-reform {
+    .program {
+      background: rgba($political-reform, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.postsecondary-national-policy-institute {
+    .program {
+      background: rgba($postsecondary-national-policy-institute, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  &.x-lab {
+    .program {
+      background: rgba($x-lab, .5);
+      // padding: 75px 0 50px;
+    }
+  }
+  
+  header {
+    float: left;
+    padding: 0;
+  }
+  
+  h1 {
+    font: normal 3.5em / 1.5 $displayFont;
+    text-transform: uppercase;
+    margin: .15em auto;
+    a {
+      border-bottom: 10px solid $white;
+    }
+    .post-header{
+      border-bottom: 10px solid $white;
+    }
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.7em;
+  }
+  
+  .summary {
+    display: none;
+  }
+
+  .tags {
+    margin-top: 1.5em;
+  }
+  .tag {
+    margin: 0;
+    
+    &:not(:last-child):after, &:not(:last-child)::after{
+      content:'';
+    }
+  }
+  
+  .icon {
+    width: auto;
+    height: 22px;
+    margin: 0 1em 0 0;
+    background-repeat: no-repeat;
+    
+    &.fellows {
+      background-position: 0 10px;
+    }
+    &.oti {
+      background-size: 76% auto;
+    }
+    &.x-lab {
+      background-size: 85% auto;
+    }
+  }
+  a.icon{
+    color: transparent;
+  }
+  
+  .photoCredit {
+    @extend .m0;
+    padding: .6em 1em;
+    background: $black30;
+    font-size: .8em;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+[id=cover-story] {
+  .articleMeta{
+    font-size: 0.875em;
+    text-transform: uppercase;
+    .pubDate {
+      margin-left: 8px;
+    }
+  }
+  .summary{
+    margin-top: 5px;
+  }
+}
+
+[id=cover-story] {
+
+  .postsecondary-national-policy-institute {
+    width: 30px;
+  }
+
+  .open-technology-institute {
+    height: 30px;
+  }
+
+}   
+

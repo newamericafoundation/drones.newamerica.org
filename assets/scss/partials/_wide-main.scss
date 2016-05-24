@@ -1,0 +1,184 @@
+/*===================================
+GLOBALS: Wide > 1250px;
+====================================*/
+
+.half {
+	@include span-columns(6);
+	&:nth-child(odd) {
+		
+	}
+	&:only-child {
+		@include span-columns(12);
+		float: none;
+		padding-left: none;
+		border: 0;	
+	}
+}
+.full{
+	float: left;
+	display: block;
+	width: 100%;
+}
+.fourup{
+	@include span-columns(12);
+}
+
+.wrapper {
+	@include outer-container;
+	max-width: $maxwidth;
+	min-width: $minwidth;
+	margin: 0px auto;
+}	
+
+.wrapper40, .wrapper50, .wrapper60 {
+	@include clearfix;
+	margin: auto;
+	position: relative;
+}
+
+.wrapper50 {
+	width: 50%;
+}
+
+.wrapper8 {
+    @include span-columns(8);
+    @include shift(2);
+}
+
+.width4-8 {
+    @include span-columns(4 of 8);
+}
+
+.width10 {
+    @include span-columns(10);
+    @include shift(1);
+}
+/*===================================
+Featured types and channel headers
+====================================*/
+
+.feature {
+	&:nth-child(even){
+		float: right;
+	}
+	
+	.full & {
+		margin: auto 4% auto 0;
+		width: 21%;
+		
+		&:nth-child(even){
+			float: left;
+		}
+	}
+}
+
+
+
+
+
+/*===================================
+Home page
+====================================*/
+
+
+/*-----------------------------------
+Recent Content
+------------------------------------*/
+
+[id=recent] {
+	.wrapper {
+		header {
+			@include span-columns(7);
+			@include shift(2);
+		}
+	}
+	> footer {
+		padding: 3.1em 0;
+	}
+}
+
+.standardblock {
+	margin: 0 auto;
+	max-width: $maxwidth;
+	@include span-columns(12);
+	.meta {
+		margin-bottom: 20px;
+	}
+	img {
+		max-width: 250px;
+		width: 100%;
+		height: auto;
+	}
+	.article, .view-more {
+		@include span-columns(8);
+		@include shift(2);
+		border-bottom: 1pt solid $black20;
+	}
+	.visual {
+		@include span-columns(3 of 8);
+	}
+	.info {
+		@include omega;
+	}
+		
+	.img, .map {
+		display: block;
+		float: left; 
+		margin: 0 2em 2em 0;
+	}
+	
+	.map {
+		width: 300px;
+		height: 300px;
+		border: 1px solid $black20;
+	}
+	
+	header {
+		padding: 0 0 1em 0;
+	}
+	
+	.programs {
+		@include clearfix;
+	}
+	
+	.blurb {
+		font-family: $serif;
+	}
+	
+	.viewMore span {
+		text-transform: capitalize;
+	}
+	
+	.podcast {
+		margin: 1 auto;
+	}
+	
+	.eventDate, .eventTime{
+		margin: 0;
+		
+		b {
+			font-weight: normal;
+		}
+	}
+	
+	.eventTime{
+		margin-bottom: 1em;
+	}
+}
+.view-more {
+	@include span-columns(8);
+	@include shift(2);
+	margin-top: 6.25em;
+	margin-bottom: 6.25em;
+}
+button.default, .button.default {
+	width: auto;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.null{
+  @include span-columns(8);
+  @include shift(2);
+  border-top: 1pt solid $black20;
+}

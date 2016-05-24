@@ -1,0 +1,11 @@
+@import "_vars.scss";
+
+[id=books] {
+	& > .wrapper {
+		margin: 0 auto;
+	}
+	.flex-viewport{
+		@extend .wrapper;
+	}
+}
+
