@@ -6,8 +6,8 @@
 unmanned aircraft are now proliferating into a wide variety of new
 applications around the world. This primer describes aspects of that proliferation.">
 <style>
-@import "https://www.newamerica.org/assets/css/main.6aab60d1.css";
-@import "http://www.newamerica.org/assets/css/wide.796fa3c5.css";
+@import "/assets/css/styles.css";
+@import "/assets/css/wide.css";
 body{
   margin: 10px;
 }
@@ -26,6 +26,24 @@ nav{
   border-bottom: 1px solid #ccc;
 }
 
+.content-uavs #flight-content, #about-content, #reg-content {
+  padding: 10px 180px 10px 100px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.content-uavs #about-content p{
+  background-size:cover;
+  border-color: #aaa;
+  padding: 10px 100px 10px 90px;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+}
+
+.content-uavs .selectboxes #MissionFilter, #YearStartFilter, #YearEndFilter, #CostFilter, #TypeFilter {
+  display: inline-block;
+}
 
 #footer {
   display: inline-block;
@@ -172,7 +190,7 @@ li.tab>a {
   cursor: pointer; 
 }
 .content-uavs {
-  background: #fffaef;
+  background: #fff;
   padding-left: 120px;
   padding-right: 150px;
   padding-top: 10px;
@@ -191,16 +209,16 @@ ul#tabs li.tab:hover {
 </style>
 
 
-<script type="text/javascript" src="newamerica/static/js/modernizr-latest.js"></script>
+<script type="text/javascript" src="/newamerica/static/js/modernizr-latest.js"></script>
 
-  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.css">
+  <link rel="stylesheet" href="/recline/vendor/leaflet/0.7.3/leaflet.css">
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="recline/vendor/leaflet/0.7.3/leaflet.ie.css" />
+  <link rel="stylesheet" href="/recline/vendor/leaflet/0.7.3/leaflet.ie.css" />
   <![endif]-->
-  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.css">
-  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="/recline/vendor/leaflet.markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="/recline/vendor/leaflet.markercluster/MarkerCluster.Default.css">
   <!--[if lte IE 8]>
-  <link rel="stylesheet" href="recline/vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
+  <link rel="stylesheet" href="/recline/vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
   <![endif]-->
 
   <!-- 3rd party JS libraries -->
@@ -213,7 +231,7 @@ ul#tabs li.tab:hover {
 <body>
 
   <nav class="na-bar " id="na-main-bar">
-    <a href="http://newamerica.org"><img src="newamerica/static/media/icons/na-menu.svg" style="width:35px; display:inline; position:absolute; top:25px; left:25px;"></a>
+    <a href="http://newamerica.org"><img src="/newamerica/static/media/icons/na-menu.svg" style="width:35px; display:inline; position:absolute; top:25px; left:25px;"></a>
     <h1 class="left-vr"><div class="page-offset"><a href="http://drones.newamerica.org/" class="org-name" id="theOrg">World of Drones</a>
 </div><div class="fr archive"><a href="http://newamerica.net/archived" target="_blank">Archived Site</a></div></h1>
 
@@ -321,11 +339,7 @@ Cover illustration and interior illustrations are copyright Valerie Altounian.
 </div> -->
 
     <div class="scripted_styling"></div>
-    <script src="newamerica/static/js/jquery.widowFix-1.3.2.min.js"></script> 
-
-    <script src="http://www.newamerica.org/assets/js/components/nav.js"></script> 
-    <script src="http://www.newamerica.org/assets/js/components/carosel.js"></script> 
-    <script src="http://www.newamerica.org/assets/js/core.8d266e97.js"></script> 
+    <script src="/newamerica/static/js/jquery.widowFix-1.3.2.min.js"></script> 
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
