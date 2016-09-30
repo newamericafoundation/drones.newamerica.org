@@ -685,11 +685,11 @@ Home page events List
   [id=upcomingEvents] .eventDescription.x-lab > div {
     background-color: #b3d234; }
   [id=upcomingEvents] .eventDescription a:link, [id=upcomingEvents] .eventDescription a:visited {
-    color: #fffaef; }
+    color: #fff; }
     [id=upcomingEvents] .eventDescription a:link b, [id=upcomingEvents] .eventDescription a:visited b {
       font-weight: normal; }
   [id=upcomingEvents] .eventDescription a:hover b {
-    border-bottom: 1px solid #fffaef; }
+    border-bottom: 1px solid #fff; }
   [id=upcomingEvents] .eventDescription .eventMeta {
     font-family: serif; }
   [id=upcomingEvents] .eventDescription .eventTime, [id=upcomingEvents] .eventDescription .eventDate {
@@ -977,7 +977,7 @@ aside.sharing {
         padding-bottom: 0;
         position: fixed;
         top: 102px;
-        background: #fffaef;
+        background: #fff;
         padding: 0 1em;
         margin-left: -1em; } }
     @media screen and (min-width: 1000px) and (min-width: 1250px) {
